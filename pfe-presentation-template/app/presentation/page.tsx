@@ -11,6 +11,18 @@ import ScopeProgressSlide from "@/components/presentation/slides/scope-progress-
 import MethodologySlide from "@/components/presentation/slides/methodology-slide"
 import ArchitectureSlide from "@/components/presentation/slides/architecture-slide"
 import TechnologyStackSlide from "@/components/presentation/slides/technology-stack-slide"
+import Sprint1Slide from "@/components/presentation/slides/sprint1-slide"
+import Sprint2Slide from "@/components/presentation/slides/sprint2-slide"
+import Sprint34Slide from "@/components/presentation/slides/sprint34-slide"
+import Sprint5Slide from "@/components/presentation/slides/sprint5-slide"
+import Sprint6Slide from "@/components/presentation/slides/sprint6-slide"
+import SecuritySlide from "@/components/presentation/slides/security-slide"
+import PerformanceMetricsSlide from "@/components/presentation/slides/performance-metrics-slide"
+import MobileAppSlide from "@/components/presentation/slides/mobile-app-slide"
+import MonitoringSlide from "@/components/presentation/slides/monitoring-slide"
+import ChallengesSolutionsSlide from "@/components/presentation/slides/challenges-solutions-slide"
+import ResultsAchievementsSlide from "@/components/presentation/slides/results-achievements-slide"
+import ConclusionSlide from "@/components/presentation/slides/conclusion-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -51,81 +63,33 @@ export default function PresentationPage() {
       <MethodologySlide key="methodology" />, // 6
       <ArchitectureSlide key="architecture" />, // 7
       <TechnologyStackSlide key="tech-stack" />, // 8
+      <Sprint1Slide key="sprint1" />, // 9
+      <Sprint2Slide key="sprint2" />, // 10
+      <Sprint34Slide key="sprint3-4" />, // 11
+      <Sprint5Slide key="sprint5" />, // 12
+      <Sprint6Slide key="sprint6" />, // 13
+      <SecuritySlide key="security" />, // 14
+      <PerformanceMetricsSlide key="perf-metrics" />, // 15
+      <MobileAppSlide key="mobile-app" />, // 16
+      <MonitoringSlide key="monitoring" />, // 17
+      <ChallengesSolutionsSlide key="challenges-solutions" />, // 18
+      <ResultsAchievementsSlide key="results-achievements" />, // 19
       <PlaceholderSlide
-        key="sprint1"
-        title="Sprint 1: Conception (Diapo 10)"
-        content="Décisions clés, patterns d'architecture, design thinking."
-      />, // 9
-      <PlaceholderSlide
-        key="sprint2"
-        title="Sprint 2: CI/CD (Diapo 11)"
-        content="Workflow GitOps, intégration Argo CD, étapes du pipeline."
-      />, // 9
-      <PlaceholderSlide
-        key="sprint3-4"
-        title="Sprint 3-4: Développement (Diapo 11)"
-        content="Services Alertes & Notifications, documentation API."
-      />, // 10
-      <PlaceholderSlide
-        key="sprint5"
-        title="Sprint 5: Performance (Diapo 12)"
-        content="Stack PLG, métriques Prometheus, logs Loki, dashboards Grafana."
-      />, // 11
-      <PlaceholderSlide
-        key="sprint6"
-        title="Sprint 6: Validation (Diapo 13)"
-        content="Couverture des tests, résultats des tests de performance et sécurité."
-      />, // 12
-      <PlaceholderSlide
-        key="security"
-        title="Implémentation de la Sécurité (Diapo 14)"
-        content="Résultats scans Trivy, badge zéro vulnérabilités."
-      />, // 13
-      <PlaceholderSlide
-        key="perf-metrics"
-        title="Métriques de Performance (Diapo 15)"
-        content="Utilisateurs concurrents, latence P95, disponibilité."
-      />, // 14
-      <PlaceholderSlide
-        key="mobile-app"
-        title="Application Mobile (Diapo 16)"
-        content="Captures React Native, pipeline Expo EAS."
-      />, // 15
-      <PlaceholderSlide
-        key="monitoring"
-        title="Tableau de Bord de Monitoring (Diapo 17)"
-        content="Captures Grafana live, configuration des alertes."
-      />, // 16
-      <PlaceholderSlide
-        key="achievements"
-        title="Réalisations Clés (Diapo 18)"
-        content="Améliorations avant/après, ROI."
-      />, // 17
-      <PlaceholderSlide
-        key="lessons"
-        title="Leçons Apprises (Diapo 19)"
-        content="Perspectives techniques, apprentissages organisationnels."
-      />, // 18
-      <PlaceholderSlide
-        key="roadmap"
-        title="Feuille de Route Future (Diapo 20)"
+        key="roadmap" 
+        title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 19
-      <PlaceholderSlide
-        key="demo"
-        title="Démonstration Live (Diapo 21)"
-        content="Checklist de préparation, fonctionnalités clés."
       />, // 20
       <PlaceholderSlide
-        key="qa"
-        title="Session Q&A (Diapo 22)"
-        content="Catégories de questions, informations de contact."
+        key="demo"
+        title="Démonstration Live"
+        content="Checklist de préparation, fonctionnalités clés."
       />, // 21
+      <ConclusionSlide key="conclusion" />, // 22
       <PlaceholderSlide
         key="thanks"
-        title="Remerciements (Diapo 23)"
-        content="Remerciements, contacts, profils LinkedIn/GitHub."
-      />, // 22
+        title="Merci!"
+        content="Questions & Discussion"
+      />, // 23
     ],
     [],
   )
@@ -133,7 +97,7 @@ export default function PresentationPage() {
   // For brevity, I'm using generic titles for placeholders.
   const slideTitles = useMemo(
     () => [
-      "Introduction (Héros)",
+      "Introduction",
       "Plan de la Présentation",
       "Contexte Entreprise",
       "Problématique",
@@ -150,12 +114,12 @@ export default function PresentationPage() {
       "Sécurité",
       "Métriques Performance",
       "Application Mobile",
-      "Monitoring",
-      "Réalisations Clés",
-      "Leçons Apprises",
-      "Feuille de Route",
-      "Démo Live",
-      "Q&A",
+      "Monitoring & Observabilité",
+      "Défis & Solutions",
+      "Résultats & Réalisations",
+      "Feuille de Route Future",
+      "Démonstration Live",
+      "Conclusion & Perspectives",
       "Remerciements",
     ],
     [],

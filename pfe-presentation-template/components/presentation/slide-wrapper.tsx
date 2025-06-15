@@ -12,11 +12,11 @@ export default function SlideWrapper({ children, className, id }: SlideWrapperPr
     <section
       id={id}
       className={cn(
-        "min-h-[calc(100vh-8rem)] w-full flex flex-col items-center justify-center p-6 md:p-12 lg:p-16 overflow-y-auto",
+        "h-full w-full flex flex-col p-4 md:p-6 lg:p-8 overflow-y-auto",
         className,
       )}
     >
-      <div className="container max-w-5xl w-full">{children}</div>
+      <div className="w-full h-full flex flex-col">{children}</div>
     </section>
   )
 }

@@ -1,5 +1,6 @@
 "use client"
 
+import SlideWrapper from "../slide-wrapper"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -13,7 +14,8 @@ import {
   ArrowRight,
   Clock,
   GitBranch,
-  Layers
+  Layers,
+  Award
 } from "lucide-react"
 
 const scrumRoles = [
@@ -139,199 +141,196 @@ const methodologyPrinciples = [
 
 export default function MethodologySlide() {
   return (
-    <div className="p-8 h-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
-      {/* Header */}
-      <div className="mb-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg">
-            <RotateCcw className="h-8 w-8 text-white" />
-          </div>
-          <div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Méthodologie Agile
-            </h1>
-            <p className="text-lg text-slate-600 mt-1">
-              Approche Scrum pour la transformation DevOps
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-12 gap-6 h-[calc(100%-120px)]">
-        {/* Left Column - Scrum Framework */}
-        <div className="col-span-4 space-y-6">
-          {/* Scrum Roles */}
-          <Card className="h-fit border-0 shadow-lg bg-white/80 backdrop-blur-sm">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-lg">
-                <Users className="h-5 w-5 text-blue-600" />
-                Rôles Scrum
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {scrumRoles.map((role, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex items-center gap-3">
-                    <div className={`p-2 ${role.color} rounded-lg`}>
-                      <role.icon className="h-4 w-4 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-sm">{role.role}</p>
-                      <p className="text-xs text-slate-600">{role.name}</p>
-                    </div>
-                  </div>
-                  <div className="ml-11 space-y-1">
-                    {role.responsibilities.map((resp, i) => (
-                      <Badge key={i} variant="secondary" className="mr-1 text-xs">
-                        {resp}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          {/* Scrum Events */}
-          <Card className="h-fit border-0 shadow-lg bg-white/80 backdrop-blur-sm">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-lg">
-                <Calendar className="h-5 w-5 text-green-600" />
-                Événements Scrum
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              {scrumEvents.map((event, index) => (
-                <div key={index} className="flex justify-between items-center p-3 bg-slate-50 rounded-lg">
-                  <div className="flex-1">
-                    <p className="font-medium text-sm">{event.event}</p>
-                    <p className="text-xs text-slate-600">{event.description}</p>
-                  </div>
-                  <div className="text-right">
-                    <Badge variant="outline" className="text-xs">
-                      {event.duration}
-                    </Badge>
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+    <SlideWrapper>
+      <div className="space-y-8">
+        {/* En-tête */}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
+            Méthodologie Agile
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Approche Scrum pour la transformation DevOps
+          </p>
         </div>
 
-        {/* Center Column - Sprint Overview */}
-        <div className="col-span-5 space-y-6">
-          <Card className="h-full border-0 shadow-lg bg-white/80 backdrop-blur-sm">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-lg">
-                <Layers className="h-5 w-5 text-purple-600" />
-                Vue d'Ensemble des Sprints
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {sprintOverview.map((sprint, index) => (
-                <div key={index} className="space-y-3">
+        {/* Scrum Framework Overview */}
+        <Card className="shadow-xl bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20 mb-8">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center text-2xl">
+              <RotateCcw className="mr-3 h-8 w-8 text-primary" />
+              Framework Scrum
+              <Badge variant="secondary" className="ml-4">
+                <Award className="mr-1 h-4 w-4" />
+                6 Sprints Complétés
+              </Badge>
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Scrum Roles */}
+              <div>
+                <h4 className="text-lg font-semibold mb-3 flex items-center">
+                  <Users className="mr-2 h-5 w-5 text-primary" />
+                  Rôles Scrum
+                </h4>
+                <div className="space-y-3">
+                  {scrumRoles.map((role, index) => (
+                    <Card key={index} className="shadow-md hover:shadow-lg transition-all duration-200">
+                      <CardContent className="p-4">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className={`p-2 ${role.color} rounded-lg`}>
+                            <role.icon className="h-4 w-4 text-white" />
+                          </div>
+                          <div>
+                            <p className="font-semibold text-sm">{role.role}</p>
+                            <p className="text-xs text-muted-foreground">{role.name}</p>
+                          </div>
+                        </div>
+                        <div className="space-y-1">
+                          {role.responsibilities.map((resp, i) => (
+                            <Badge key={i} variant="outline" className="mr-1 text-xs">
+                              {resp}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Scrum Events */}
+              <div>
+                <h4 className="text-lg font-semibold mb-3 flex items-center">
+                  <Calendar className="mr-2 h-5 w-5 text-primary" />
+                  Événements Scrum
+                </h4>
+                <div className="space-y-3">
+                  {scrumEvents.map((event, index) => (
+                    <Card key={index} className="shadow-md hover:shadow-lg transition-all duration-200">
+                      <CardContent className="p-4">
+                        <div className="flex justify-between items-start mb-2">
+                          <div className="flex-1">
+                            <p className="font-semibold text-sm">{event.event}</p>
+                            <p className="text-xs text-muted-foreground">{event.description}</p>
+                          </div>
+                          <Badge variant="secondary" className="text-xs ml-2">
+                            {event.duration}
+                          </Badge>
+                        </div>
+                        <Badge variant="outline" className="text-xs">
+                          {event.frequency}
+                        </Badge>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+
+              {/* Agile Principles */}
+              <div>
+                <h4 className="text-lg font-semibold mb-3 flex items-center">
+                  <Target className="mr-2 h-5 w-5 text-primary" />
+                  Principes Agiles
+                </h4>
+                <div className="space-y-3">
+                  {methodologyPrinciples.map((principle, index) => (
+                    <Card key={index} className="shadow-md hover:shadow-lg transition-all duration-200">
+                      <CardContent className="p-4">
+                        <div className="flex items-start gap-2 mb-2">
+                          <principle.icon className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                          <div>
+                            <p className="font-semibold text-sm">{principle.principle}</p>
+                            <p className="text-xs text-muted-foreground mb-2">{principle.description}</p>
+                            <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
+                              {principle.benefit}
+                            </Badge>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Sprint Overview */}
+        <div>
+          <h3 className="text-2xl font-semibold mb-6 flex items-center">
+            <Layers className="mr-3 h-6 w-6 text-primary" />
+            Vue d'Ensemble des Sprints
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {sprintOverview.map((sprint, index) => (
+              <Card key={index} className="shadow-lg hover:shadow-xl transition-all duration-300 bg-green-50/50 dark:bg-green-950/20 border-green-200/50">
+                <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-bold text-sm">
                         {index + 1}
                       </div>
                       <div>
-                        <p className="font-semibold text-sm">{sprint.sprint}</p>
-                        <p className="text-xs text-slate-600">{sprint.focus}</p>
+                        <CardTitle className="text-lg">{sprint.sprint}</CardTitle>
+                        <p className="text-sm text-muted-foreground">{sprint.focus}</p>
                       </div>
                     </div>
-                    <div className="text-right">
-                      <Badge variant="secondary" className="text-xs">
-                        {sprint.duration}
-                      </Badge>
-                      <div className="flex items-center gap-1 mt-1">
-                        <CheckCircle2 className="h-3 w-3 text-green-500" />
-                        <span className="text-xs text-green-600">Terminé</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="ml-11 space-y-2">
-                    <Progress value={sprint.progress} className="h-2" />
-                    <div className="space-y-1">
-                      {sprint.deliverables.map((deliverable, i) => (
-                        <div key={i} className="flex items-center gap-2">
-                          <CheckCircle2 className="h-3 w-3 text-green-500 flex-shrink-0" />
-                          <span className="text-xs text-slate-600">{deliverable}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {index < sprintOverview.length - 1 && (
-                    <div className="flex justify-center">
-                      <ArrowRight className="h-4 w-4 text-slate-400" />
-                    </div>
-                  )}
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Right Column - Agile Principles */}
-        <div className="col-span-3 space-y-6">
-          <Card className="h-full border-0 shadow-lg bg-white/80 backdrop-blur-sm">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-lg">
-                <Target className="h-5 w-5 text-orange-600" />
-                Principes Agiles
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {methodologyPrinciples.map((principle, index) => (
-                <div key={index} className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <principle.icon className="h-4 w-4 text-blue-600" />
-                    <p className="font-medium text-sm">{principle.principle}</p>
-                  </div>
-                  <p className="text-xs text-slate-600 pl-6">{principle.description}</p>
-                  <div className="pl-6">
-                    <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
-                      {principle.benefit}
+                    <Badge variant="secondary" className="text-xs">
+                      {sprint.duration}
                     </Badge>
                   </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          {/* Project Metrics */}
-          <Card className="h-fit border-0 shadow-lg bg-gradient-to-br from-blue-500 to-purple-600 text-white">
-            <CardHeader className="pb-4">
-              <CardTitle className="flex items-center gap-2 text-lg">
-                <Clock className="h-5 w-5" />
-                Métriques Projet
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <div className="text-center">
-                  <p className="text-2xl font-bold">6</p>
-                  <p className="text-xs opacity-90">Sprints</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-2xl font-bold">12</p>
-                  <p className="text-xs opacity-90">Semaines</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-2xl font-bold">100%</p>
-                  <p className="text-xs opacity-90">Objectifs</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-2xl font-bold">15+</p>
-                  <p className="text-xs opacity-90">Livrables</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  <div className="flex items-center gap-1">
+                    <CheckCircle2 className="h-4 w-4 text-green-500" />
+                    <span className="text-sm font-medium text-green-600">Terminé</span>
+                    <Progress value={sprint.progress} className="flex-1 ml-2 h-2" />
+                  </div>
+                  <div className="space-y-1">
+                    {sprint.deliverables.map((deliverable, i) => (
+                      <div key={i} className="flex items-center gap-2">
+                        <CheckCircle2 className="h-3 w-3 text-green-500 flex-shrink-0" />
+                        <span className="text-xs text-muted-foreground">{deliverable}</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
+
+        {/* Project Metrics */}
+        <Card className="shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+          <CardHeader className="pb-4">
+            <CardTitle className="flex items-center gap-2 text-xl">
+              <Clock className="h-6 w-6" />
+              Métriques Projet
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="text-center">
+                <div className="text-3xl font-bold">6</div>
+                <div className="text-sm opacity-90">Sprints</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold">12</div>
+                <div className="text-sm opacity-90">Semaines</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold">100%</div>
+                <div className="text-sm opacity-90">Objectifs</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold">15+</div>
+                <div className="text-sm opacity-90">Livrables</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
-    </div>
+    </SlideWrapper>
   )
 }
