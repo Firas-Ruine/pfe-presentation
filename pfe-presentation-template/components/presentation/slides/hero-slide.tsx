@@ -42,7 +42,7 @@ export default function HeroSlide({ onStartPresentation }: HeroSlideProps) {
       </div>
 
       <div className="h-full flex flex-col justify-center items-center text-center space-y-6 md:space-y-8">
-        <Badge variant="secondary" className="px-4 py-1.5 text-sm">
+        <Badge variant="secondary" className="px-4 py-1.5 text-sm text-white">
           <CalendarDays className="mr-2 h-4 w-4" />
           Année Universitaire: 2024-2025
         </Badge>
@@ -55,7 +55,7 @@ export default function HeroSlide({ onStartPresentation }: HeroSlideProps) {
           Présenté par: <span className="font-bold text-primary">Firas Ruine</span>
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl w-full mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 max-w-6xl w-full mx-auto">
           <Card className="shadow-lg hover:shadow-xl transition-shadow">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center text-base md:text-lg">
@@ -82,18 +82,7 @@ export default function HeroSlide({ onStartPresentation }: HeroSlideProps) {
             </CardContent>
           </Card>
           
-          <Card className="shadow-lg hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1">
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center text-base md:text-lg">
-                <Building className="mr-2 h-5 w-5 md:h-6 md:w-6 text-primary" />
-                Institution
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">IT</p>
-              <p className="font-semibold">Business School</p>
-            </CardContent>
-          </Card>
+  
         </div>
 
       </div>
