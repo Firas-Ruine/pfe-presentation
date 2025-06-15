@@ -8,6 +8,7 @@ import IntroductionTitleSlide from "@/components/presentation/slides/introductio
 import IntroductionContentSlide from "@/components/presentation/slides/introduction-content-slide"
 import DevOpsDefinitionSlide from "@/components/presentation/slides/devops-definition-slide"
 import DevOpsImpactSlide from "@/components/presentation/slides/devops-impact-slide"
+import CompanyPresentationTitleSlide from "@/components/presentation/slides/company-presentation-title-slide"
 import ProblemStatementSlide from "@/components/presentation/slides/problem-statement-slide"
 import CompanyContextSlide from "@/components/presentation/slides/company-context-slide"
 import ObjectivesScopeSlide from "@/components/presentation/slides/objectives-scope-slide"
@@ -64,40 +65,41 @@ export default function PresentationPage() {
       <IntroductionContentSlide key="intro-content" />, // 3
       <DevOpsDefinitionSlide key="devops-definition" />, // 4
       <DevOpsImpactSlide key="devops-impact" />, // 5
-      <CompanyContextSlide key="company-context" />, // 6
-      <ProblemStatementSlide key="problem" />, // 7
-      <ObjectivesScopeSlide key="objectives" />, // 8
-      <ScopeProgressSlide key="scope-progress" />, // 9
-      <MethodologySlide key="methodology" />, // 10
-      <ArchitectureSlide key="architecture" />, // 11
-      <TechnologyStackSlide key="tech-stack" />, // 12
-      <Sprint1Slide key="sprint1" />, // 13
-      <Sprint2Slide key="sprint2" />, // 14
-      <Sprint34Slide key="sprint3-4" />, // 15
-      <Sprint5Slide key="sprint5" />, // 16
-      <Sprint6Slide key="sprint6" />, // 17
-      <SecuritySlide key="security" />, // 18
-      <PerformanceMetricsSlide key="perf-metrics" />, // 19
-      <MobileAppSlide key="mobile-app" />, // 20
-      <MonitoringSlide key="monitoring" />, // 21
-      <ChallengesSolutionsSlide key="challenges-solutions" />, // 22
-      <ResultsAchievementsSlide key="results-achievements" />, // 23
+      <CompanyPresentationTitleSlide key="company-presentation-title" />, // 6
+      <CompanyContextSlide key="company-context" />, // 7
+      <ProblemStatementSlide key="problem" />, // 8
+      <ObjectivesScopeSlide key="objectives" />, // 9
+      <ScopeProgressSlide key="scope-progress" />, // 10
+      <MethodologySlide key="methodology" />, // 11
+      <ArchitectureSlide key="architecture" />, // 12
+      <TechnologyStackSlide key="tech-stack" />, // 13
+      <Sprint1Slide key="sprint1" />, // 14
+      <Sprint2Slide key="sprint2" />, // 15
+      <Sprint34Slide key="sprint3-4" />, // 16
+      <Sprint5Slide key="sprint5" />, // 17
+      <Sprint6Slide key="sprint6" />, // 18
+      <SecuritySlide key="security" />, // 19
+      <PerformanceMetricsSlide key="perf-metrics" />, // 20
+      <MobileAppSlide key="mobile-app" />, // 21
+      <MonitoringSlide key="monitoring" />, // 22
+      <ChallengesSolutionsSlide key="challenges-solutions" />, // 23
+      <ResultsAchievementsSlide key="results-achievements" />, // 24
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 24
+      />, // 25
       <PlaceholderSlide
         key="demo"
         title="Démonstration Live"
         content="Checklist de préparation, fonctionnalités clés."
-      />, // 25
-      <ConclusionSlide key="conclusion" />, // 26
+      />, // 26
+      <ConclusionSlide key="conclusion" />, // 27
       <PlaceholderSlide
         key="thanks"
         title="Merci!"
         content="Questions & Discussion"
-      />, // 24
+      />, // 28
     ],
     [],
   )
