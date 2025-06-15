@@ -126,7 +126,7 @@ export default function PresentationLayout({
               </Button>
             )}
             {isMounted && (
-              <span className="text-sm font-medium text-muted-foreground hidden md:block">
+              <span className="text-md font-bold text-muted-foreground hidden md:block">
                 Diapo {currentSlide + 1} sur {totalSlides}
               </span>
             )}
@@ -188,9 +188,7 @@ export default function PresentationLayout({
 
       <main className="flex-1 min-h-0">{isMounted ? slides[currentSlide] : <div className="p-8 h-full flex items-center justify-center">Loading...</div>}</main>
 
-      <footer className="py-2 text-center text-xs text-muted-foreground border-t border-border/40 bg-background/95 flex-shrink-0">
-        PFE Presentation Template | Firas Ruine | 2024-2025
-      </footer>
+    
     </div>
   )
 }

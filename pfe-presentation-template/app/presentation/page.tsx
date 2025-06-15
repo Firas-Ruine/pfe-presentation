@@ -4,6 +4,8 @@ import { useState, useMemo } from "react"
 import PresentationLayout from "@/components/presentation/presentation-layout"
 import HeroSlide from "@/components/presentation/slides/hero-slide"
 import NavigationSlide from "@/components/presentation/slides/navigation-slide"
+import IntroductionTitleSlide from "@/components/presentation/slides/introduction-title-slide"
+import IntroductionContentSlide from "@/components/presentation/slides/introduction-content-slide"
 import ProblemStatementSlide from "@/components/presentation/slides/problem-statement-slide"
 import CompanyContextSlide from "@/components/presentation/slides/company-context-slide"
 import ObjectivesScopeSlide from "@/components/presentation/slides/objectives-scope-slide"
@@ -56,40 +58,42 @@ export default function PresentationPage() {
     () => [
       <HeroSlide key="hero" onStartPresentation={handleStartPresentation} />, // 0
       <NavigationSlide key="nav" onNavigate={handleNavigateToSlide} />, // 1
-      <CompanyContextSlide key="company-context" />, // 2
-      <ProblemStatementSlide key="problem" />, // 3
-      <ObjectivesScopeSlide key="objectives" />, // 4
-      <ScopeProgressSlide key="scope-progress" />, // 5
-      <MethodologySlide key="methodology" />, // 6
-      <ArchitectureSlide key="architecture" />, // 7
-      <TechnologyStackSlide key="tech-stack" />, // 8
-      <Sprint1Slide key="sprint1" />, // 9
-      <Sprint2Slide key="sprint2" />, // 10
-      <Sprint34Slide key="sprint3-4" />, // 11
-      <Sprint5Slide key="sprint5" />, // 12
-      <Sprint6Slide key="sprint6" />, // 13
-      <SecuritySlide key="security" />, // 14
-      <PerformanceMetricsSlide key="perf-metrics" />, // 15
-      <MobileAppSlide key="mobile-app" />, // 16
-      <MonitoringSlide key="monitoring" />, // 17
-      <ChallengesSolutionsSlide key="challenges-solutions" />, // 18
-      <ResultsAchievementsSlide key="results-achievements" />, // 19
+      <IntroductionTitleSlide key="intro-title" />, // 2
+      <IntroductionContentSlide key="intro-content" />, // 3
+      <CompanyContextSlide key="company-context" />, // 4
+      <ProblemStatementSlide key="problem" />, // 5
+      <ObjectivesScopeSlide key="objectives" />, // 6
+      <ScopeProgressSlide key="scope-progress" />, // 7
+      <MethodologySlide key="methodology" />, // 8
+      <ArchitectureSlide key="architecture" />, // 9
+      <TechnologyStackSlide key="tech-stack" />, // 10
+      <Sprint1Slide key="sprint1" />, // 11
+      <Sprint2Slide key="sprint2" />, // 12
+      <Sprint34Slide key="sprint3-4" />, // 13
+      <Sprint5Slide key="sprint5" />, // 14
+      <Sprint6Slide key="sprint6" />, // 15
+      <SecuritySlide key="security" />, // 16
+      <PerformanceMetricsSlide key="perf-metrics" />, // 17
+      <MobileAppSlide key="mobile-app" />, // 18
+      <MonitoringSlide key="monitoring" />, // 19
+      <ChallengesSolutionsSlide key="challenges-solutions" />, // 20
+      <ResultsAchievementsSlide key="results-achievements" />, // 21
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 20
+      />, // 22
       <PlaceholderSlide
         key="demo"
         title="Démonstration Live"
         content="Checklist de préparation, fonctionnalités clés."
-      />, // 21
-      <ConclusionSlide key="conclusion" />, // 22
+      />, // 23
+      <ConclusionSlide key="conclusion" />, // 24
       <PlaceholderSlide
         key="thanks"
         title="Merci!"
         content="Questions & Discussion"
-      />, // 23
+      />, // 24
     ],
     [],
   )
@@ -99,6 +103,7 @@ export default function PresentationPage() {
     () => [
       "Introduction",
       "Plan de la Présentation",
+      "Introduction",
       "Contexte Entreprise",
       "Problématique",
       "Objectifs & Périmètre",
