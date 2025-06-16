@@ -1,0 +1,5 @@
+export { default as Sprint1Slide } from './sprint1-slide'
+export { default as Sprint2Slide } from './sprint2-slide'
+export { default as Sprint34Slide } from './sprint34-slide'
+export { default as Sprint5Slide } from './sprint5-slide'
+export { default as Sprint6Slide } from './sprint6-slide'
