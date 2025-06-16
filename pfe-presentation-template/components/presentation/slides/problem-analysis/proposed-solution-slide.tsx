@@ -19,58 +19,63 @@ import {
     Target,
     ShieldCheck,
     Rocket,
-    Sparkles
+    Sparkles,
+    ArrowRight
 } from "lucide-react"
 
 const microservicesBenefitsData = [
-    { icon: Container, text: "Services isolés et indépendants pour un développement agile", color: "text-green-600" },
+    { icon: Container, text: "Extraction des fonctionnalités critiques (alertes/notifications)", color: "text-green-600" },
     {
         icon: Network,
-        text: "Résilience accrue et haute disponibilité grâce à la décentralisation",
+        text: "Communication asynchrone via RabbitMQ entre services",
         color: "text-green-600",
     },
-    { icon: Users, text: "Équipes autonomes et spécialisées par service", color: "text-green-600" },
+    { icon: Shield, text: "Infrastructure cloud scalable et résiliente", color: "text-green-600" },
     {
-        icon: Settings,
-        text: "Flexibilité technologique pour choisir les meilleurs outils par service",
+        icon: Zap,
+        text: "Pipelines CI/CD automatisés pour tests et déploiements",
         color: "text-green-600",
     },
-    { icon: ShieldCheck, text: "Sécurité améliorée par l'isolation des composants", color: "text-green-600" },
-    { icon: Rocket, text: "Scalabilité granulaire et optimisée par service", color: "text-green-600" },
+    { icon: TrendingUp, text: "Performances optimisées en situation de charge élevée", color: "text-green-600" },
+    { icon: Settings, text: "Architecture moderne et évolutive pour l'avantage concurrentiel", color: "text-green-600" },
 ]
 
 const impactMetricsData = [
     {
-        category: "Performance & Scalabilité",
+        category: "Scalabilité & Performances",
         icon: TrendingUp,
+        color: "blue",
         metrics: [
-            { label: "Utilisateurs concurrents", before: "500", after: "3000+", improvement: "+500%" },
-            { label: "Temps de réponse moyen", before: "2.5s", after: "<500ms", improvement: "-80%" },
-            { label: "Disponibilité du service", before: "95%", after: "99.98%", improvement: "+5.2%" },
-        ],
+            { label: "Pics de charge", before: "Saturation fréquente", after: "Auto-scaling cloud", improvement: "Élastique" },
+            { label: "Temps de réponse", before: "Dégradés en charge", after: "Optimisés constants", improvement: "Stable" },
+        ]
     },
     {
-        category: "Agilité & Déploiement",
+        category: "Résilience & Isolation",
+        icon: Shield,
+        color: "green",
+        metrics: [
+            { label: "Composants critiques", before: "Couplage fort", after: "Services isolés", improvement: "Isolation" },
+            { label: "Résilience système", before: "Point de défaillance unique", after: "Fault tolerance", improvement: "Robuste" },
+        ]
+    },
+    {
+        category: "Expérience Utilisateur",
         icon: Zap,
+        color: "purple",
         metrics: [
-            { label: "Fréquence de release", before: "1/mois", after: "Plusieurs/jour", improvement: "Continue" },
-            { label: "Temps de déploiement", before: "4h", after: "<15min", improvement: "-93.75%" },
-            { label: "Temps de rollback", before: "2h", after: "<5min", improvement: "-95.8%" },
-        ],
+            { label: "Expérience utilisateur", before: "Variable", after: "Prévisible", improvement: "Constante" },
+            { label: "Gestion de charge", before: "Limitations", after: "Haute disponibilité", improvement: "Scalable" },
+        ]
     },
     {
-        category: "Efficacité de Développement",
-        icon: Target, // Using Target as per original data, could be Users or Settings too
+        category: "Agilité & DevOps",
+        icon: Rocket,
+        color: "green",
         metrics: [
-            {
-                label: "Time to market (nouvelles fonctionnalités)",
-                before: "6 mois",
-                after: "2 semaines",
-                improvement: "-91.6%",
-            },
-            { label: "Couverture de tests automatisés", before: "45%", after: ">90%", improvement: "+100%" },
-            { label: "Détection précoce des bugs", before: "Production", after: "CI/CD (Pré-prod)", improvement: "Proactif" },
-        ],
+            { label: "Déploiements", before: "Manuels lents", after: "CI/CD automatisés", improvement: "Accélérés" },
+            { label: "Maintenance", before: "Complexe monolithique", after: "Modulaire évolutive", improvement: "Simplifiée" },
+        ]
     },
 ]
 
@@ -124,37 +129,63 @@ export default function ProposedSolutionSlide() {
 
                             {/* Section: Impacts Attendus et Métriques Clés */}
                             <div>
-                                <h3 className="text-xl font-semibold text-slate-700 mb-5 flex  items-center">
+                                <h3 className="text-xl font-semibold text-slate-700 mb-5 flex items-center">
                                     <BarChart3 className="h-6 w-6 mr-2 text-green-500" />
                                     Impacts Attendus et Métriques Clés
                                 </h3>
-                                <div className=" grid grid-cols-3 gap-3">
+                                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
                                     {impactMetricsData.map((categoryData) => (
-                                        <div key={categoryData.category} className="bg-white border border-slate-200 rounded-lg p-4 shadow-md">
-                                            <div className="flex items-center mb-3">
-                                                <div className="p-1.5 bg-green-100 rounded-md mr-3">
-                                                    <categoryData.icon className="h-5 w-5 text-green-600" />
+                                        <div
+                                            key={categoryData.category}
+                                            className={`bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-2xl hover:-translate-y-1 border-t-4 
+                                                ${categoryData.color === "green" && "border-t-green-500"}
+                                                ${categoryData.color === "blue" && "border-t-blue-500"}
+                                                ${categoryData.color === "purple" && "border-t-purple-500"}
+                                            `}
+                                        >
+                                            <div className="p-5">
+                                                <div className="flex items-center mb-4">
+                                                    <div
+                                                        className={`p-2 rounded-lg mr-3
+                                                            ${categoryData.color === "green" && "bg-green-100"}
+                                                            ${categoryData.color === "blue" && "bg-blue-100"}
+                                                            ${categoryData.color === "purple" && "bg-purple-100"}
+                                                        `}
+                                                    >
+                                                        <categoryData.icon
+                                                            className={`h-6 w-6 
+                                                                ${categoryData.color === "green" && "text-green-600"}
+                                                                ${categoryData.color === "blue" && "text-blue-600"}
+                                                                ${categoryData.color === "purple" && "text-purple-600"}
+                                                            `}
+                                                        />
+                                                    </div>
+                                                    <h4 className="text-lg font-bold text-slate-800">{categoryData.category}</h4>
                                                 </div>
-                                                <h4 className="text-lg font-semibold text-slate-800">{categoryData.category}</h4>
-                                            </div>
-                                            <ul className="space-y-2 text-sm">
-                                                {categoryData.metrics.map((metric) => (
-                                                    <li key={metric.label} className="grid grid-cols-3 gap-2 items-center">
-                                                        <span className="text-slate-600 font-medium col-span-1">{metric.label}:</span>
-                                                        <div className="col-span-2 flex items-center justify-between">
-                                                            <div className="flex items-center">
-                                                                <Badge variant="secondary" className="mr-2 text-xs">
-                                                                    Avant: {metric.before}
-                                                                </Badge>
-                                                                <Badge variant="default" className="bg-green-500 hover:bg-green-600 text-white text-xs">
-                                                                    Après: {metric.after}
+                                                <div className="space-y-4">
+                                                    {categoryData.metrics.map((metric) => (
+                                                        <div key={metric.label}>
+                                                            <div className="text-sm font-semibold text-slate-600 mb-2">{metric.label}</div>
+                                                            <div className="flex items-center justify-between bg-slate-50 p-3 rounded-lg">
+                                                                <div className="flex items-center space-x-2 text-sm">
+                                                                    <span className="text-slate-500 font-medium">{metric.before}</span>
+                                                                    <ArrowRight className="h-4 w-4 text-slate-400" />
+                                                                    <span className="text-slate-800 font-bold">{metric.after}</span>
+                                                                </div>
+                                                                <Badge
+                                                                    className={`text-xs font-bold
+                                                                        ${categoryData.color === "green" && "bg-green-500 hover:bg-green-600"}
+                                                                        ${categoryData.color === "blue" && "bg-blue-500 hover:bg-blue-600"}
+                                                                        ${categoryData.color === "purple" && "bg-purple-500 hover:bg-purple-600"}
+                                                                    `}
+                                                                >
+                                                                    {metric.improvement}
                                                                 </Badge>
                                                             </div>
-                                                            <span className="text-green-600 font-bold text-xs sm:text-sm">({metric.improvement})</span>
                                                         </div>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
