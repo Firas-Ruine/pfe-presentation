@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -98,15 +99,12 @@ export default function MonitoringObservabilitySlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-slate-900 dark:to-orange-900/20">
       <div className="h-full flex flex-col space-y-6">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            Monitoring & Observabilité
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Surveillance continue et alertes en temps réel
-          </p>
-        </div>
+        {/* En-tête */}
+        <SlideHeader 
+          badge="Chapitre 9 • Monitoring"
+          title="Monitoring & Observabilité"
+          subtitle="Surveillance continue et alertes en temps réel"
+        />
 
         {/* Main Content Grid */}
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6">

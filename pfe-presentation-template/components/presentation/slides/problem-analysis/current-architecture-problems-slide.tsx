@@ -77,7 +77,7 @@ export default function CurrentArchitectureProblemsSlide() {
       <div className="space-y-8">
         {/* En-tête */}
         <SlideHeader 
-          badge="2 • Contexte Général"
+          badge="3 • Problématique et Besoin métier"
           title="Problématique"
           subtitle="De l'architecture monolithique vers les microservices"
         />

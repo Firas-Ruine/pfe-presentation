@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -74,19 +75,12 @@ export default function ConclusionSlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-slate-900 dark:to-violet-900/20">
       <div className="h-full flex flex-col space-y-6">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <div className="flex items-center justify-center space-x-2">
-            <Sparkles className="h-8 w-8 text-primary" />
-            <h1 className="text-3xl md:text-4xl font-bold text-primary">
-              Conclusion & Perspectives
-            </h1>
-            <Sparkles className="h-8 w-8 text-primary" />
-          </div>
-          <p className="text-lg text-muted-foreground">
-            Bilan du projet et ouvertures futures
-          </p>
-        </div>
+        {/* En-tête */}
+        <SlideHeader 
+          badge="Chapitre 10 • Conclusion"
+          title="Conclusion & Perspectives"
+          subtitle="Bilan du projet et ouvertures futures"
+        />
 
         {/* Main Content Grid */}
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6">

@@ -18,13 +18,6 @@ import {
   Zap
 } from "lucide-react"
 
-const companyStats = [
-  { label: "Années d'expérience", value: "13+", icon: Calendar, color: "from-blue-500 to-blue-700" },
-  { label: "Projets digitaux", value: "300+", icon: CheckCircle2, color: "from-purple-500 to-purple-700" },
-  { label: "Clients accompagnés", value: "150+", icon: Users, color: "from-green-500 to-green-700" },
-  { label: "Technologies maîtrisées", value: "20+", icon: Code, color: "from-orange-500 to-orange-700" }
-]
-
 const services = [
   { name: "Développement Web", icon: Code, description: "Sites sur mesure, e-commerce, plateformes" },
   { name: "Applications Mobiles", icon: Smartphone, description: "Solutions natives Android & iOS" },

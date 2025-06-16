@@ -24,6 +24,7 @@ This directory contains all presentation slides organized into logical subdirect
 ### 📁 `problem-analysis/`
 **Problem definition and analysis**
 - `current-architecture-problems-slide.tsx` - Current monolithic architecture issues
+- `proposed-solution-slide.tsx` - Microservices architecture solution proposal
 
 ### 📁 `project-management/`
 **Project planning and methodology**

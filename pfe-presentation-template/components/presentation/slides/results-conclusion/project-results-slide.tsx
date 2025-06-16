@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -144,15 +145,12 @@ export default function ProjectResultsSlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-slate-900 dark:to-emerald-900/20">
       <div className="h-full flex flex-col space-y-6">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            Résultats & Réalisations
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Impact mesurable et reconnaissance du projet
-          </p>
-        </div>
+        {/* En-tête */}
+        <SlideHeader 
+          badge="Chapitre 11 • Résultats"
+          title="Résultats & Réalisations"
+          subtitle="Impact mesurable et reconnaissance du projet"
+        />
 
         {/* Main Content Grid */}
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-6 overflow-y-auto">

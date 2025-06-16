@@ -10,6 +10,7 @@ import WhatIsDevOpsSlide from "@/components/presentation/slides/introduction/wha
 import DevOpsGlobalImpactSlide from "@/components/presentation/slides/introduction/devops-global-impact-slide"
 import CompanyPresentationTitleSlide from "@/components/presentation/slides/company-context/company-presentation-title-slide"
 import CurrentArchitectureProblemsSlide from "@/components/presentation/slides/problem-analysis/current-architecture-problems-slide"
+import ProposedSolutionSlide from "@/components/presentation/slides/problem-analysis/proposed-solution-slide"
 import CompanyOverviewSlide from "@/components/presentation/slides/company-context/company-overview-slide"
 import ProjectObjectivesSlide from "@/components/presentation/slides/project-management/project-objectives-slide"
 import ProjectScopeProgressSlide from "@/components/presentation/slides/project-management/project-scope-progress-slide"
@@ -68,38 +69,39 @@ export default function PresentationPage() {
       <CompanyPresentationTitleSlide key="company-presentation-title" />, // 6
       <CompanyOverviewSlide key="company-context" />, // 7
       <CurrentArchitectureProblemsSlide key="problem" />, // 8
-      <ProjectObjectivesSlide key="objectives" />, // 9
-      <ProjectScopeProgressSlide key="scope-progress" />, // 10
-      <DevelopmentMethodologySlide key="methodology" />, // 11
-      <MicroservicesArchitectureSlide key="architecture" />, // 12
-      <TechStackOverviewSlide key="tech-stack" />, // 13
-      <Sprint1Slide key="sprint1" />, // 14
-      <Sprint2Slide key="sprint2" />, // 15
-      <Sprint34Slide key="sprint3-4" />, // 16
-      <Sprint5Slide key="sprint5" />, // 17
-      <Sprint6Slide key="sprint6" />, // 18
-      <SecurityImplementationSlide key="security" />, // 19
-      <PerformanceBenchmarksSlide key="perf-metrics" />, // 20
-      <MobileAppFeaturesSlide key="mobile-app" />, // 21
-      <MonitoringObservabilitySlide key="monitoring" />, // 22
-      <ChallengesResolvedSlide key="challenges-solutions" />, // 23
-      <ProjectResultsSlide key="results-achievements" />, // 24
+      <ProposedSolutionSlide key="proposed-solution" />, // 9
+      <ProjectObjectivesSlide key="objectives" />, // 10
+      <ProjectScopeProgressSlide key="scope-progress" />, // 11
+      <DevelopmentMethodologySlide key="methodology" />, // 12
+      <MicroservicesArchitectureSlide key="architecture" />, // 13
+      <TechStackOverviewSlide key="tech-stack" />, // 14
+      <Sprint1Slide key="sprint1" />, // 15
+      <Sprint2Slide key="sprint2" />, // 16
+      <Sprint34Slide key="sprint3-4" />, // 17
+      <Sprint5Slide key="sprint5" />, // 18
+      <Sprint6Slide key="sprint6" />, // 19
+      <SecurityImplementationSlide key="security" />, // 20
+      <PerformanceBenchmarksSlide key="perf-metrics" />, // 21
+      <MobileAppFeaturesSlide key="mobile-app" />, // 22
+      <MonitoringObservabilitySlide key="monitoring" />, // 23
+      <ChallengesResolvedSlide key="challenges-solutions" />, // 24
+      <ProjectResultsSlide key="results-achievements" />, // 25
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 25
+      />, // 26
       <PlaceholderSlide
         key="demo"
         title="Démonstration Live"
         content="Checklist de préparation, fonctionnalités clés."
-      />, // 26
-      <ConclusionSlide key="conclusion" />, // 27
+      />, // 27
+      <ConclusionSlide key="conclusion" />, // 28
       <PlaceholderSlide
         key="thanks"
         title="Merci!"
         content="Questions & Discussion"
-      />, // 28
+      />, // 29
     ],
     [],
   )
@@ -108,14 +110,19 @@ export default function PresentationPage() {
   const slideTitles = useMemo(
     () => [
       "Introduction",
-      "Plan de la Présentation",
+      "Plan de la Présentation", 
       "Introduction",
-      "Contexte Entreprise",
-      "Problématique",
-      "Objectifs & Périmètre",
+      "Contexte du Projet",
+      "Qu'est-ce que le DevOps ?",
+      "Impact du DevOps",
+      "Présentation de l'entreprise",
+      "Maison du Web",
+      "Défis de l'Architecture Actuelle",
+      "Solution Microservices Proposée",
+      "Objectifs du Projet",
       "Périmètre & Progression", 
-      "Méthodologie",
-      "Architecture",
+      "Méthodologie Agile",
+      "Architecture Microservices",
       "Stack Technologique",
       "Sprint 1: Conception",
       "Sprint 2: CI/CD",

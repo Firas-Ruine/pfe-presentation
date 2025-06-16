@@ -1,6 +1,7 @@
 "use client"
 
 import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -258,15 +259,12 @@ export default function TechStackOverviewSlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-slate-900 dark:to-purple-900/20">
       <div className="h-full flex flex-col space-y-6">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            Stack Technologique
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Technologies et outils utilisés dans le projet
-          </p>
-        </div>
+        {/* En-tête */}
+        <SlideHeader 
+          badge="Chapitre 6 • Stack Technique"
+          title="Stack Technologique"
+          subtitle="Technologies et outils utilisés dans le projet"
+        />
 
         {/* Technology Categories - Full Width Grid */}
         <div className="flex-1 space-y-6 overflow-y-auto">

@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Shield, Lock, Eye, FileSearch, CheckCircle2, AlertTriangle, ShieldCheck, Zap } from "lucide-react"
 import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
 
 export default function SecurityImplementationSlide() {
   const securityLayers = [
@@ -144,15 +145,12 @@ export default function SecurityImplementationSlide() {
   return (
     <SlideWrapper>
       <div className="space-y-8">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            Implémentation de la Sécurité
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Sécurité multi-couches avec badge zéro vulnérabilités critiques
-          </p>
-        </div>
+        {/* En-tête */}
+        <SlideHeader 
+          badge="Chapitre 7 • Sécurité"
+          title="Implémentation de la Sécurité"
+          subtitle="Sécurité multi-couches avec badge zéro vulnérabilités critiques"
+        />
 
         {/* Security Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">

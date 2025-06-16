@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Activity, Clock, Users, Zap, TrendingUp, Server, Database, Globe } from "lucide-react"
 import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
 
 export default function PerformanceBenchmarksSlide() {
   const keyMetrics = [
@@ -153,15 +154,12 @@ export default function PerformanceBenchmarksSlide() {
   return (
     <SlideWrapper>
       <div className="space-y-8">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            Métriques de Performance
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Résultats de performance dépassant tous les objectifs fixés
-          </p>
-        </div>
+        {/* En-tête */}
+        <SlideHeader 
+          badge="Chapitre 13 • Performance"
+          title="Métriques de Performance"
+          subtitle="Résultats de performance dépassant tous les objectifs fixés"
+        />
 
         {/* Key Performance Metrics */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">

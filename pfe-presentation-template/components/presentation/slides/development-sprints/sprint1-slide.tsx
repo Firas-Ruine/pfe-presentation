@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Clock, Target, Lightbulb, CheckCircle2, Users, GitBranch } from "lucide-react"
 import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
 
 export default function Sprint1Slide() {
   const architecturalDecisions = [
@@ -76,15 +77,12 @@ export default function Sprint1Slide() {
   return (
     <SlideWrapper>
       <div className="space-y-8">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            Sprint 1: Phase de Conception
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Design thinking, décisions architecturales et patterns fondamentaux
-          </p>
-        </div>
+        {/* En-tête */}
+        <SlideHeader 
+          badge="Sprint 1 • Conception"
+          title="Sprint 1: Phase de Conception"
+          subtitle="Design thinking, décisions architecturales et patterns fondamentaux"
+        />
 
         {/* Sprint Overview Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">

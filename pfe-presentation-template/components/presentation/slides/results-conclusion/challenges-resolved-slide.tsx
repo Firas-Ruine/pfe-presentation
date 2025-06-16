@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
@@ -129,15 +130,12 @@ export default function ChallengesResolvedSlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-slate-900 dark:to-red-900/20">
       <div className="h-full flex flex-col space-y-6">
-        {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            Défis & Solutions
-          </h1>
-          <p className="text-lg text-muted-foreground">
-            Problèmes rencontrés et approches de résolution
-          </p>
-        </div>
+        {/* En-tête */}
+        <SlideHeader 
+          badge="Chapitre 12 • Défis & Solutions"
+          title="Défis & Solutions"
+          subtitle="Problèmes rencontrés et approches de résolution"
+        />
 
         {/* Main Content */}
         <div className="flex-1 space-y-6 overflow-y-auto">
