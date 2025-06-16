@@ -140,7 +140,7 @@ const futureEnhancements = [
   "Optimisation des coûts avec FinOps"
 ]
 
-export default function ResultsAchievementsSlide() {
+export default function ProjectResultsSlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-slate-900 dark:to-emerald-900/20">
       <div className="h-full flex flex-col space-y-6">

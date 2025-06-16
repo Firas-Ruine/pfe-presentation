@@ -125,7 +125,7 @@ const lessonsLearned = [
   "Les patterns de résilience doivent être implémentés early"
 ]
 
-export default function ChallengesSolutionsSlide() {
+export default function ChallengesResolvedSlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-slate-900 dark:to-red-900/20">
       <div className="h-full flex flex-col space-y-6">
