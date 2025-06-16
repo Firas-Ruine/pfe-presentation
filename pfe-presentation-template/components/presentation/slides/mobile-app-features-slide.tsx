@@ -65,7 +65,7 @@ const technicalSpecs = [
   { name: "Firebase", version: "10.x", usage: "Backend services" }
 ]
 
-export default function MobileAppSlide() {
+export default function MobileAppFeaturesSlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-slate-900 dark:to-green-900/20">
       <div className="h-full flex flex-col space-y-6">

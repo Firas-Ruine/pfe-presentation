@@ -1,11 +1,8 @@
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import {
   AlertTriangle,
-  CheckCircle,
-  TrendingUp,
-  Zap,
   ServerCrash,
   Layers,
   ShieldAlert,
@@ -14,62 +11,12 @@ import {
   Users,
   GitBranch,
   MonitorSpeaker,
-  ArrowRight,
-  TrendingDown,
   Server,
-  Network,
-  Container,
   Settings,
-  Target,
-  BarChart3,
   ListChecks,
   AlertOctagon
 } from "lucide-react"
 
-const painPoints = [
-  {
-    title: "Déploiements Lents",
-    icon: Clock,
-    description: "Processus manuels et chronophages",
-    impact: "2-3 semaines par release",
-    severity: "high"
-  },
-  {
-    title: "Scalabilité Limitée",
-    icon: ServerCrash,
-    description: "Difficulté à gérer les pics de charge",
-    impact: "500 utilisateurs max",
-    severity: "critical"
-  },
-  {
-    title: "Maintenance Complexe",
-    icon: Layers,
-    description: "Monolithe difficile à maintenir",
-    impact: "80% du temps dev",
-    severity: "high"
-  },
-  {
-    title: "Risques de Sécurité",
-    icon: ShieldAlert,
-    description: "Failles potentielles centralisées",
-    impact: "Exposition globale",
-    severity: "critical"
-  },
-  {
-    title: "Couplage Fort",
-    icon: GitBranch,
-    description: "Dépendances entre composants",
-    impact: "Développement bloqué",
-    severity: "medium"
-  },
-  {
-    title: "Monitoring Limité",
-    icon: MonitorSpeaker,
-    description: "Visibilité réduite sur l'état",
-    impact: "Temps de résolution élevé",
-    severity: "high"
-  }
-]
 
 const painPointsData = [
   {
@@ -123,66 +70,17 @@ const monolithicChallengesData = [
   { icon: Settings, text: "Pile technologique unique et rigide imposée à tous", color: "text-red-300" },
 ]
 
-const monolithicChallenges = [
-  { icon: Database, text: "Base de données centralisée", color: "text-red-600" },
-  { icon: Server, text: "Serveur unique point de défaillance", color: "text-red-600" },
-  { icon: Users, text: "Équipes bloquées mutuellement", color: "text-red-600" },
-  { icon: Settings, text: "Technologie unique imposée", color: "text-red-600" }
-]
 
-const microservicesBenefits = [
-  { icon: Container, text: "Services isolés et indépendants", color: "text-green-600" },
-  { icon: Network, text: "Résilience et haute disponibilité", color: "text-green-600" },
-  { icon: Users, text: "Équipes autonomes par service", color: "text-green-600" },
-  { icon: Settings, text: "Flexibilité technologique", color: "text-green-600" }
-]
-
-const impactMetrics = [
-  {
-    category: "Performance",
-    icon: TrendingUp,
-    metrics: [
-      { label: "Utilisateurs concurrents", before: "500", after: "3000+", improvement: "+500%" },
-      { label: "Temps de réponse", before: "2.5s", after: "380ms", improvement: "-85%" },
-      { label: "Disponibilité", before: "95%", after: "99.98%", improvement: "+5%" }
-    ]
-  },
-  {
-    category: "Déploiement",
-    icon: Zap,
-    metrics: [
-      { label: "Fréquence de release", before: "1/mois", after: "10/jour", improvement: "+3000%" },
-      { label: "Temps de déploiement", before: "4h", after: "15min", improvement: "-90%" },
-      { label: "Rollback", before: "2h", after: "30s", improvement: "-95%" }
-    ]
-  },
-  {
-    category: "Développement",
-    icon: Target,
-    metrics: [
-      { label: "Time to market", before: "6 mois", after: "2 semaines", improvement: "-92%" },
-      { label: "Couverture de tests", before: "45%", after: "96.7%", improvement: "+115%" },
-      { label: "Détection de bugs", before: "Production", after: "CI/CD", improvement: "Préventif" }
-    ]
-  }
-]
-
-export default function ProblemStatementSlide() {
+export default function CurrentArchitectureProblemsSlide() {
   return (
     <SlideWrapper>
       <div className="space-y-8">
         {/* En-tête */}
-        <div className="text-center mb-8">
-          <Badge variant="outline" className="mb-4 text-lg px-4 py-2">
-            Chapitre 2 • Contexte Général
-          </Badge>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">
-            Problématique et Transformation
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            De l'architecture monolithique vers les microservices
-          </p>
-        </div>
+        <SlideHeader 
+          badge="Chapitre 2 • Contexte Général"
+          title="Problématique"
+          subtitle="De l'architecture monolithique vers les microservices"
+        />
 
         {/* Split-screen comparison */}
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-8 mb-12">
@@ -245,19 +143,6 @@ export default function ProblemStatementSlide() {
                         <h4 className="font-semibold text-md text-slate-800">{point.title}</h4>
                       </div>
                       <p className="text-xs text-slate-500 leading-relaxed mb-3 flex-grow">{point.description}</p>
-                      <div className="mt-auto pt-2 border-t border-slate-200 flex justify-between items-center">
-                        <Badge
-                          className={`text-xs px-2 py-0.5 font-semibold border-0 ${point.severity === "critical"
-                              ? "bg-red-500 text-white"
-                              : point.severity === "high"
-                                ? "bg-yellow-400 text-yellow-900"
-                                : "bg-sky-400 text-white"
-                            }`}
-                        >
-                          {point.severity === "critical" ? "Critique" : point.severity === "high" ? "Élevé" : "Moyen"}
-                        </Badge>
-                        <span className="text-xs text-slate-500 font-medium">{point.impact}</span>
-                      </div>
                     </div>
                   ))}
                 </div>

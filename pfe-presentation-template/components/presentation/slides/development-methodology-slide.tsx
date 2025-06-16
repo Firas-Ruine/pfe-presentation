@@ -1,6 +1,7 @@
 "use client"
 
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -139,19 +140,16 @@ const methodologyPrinciples = [
   }
 ]
 
-export default function MethodologySlide() {
+export default function DevelopmentMethodologySlide() {
   return (
     <SlideWrapper>
       <div className="space-y-8">
         {/* En-tête */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-            Méthodologie Agile
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Approche Scrum pour la transformation DevOps
-          </p>
-        </div>
+        <SlideHeader 
+          badge="Chapitre 4 • Méthodologie"
+          title="Méthodologie Agile"
+          subtitle="Approche Scrum pour la transformation DevOps"
+        />
 
         {/* Scrum Framework Overview */}
         <Card className="shadow-xl bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20 mb-8">

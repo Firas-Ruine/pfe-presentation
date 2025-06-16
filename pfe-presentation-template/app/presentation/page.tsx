@@ -5,28 +5,28 @@ import PresentationLayout from "@/components/presentation/presentation-layout"
 import HeroSlide from "@/components/presentation/slides/hero-slide"
 import NavigationSlide from "@/components/presentation/slides/navigation-slide"
 import IntroductionTitleSlide from "@/components/presentation/slides/introduction-title-slide"
-import IntroductionContentSlide from "@/components/presentation/slides/introduction-content-slide"
-import DevOpsDefinitionSlide from "@/components/presentation/slides/devops-definition-slide"
-import DevOpsImpactSlide from "@/components/presentation/slides/devops-impact-slide"
+import ProjectContextSlide from "@/components/presentation/slides/project-context-slide"
+import WhatIsDevOpsSlide from "@/components/presentation/slides/what-is-devops-slide"
+import DevOpsGlobalImpactSlide from "@/components/presentation/slides/devops-global-impact-slide"
 import CompanyPresentationTitleSlide from "@/components/presentation/slides/company-presentation-title-slide"
-import ProblemStatementSlide from "@/components/presentation/slides/problem-statement-slide"
-import CompanyContextSlide from "@/components/presentation/slides/company-context-slide"
-import ObjectivesScopeSlide from "@/components/presentation/slides/objectives-scope-slide"
-import ScopeProgressSlide from "@/components/presentation/slides/scope-progress-slide"
-import MethodologySlide from "@/components/presentation/slides/methodology-slide"
-import ArchitectureSlide from "@/components/presentation/slides/architecture-slide"
-import TechnologyStackSlide from "@/components/presentation/slides/technology-stack-slide"
+import CurrentArchitectureProblemsSlide from "@/components/presentation/slides/current-architecture-problems-slide"
+import CompanyOverviewSlide from "@/components/presentation/slides/company-overview-slide"
+import ProjectObjectivesSlide from "@/components/presentation/slides/project-objectives-slide"
+import ProjectScopeProgressSlide from "@/components/presentation/slides/project-scope-progress-slide"
+import DevelopmentMethodologySlide from "@/components/presentation/slides/development-methodology-slide"
+import MicroservicesArchitectureSlide from "@/components/presentation/slides/microservices-architecture-slide"
+import TechStackOverviewSlide from "@/components/presentation/slides/tech-stack-overview-slide"
 import Sprint1Slide from "@/components/presentation/slides/sprint1-slide"
 import Sprint2Slide from "@/components/presentation/slides/sprint2-slide"
 import Sprint34Slide from "@/components/presentation/slides/sprint34-slide"
 import Sprint5Slide from "@/components/presentation/slides/sprint5-slide"
 import Sprint6Slide from "@/components/presentation/slides/sprint6-slide"
-import SecuritySlide from "@/components/presentation/slides/security-slide"
-import PerformanceMetricsSlide from "@/components/presentation/slides/performance-metrics-slide"
-import MobileAppSlide from "@/components/presentation/slides/mobile-app-slide"
-import MonitoringSlide from "@/components/presentation/slides/monitoring-slide"
-import ChallengesSolutionsSlide from "@/components/presentation/slides/challenges-solutions-slide"
-import ResultsAchievementsSlide from "@/components/presentation/slides/results-achievements-slide"
+import SecurityImplementationSlide from "@/components/presentation/slides/security-implementation-slide"
+import PerformanceBenchmarksSlide from "@/components/presentation/slides/performance-benchmarks-slide"
+import MobileAppFeaturesSlide from "@/components/presentation/slides/mobile-app-features-slide"
+import MonitoringObservabilitySlide from "@/components/presentation/slides/monitoring-observability-slide"
+import ChallengesResolvedSlide from "@/components/presentation/slides/challenges-resolved-slide"
+import ProjectResultsSlide from "@/components/presentation/slides/project-results-slide"
 import ConclusionSlide from "@/components/presentation/slides/conclusion-slide"
 // Import other slides here as they are created
 
@@ -62,28 +62,28 @@ export default function PresentationPage() {
       <HeroSlide key="hero" onStartPresentation={handleStartPresentation} />, // 0
       <NavigationSlide key="nav" onNavigate={handleNavigateToSlide} />, // 1
       <IntroductionTitleSlide key="intro-title" />, // 2
-      <IntroductionContentSlide key="intro-content" />, // 3
-      <DevOpsDefinitionSlide key="devops-definition" />, // 4
-      <DevOpsImpactSlide key="devops-impact" />, // 5
+      <ProjectContextSlide key="intro-content" />, // 3
+      <WhatIsDevOpsSlide key="devops-definition" />, // 4
+      <DevOpsGlobalImpactSlide key="devops-impact" />, // 5
       <CompanyPresentationTitleSlide key="company-presentation-title" />, // 6
-      <CompanyContextSlide key="company-context" />, // 7
-      <ProblemStatementSlide key="problem" />, // 8
-      <ObjectivesScopeSlide key="objectives" />, // 9
-      <ScopeProgressSlide key="scope-progress" />, // 10
-      <MethodologySlide key="methodology" />, // 11
-      <ArchitectureSlide key="architecture" />, // 12
-      <TechnologyStackSlide key="tech-stack" />, // 13
+      <CompanyOverviewSlide key="company-context" />, // 7
+      <CurrentArchitectureProblemsSlide key="problem" />, // 8
+      <ProjectObjectivesSlide key="objectives" />, // 9
+      <ProjectScopeProgressSlide key="scope-progress" />, // 10
+      <DevelopmentMethodologySlide key="methodology" />, // 11
+      <MicroservicesArchitectureSlide key="architecture" />, // 12
+      <TechStackOverviewSlide key="tech-stack" />, // 13
       <Sprint1Slide key="sprint1" />, // 14
       <Sprint2Slide key="sprint2" />, // 15
       <Sprint34Slide key="sprint3-4" />, // 16
       <Sprint5Slide key="sprint5" />, // 17
       <Sprint6Slide key="sprint6" />, // 18
-      <SecuritySlide key="security" />, // 19
-      <PerformanceMetricsSlide key="perf-metrics" />, // 20
-      <MobileAppSlide key="mobile-app" />, // 21
-      <MonitoringSlide key="monitoring" />, // 22
-      <ChallengesSolutionsSlide key="challenges-solutions" />, // 23
-      <ResultsAchievementsSlide key="results-achievements" />, // 24
+      <SecurityImplementationSlide key="security" />, // 19
+      <PerformanceBenchmarksSlide key="perf-metrics" />, // 20
+      <MobileAppFeaturesSlide key="mobile-app" />, // 21
+      <MonitoringObservabilitySlide key="monitoring" />, // 22
+      <ChallengesResolvedSlide key="challenges-solutions" />, // 23
+      <ProjectResultsSlide key="results-achievements" />, // 24
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"

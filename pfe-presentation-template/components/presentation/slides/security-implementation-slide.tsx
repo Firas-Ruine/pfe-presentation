@@ -5,7 +5,7 @@ import { Progress } from "@/components/ui/progress"
 import { Shield, Lock, Eye, FileSearch, CheckCircle2, AlertTriangle, ShieldCheck, Zap } from "lucide-react"
 import SlideWrapper from "../slide-wrapper"
 
-export default function SecuritySlide() {
+export default function SecurityImplementationSlide() {
   const securityLayers = [
     {
       layer: "Application Security",

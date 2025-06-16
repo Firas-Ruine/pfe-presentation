@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -15,22 +16,16 @@ const introductionSections = [
     }
 ]
 
-export default function IntroductionContentSlide() {
+export default function ProjectContextSlide() {
     return (
         <SlideWrapper>
             <div className="h-full flex flex-col">
                 {/* En-tête */}
-                <div className="text-center mb-8">
-                    <Badge variant="outline" className="mb-4 text-lg px-4 py-2">
-                        Chapitre 1 • Introduction
-                    </Badge>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">
-                        Contexte du Projet
-                    </h1>
-                    <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-                        Présentation du contexte et des enjeux du projet
-                    </p>
-                </div>
+                <SlideHeader 
+                    badge="Chapitre 1 • Introduction"
+                    title="Contexte du Projet"
+                    subtitle="Présentation du contexte et des enjeux du projet"
+                />
 
                 {/* Contenu principal - parfaitement centré */}
                 <div className="flex-1 flex items-center justify-center px-8">

@@ -5,7 +5,7 @@ import { Progress } from "@/components/ui/progress"
 import { Activity, Clock, Users, Zap, TrendingUp, Server, Database, Globe } from "lucide-react"
 import SlideWrapper from "../slide-wrapper"
 
-export default function PerformanceMetricsSlide() {
+export default function PerformanceBenchmarksSlide() {
   const keyMetrics = [
     {
       metric: "Utilisateurs Concurrents",

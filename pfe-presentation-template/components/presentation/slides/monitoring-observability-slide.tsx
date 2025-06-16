@@ -94,7 +94,7 @@ const keyMetrics = [
   { label: "Services Monitored", value: "12", icon: Server, color: "text-purple-600" }
 ]
 
-export default function MonitoringSlide() {
+export default function MonitoringObservabilitySlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-slate-900 dark:to-orange-900/20">
       <div className="h-full flex flex-col space-y-6">

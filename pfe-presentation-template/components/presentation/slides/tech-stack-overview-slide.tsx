@@ -254,7 +254,7 @@ const adoptionStats = {
   cloudNativeCompliance: 100
 }
 
-export default function TechnologyStackSlide() {
+export default function TechStackOverviewSlide() {
   return (
     <SlideWrapper className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-slate-900 dark:to-purple-900/20">
       <div className="h-full flex flex-col space-y-6">

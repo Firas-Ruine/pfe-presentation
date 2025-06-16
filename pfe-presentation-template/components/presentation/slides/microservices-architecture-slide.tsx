@@ -1,6 +1,7 @@
 "use client"
 
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
@@ -168,19 +169,16 @@ const architectureBenefits = [
   }
 ]
 
-export default function ArchitectureSlide() {
+export default function MicroservicesArchitectureSlide() {
   return (
     <SlideWrapper>
       <div className="space-y-8">
         {/* En-tête */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-            Vue d'Ensemble de l'Architecture
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Architecture microservices cloud-native avec DevOps
-          </p>
-        </div>
+        <SlideHeader 
+          badge="Chapitre 5 • Architecture"
+          title="Vue d'Ensemble de l'Architecture"
+          subtitle="Architecture microservices cloud-native avec DevOps"
+        />
 
         {/* Architecture Overview */}
         <Card className="shadow-xl bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20 mb-8">

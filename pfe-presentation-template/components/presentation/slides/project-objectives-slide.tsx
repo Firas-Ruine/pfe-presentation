@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -149,19 +150,16 @@ const deliverablesTimeline = [
   }
 ]
 
-export default function ObjectivesScopeSlide() {
+export default function ProjectObjectivesSlide() {
   return (
     <SlideWrapper>
       <div className="space-y-8">
         {/* En-tête */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-            Objectifs du Projet
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Transformation DevOps et modernisation de l'architecture
-          </p>
-        </div>
+        <SlideHeader 
+          badge="Chapitre 3 • Objectifs"
+          title="Objectifs du Projet"
+          subtitle="Transformation DevOps et modernisation de l'architecture"
+        />
 
         {/* Objectifs Primaires */}
         <div>

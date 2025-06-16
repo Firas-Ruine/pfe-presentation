@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
@@ -39,23 +40,18 @@ const timeline = [
   { year: "2024", event: "Architecture Microservices", description: "Migration et modernisation" }
 ]
 
-export default function CompanyContextSlide() {
+export default function CompanyOverviewSlide() {
   return (
     <SlideWrapper>
             <div className="h-full flex flex-col">
         
         {/* Header - Maximized for Impact */}
-                <div className="text-center mb-36">
-                    <Badge variant="outline" className="mb-4 text-lg px-4 py-2">
-            Chapitre 2 • Contexte Général
-          </Badge>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">
-            Maison du Web
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Agence tunisienne de transformation digitale depuis 2012
-          </p>
-        </div>
+        <SlideHeader 
+          badge="Chapitre 2 • Contexte Général"
+          title="Maison du Web"
+          subtitle="Agence tunisienne de transformation digitale depuis 2012"
+          className="mb-6"
+        />
 
         {/* Main Content - Enhanced 3-Column Layout */}
         <div className="flex-1 grid grid-cols-3 gap-8">

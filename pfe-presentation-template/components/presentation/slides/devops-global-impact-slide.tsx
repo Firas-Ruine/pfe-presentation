@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { 
@@ -53,22 +54,16 @@ const globalBenefits = [
   "Culture d'amélioration continue et d'innovation"
 ]
 
-export default function DevOpsImpactSlide() {
+export default function DevOpsGlobalImpactSlide() {
   return (
     <SlideWrapper>
       <div className="h-full flex flex-col">
         {/* En-tête */}
-        <div className="text-center mb-8">
-          <Badge variant="outline" className="mb-4 text-lg px-4 py-2">
-                        Chapitre 1 • Introduction
-                    </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">
-            Impact du DevOps
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            Transformation digitale et révolution des pratiques de développement
-          </p>
-        </div>
+        <SlideHeader 
+          badge="Chapitre 1 • Introduction"
+          title="Impact du DevOps"
+          subtitle="Transformation digitale et révolution des pratiques de développement"
+        />
 
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">
           {/* Métriques d'impact */}

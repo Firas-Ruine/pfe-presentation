@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -72,22 +73,17 @@ const traditionalVsDevOps = [
     }
 ]
 
-export default function DevOpsDefinitionSlide() {
+export default function WhatIsDevOpsSlide() {
     return (
         <SlideWrapper>
             <div className="h-full flex flex-col">
                 {/* En-tête - réduit */}
-                <div className="text-center mb-4">
-                    <Badge variant="outline" className="mb-4 text-lg px-4 py-2">
-                        Chapitre 1 • Introduction
-                    </Badge>
-                     <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">
-                        Qu'est-ce que le DevOps ?
-                    </h1>
-                    <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-                        Comprendre la philosophie du DevOps
-                    </p>
-                </div>
+                <SlideHeader 
+                    badge="Chapitre 1 • Introduction"
+                    title="Qu'est-ce que le DevOps ?"
+                    subtitle="Comprendre la philosophie du DevOps"
+                    className="mb-4"
+                />
 
                 <div className="flex-1 overflow-hidden">
                     {/* Layout horizontal - Definition à gauche, Piliers à droite */}

@@ -1,5 +1,6 @@
 "use client"
 import SlideWrapper from "../slide-wrapper"
+import SlideHeader from "../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -45,19 +46,16 @@ const scopeDefinition = [
   }
 ]
 
-export default function ScopeProgressSlide() {
+export default function ProjectScopeProgressSlide() {
   return (
     <SlideWrapper>
       <div className="space-y-8">
         {/* En-tête */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-            Périmètre & Progression
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            Définition du scope et avancement des travaux
-          </p>
-        </div>
+        <SlideHeader 
+          badge="Chapitre 3 • Périmètre"
+          title="Périmètre & Progression"
+          subtitle="Définition du scope et avancement des travaux"
+        />
 
         {/* Définition du Périmètre */}
         <div>
