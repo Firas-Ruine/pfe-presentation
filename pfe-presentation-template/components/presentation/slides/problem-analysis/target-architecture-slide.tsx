@@ -142,7 +142,7 @@ const initialNodes: RFNode[] = [
                 </div>
             ),
         },
-        position: { x: -1200, y: -50 },
+        position: { x: -1300, y: -50 },
         style: { 
             ...groupNodeStyleBase, 
             width: 800, 
@@ -171,7 +171,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -1190, y: 20 },
+        position: { x: -1290, y: 20 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -193,7 +193,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -900, y: 20 },
+        position: { x: -1000, y: 20 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -218,7 +218,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -610, y: 20 },
+        position: { x: -710, y: 20 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -243,7 +243,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -1190, y: 250 },
+        position: { x: -1290, y: 250 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -268,7 +268,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -1190, y: 650 },
+        position: { x: -1290, y: 650 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -291,7 +291,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -850, y: 450 },
+        position: { x: -950, y: 420 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -314,7 +314,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -600, y: 420 },
+        position: { x: -700, y: 400 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -339,12 +339,36 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -600, y: 250 },
+        position: { x: -700, y: 230 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
             borderColor: "#06b6d4",
             background: "linear-gradient(135deg, #ffffff 0%, #ecfeff 100%)",
+        },
+
+    },
+
+    {
+        id: "k6",
+        data: {
+            label: (
+                <NodeLabel 
+                    icon={<TestTube />} 
+                    text="Grafana K6" 
+                    iconBgClass="bg-cyan-100" 
+                    iconColorClass="text-cyan-600"
+                    status="processing"
+                    subtitle="Load Testing"
+                />
+            ),
+        },
+        position: { x: -900, y: 650 },
+        parentNode: "devops-group",
+        style: {
+            ...nodeDefaults.style,
+            borderColor: "#a16207",
+            background: "linear-gradient(135deg, #ffffff 0%, #fef3c7 100%)",
         },
 
     },
@@ -364,7 +388,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -900, y: 800 },
+        position: { x: -1100, y: 600 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -387,7 +411,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -650, y: 600 },
+        position: { x: -1030, y: 800 },
         parentNode: "devops-group",
         style: {
             ...nodeDefaults.style,
@@ -410,11 +434,11 @@ const initialNodes: RFNode[] = [
                 </div>
             ),
         },
-        position: { x: -100, y: -50 },
+        position: { x: -400, y: -50 },
         style: { 
             ...groupNodeStyleBase, 
             width: 800, 
-            height: 600, 
+            height: 1000, 
             borderColor: "#3b82f6",
             background: "linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%)",
             borderWidth: "3px",
@@ -437,7 +461,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -50, y: 20 },
+        position: { x: -390, y: 20 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -462,7 +486,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 150, y: 180 },
+        position: { x: -80, y: 0 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -485,7 +509,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -50, y: 180 },
+        position: { x: -390, y: 500 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -508,7 +532,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 350, y: 180 },
+        position: { x: 230, y: 500 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -533,7 +557,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: -50, y: 340 },
+        position: { x: -390, y: 750 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -556,7 +580,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 150, y: 340 },
+        position: { x: 150, y: 200 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -579,7 +603,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 350, y: 340 },
+        position: { x: 230, y: 750 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -604,7 +628,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 550, y: 180 },
+        position: { x: -70, y: 480 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -627,7 +651,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 550, y: 340 },
+        position: { x: 230, y: 20 },
         parentNode: "k8s-group",
         style: {
             ...nodeDefaults.style,
@@ -650,11 +674,11 @@ const initialNodes: RFNode[] = [
                 </div>
             ),
         },
-        position: { x: 800, y: -200 },
+        position: { x: 580, y: -50 },
         style: { 
             ...groupNodeStyleBase, 
-            width: 500, 
-            height: 400, 
+            width: 600, 
+            height: 550, 
             borderColor: "#8b5cf6",
             background: "linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)",
             borderWidth: "3px",
@@ -677,7 +701,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 850, y: -100 },
+        position: { x: 900, y: -20 },
         parentNode: "obs-group",
         style: {
             ...nodeDefaults.style,
@@ -700,7 +724,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 1050, y: -100 },
+        position: { x: 620, y: 340 },
         parentNode: "obs-group",
         style: {
             ...nodeDefaults.style,
@@ -725,7 +749,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 850, y: 60 },
+        position: { x: 800, y: 160 },
         parentNode: "obs-group",
         style: {
             ...nodeDefaults.style,
@@ -748,7 +772,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 1050, y: 60 },
+        position: { x: 1010, y: 160 },
         parentNode: "obs-group",
         style: {
             ...nodeDefaults.style,
@@ -773,7 +797,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 950, y: -20 },
+        position: { x: 1010, y: 340 },
         parentNode: "obs-group",
         style: {
             ...nodeDefaults.style,
@@ -796,7 +820,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 1250, y: -100 },
+        position: { x: 600, y: 160 },
         parentNode: "obs-group",
         style: {
             ...nodeDefaults.style,
@@ -819,10 +843,10 @@ const initialNodes: RFNode[] = [
                 </div>
             ),
         },
-        position: { x: 800, y: 300 },
+        position: { x: 580, y: 550 },
         style: { 
             ...groupNodeStyleBase, 
-            width: 500, 
+            width: 600, 
             height: 400, 
             borderColor: "#f59e0b",
             background: "linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(251, 146, 60, 0.1) 100%)",
@@ -846,7 +870,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 850, y: 400 },
+        position: { x: 700, y: 600 },
         parentNode: "ext-group",
         style: {
             ...nodeDefaults.style,
@@ -869,7 +893,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 1050, y: 400 },
+        position: { x: 950, y: 600 },
         parentNode: "ext-group",
         style: {
             ...nodeDefaults.style,
@@ -894,30 +918,7 @@ const initialNodes: RFNode[] = [
                 />
             ),
         },
-        position: { x: 950, y: 560 },
-        parentNode: "ext-group",
-        style: {
-            ...nodeDefaults.style,
-            borderColor: "#f59e0b",
-            background: "linear-gradient(135deg, #ffffff 0%, #fffbeb 100%)",
-        },
-
-    },
-    {
-        id: "ext-apis",
-        data: {
-            label: (
-                <NodeLabel 
-                    icon={<Globe />} 
-                    text="External APIs" 
-                    iconBgClass="bg-amber-100" 
-                    iconColorClass="text-amber-600"
-                    status="active"
-                    subtitle="Third-party Services"
-                />
-            ),
-        },
-        position: { x: 1250, y: 400 },
+        position: { x: 850, y: 800 },
         parentNode: "ext-group",
         style: {
             ...nodeDefaults.style,
@@ -960,7 +961,12 @@ const edgeStyles = {
         strokeWidth: 2,
         stroke: "#10b981",
         strokeDasharray: "6,2",
-    }
+    },
+    errorTracking: {
+        strokeWidth: 2,
+        stroke: "#ef4444",
+        strokeDasharray: "2,4",
+    },
 }
 
 const edgeLabelStyle = { 
@@ -983,6 +989,7 @@ const initialEdges: RFEdge[] = [
         target: "captain-hook",
         label: "📝 Pre-commit Hooks",
         animated: true,
+        type: "smoothstep",
         style: edgeStyles.primary,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#3b82f6" },
         labelStyle: edgeLabelStyle,
@@ -993,6 +1000,7 @@ const initialEdges: RFEdge[] = [
         target: "bitbucket-repo",
         label: "⬆️ Push Code",
         animated: true,
+        type: "smoothstep",
         style: edgeStyles.primary,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#3b82f6" },
         labelStyle: edgeLabelStyle,
@@ -1003,6 +1011,7 @@ const initialEdges: RFEdge[] = [
         target: "bitbucket-pipelines",
         label: "🚀 Trigger CI/CD",
         animated: true,
+        type: "smoothstep",
         style: edgeStyles.primary,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#3b82f6" },
         labelStyle: edgeLabelStyle,
@@ -1045,6 +1054,16 @@ const initialEdges: RFEdge[] = [
         markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
         labelStyle: edgeLabelStyle,
     },
+    
+    {
+        id: "e8-pipeline-k6",
+        source: "bitbucket-pipelines",
+        target: "k6",
+        label: "📊 Load Testing",
+        style: edgeStyles.dataFlow,
+        markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
+        labelStyle: edgeLabelStyle,
+    },
 
     // GitOps Deployment Flow
     {
@@ -1071,6 +1090,7 @@ const initialEdges: RFEdge[] = [
         target: "k8s-group",
         label: "⚙️ Deploy to Cluster",
         animated: true,
+        type: "smoothstep",
         style: { ...edgeStyles.primary, stroke: "#10b981" },
         markerEnd: { type: MarkerType.ArrowClosed, color: "#10b981" },
         labelStyle: edgeLabelStyle,
@@ -1086,6 +1106,7 @@ const initialEdges: RFEdge[] = [
         source: "portainer",
         target: "ms-alertes",
         label: "⚡ Manage Containers",
+        type: "smoothstep",
         style: edgeStyles.interaction,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" },
         labelStyle: edgeLabelStyle,
@@ -1095,6 +1116,7 @@ const initialEdges: RFEdge[] = [
         source: "portainer",
         target: "api-laravel",
         label: "⚡ Manage Containers",
+        type: "smoothstep",
         style: edgeStyles.interaction,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" },
         labelStyle: edgeLabelStyle,
@@ -1104,6 +1126,7 @@ const initialEdges: RFEdge[] = [
         source: "portainer",
         target: "ms-notifs",
         label: "⚡ Manage Containers",
+        type: "smoothstep",
         style: edgeStyles.interaction,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" },
         labelStyle: edgeLabelStyle,
@@ -1115,6 +1138,7 @@ const initialEdges: RFEdge[] = [
         source: "ms-alertes",
         target: "pg-alertes",
         label: "💾 Read/Write Data",
+        type: "smoothstep",
         style: edgeStyles.dataFlow,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
         labelStyle: edgeLabelStyle,
@@ -1124,6 +1148,7 @@ const initialEdges: RFEdge[] = [
         source: "api-laravel",
         target: "mariadb",
         label: "💾 Read/Write Data",
+        type: "smoothstep",
         style: edgeStyles.dataFlow,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
         labelStyle: edgeLabelStyle,
@@ -1133,6 +1158,7 @@ const initialEdges: RFEdge[] = [
         source: "ms-notifs",
         target: "pg-notifs",
         label: "💾 Read/Write Data",
+        type: "smoothstep",
         style: edgeStyles.dataFlow,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
         labelStyle: edgeLabelStyle,
@@ -1144,24 +1170,18 @@ const initialEdges: RFEdge[] = [
         source: "ms-alertes",
         target: "rabbitmq",
         label: "📨 Publish Events",
+        type: "smoothstep",
         style: edgeStyles.dataFlow,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
         labelStyle: edgeLabelStyle,
     },
-    {
-        id: "e18-api-rabbit",
-        source: "api-laravel",
-        target: "rabbitmq",
-        label: "📨 Publish Events",
-        style: edgeStyles.dataFlow,
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
-        labelStyle: edgeLabelStyle,
-    },
+
     {
         id: "e19-rabbit-notifs",
         source: "rabbitmq",
         target: "ms-notifs",
         label: "📥 Consume Events",
+        type: "smoothstep",
         animated: true,
         style: edgeStyles.dataFlow,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
@@ -1174,6 +1194,7 @@ const initialEdges: RFEdge[] = [
         source: "api-laravel",
         target: "redis",
         label: "⚡ Cache Operations",
+        type: "smoothstep",
         style: edgeStyles.interaction,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" },
         labelStyle: edgeLabelStyle,
@@ -1183,41 +1204,13 @@ const initialEdges: RFEdge[] = [
     // 3. OBSERVABILITY & MONITORING CONNECTIONS
     // =============================================================================
 
-    // Error Tracking & Monitoring
-    {
-        id: "e21-api-sentry",
-        source: "api-laravel",
-        target: "sentry",
-        label: "🐛 Error Tracking",
-        style: edgeStyles.monitoring,
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#f59e0b" },
-        labelStyle: edgeLabelStyle,
-    },
-    {
-        id: "e22-alerts-sentry",
-        source: "ms-alertes",
-        target: "sentry",
-        label: "🐛 Error Tracking",
-        style: edgeStyles.monitoring,
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#f59e0b" },
-        labelStyle: edgeLabelStyle,
-    },
-    {
-        id: "e23-notifs-sentry",
-        source: "ms-notifs",
-        target: "sentry",
-        label: "🐛 Error Tracking",
-        style: edgeStyles.monitoring,
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#f59e0b" },
-        labelStyle: edgeLabelStyle,
-    },
-
     // Metrics Collection
     {
         id: "e24-k8s-prometheus",
         source: "k8s-group",
         target: "prometheus",
         label: "📊 Collect Metrics",
+        type: "smoothstep",
         style: edgeStyles.monitoring,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#f59e0b" },
         labelStyle: edgeLabelStyle,
@@ -1227,8 +1220,19 @@ const initialEdges: RFEdge[] = [
         source: "k8s-group",
         target: "loki",
         label: "📋 Collect Logs",
+        type: "smoothstep",
         style: edgeStyles.monitoring,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#f59e0b" },
+        labelStyle: edgeLabelStyle,
+    },
+    
+    {
+        id: "e26-k8s-sentry",
+        source: "sentry",
+        target: "k8s-group",
+        label: "🐛 Error Tracking",
+        type: "smoothstep",
+        style: edgeStyles.errorTracking,
         labelStyle: edgeLabelStyle,
     },
 
@@ -1238,6 +1242,7 @@ const initialEdges: RFEdge[] = [
         source: "prometheus",
         target: "grafana",
         label: "📈 Metrics Dashboard",
+        type: "smoothstep",
         style: edgeStyles.dataFlow,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
         labelStyle: edgeLabelStyle,
@@ -1247,19 +1252,9 @@ const initialEdges: RFEdge[] = [
         source: "loki",
         target: "grafana",
         label: "📝 Logs Dashboard",
+        type: "smoothstep",
         style: edgeStyles.dataFlow,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
-        labelStyle: edgeLabelStyle,
-    },
-
-    // Automation & Notifications
-    {
-        id: "e28-sentry-n8n",
-        source: "sentry",
-        target: "n8n",
-        label: "🔔 Trigger Workflows",
-        style: edgeStyles.interaction,
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" },
         labelStyle: edgeLabelStyle,
     },
     {
@@ -1267,6 +1262,8 @@ const initialEdges: RFEdge[] = [
         source: "grafana",
         target: "n8n",
         label: "🚨 Alert Workflows",
+        animated: true,
+        type: "smoothstep",
         style: edgeStyles.interaction,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" },
         labelStyle: edgeLabelStyle,
@@ -1277,6 +1274,7 @@ const initialEdges: RFEdge[] = [
         target: "discord",
         label: "💬 Team Notifications",
         animated: true,
+        type: "smoothstep",
         style: edgeStyles.external,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#10b981" },
         labelStyle: edgeLabelStyle,
@@ -1292,6 +1290,8 @@ const initialEdges: RFEdge[] = [
         source: "ms-notifs",
         target: "fcm",
         label: "📱 Android Push",
+        animated: true,
+        type: "smoothstep",
         style: edgeStyles.external,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#10b981" },
         labelStyle: edgeLabelStyle,
@@ -1301,6 +1301,8 @@ const initialEdges: RFEdge[] = [
         source: "ms-notifs",
         target: "apns",
         label: "🍎 iOS Push",
+        animated: true,
+        type: "smoothstep",
         style: edgeStyles.external,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#10b981" },
         labelStyle: edgeLabelStyle,
@@ -1311,8 +1313,8 @@ const initialEdges: RFEdge[] = [
         id: "e33-fcm-mobile",
         source: "fcm",
         target: "app-mobile",
-        label: "📲 Push Notifications",
         animated: true,
+        type: "smoothstep",
         style: edgeStyles.external,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#10b981" },
         labelStyle: edgeLabelStyle,
@@ -1321,44 +1323,14 @@ const initialEdges: RFEdge[] = [
         id: "e34-apns-mobile",
         source: "apns",
         target: "app-mobile",
-        label: "📲 Push Notifications",
         animated: true,
+        type: "smoothstep",
         style: edgeStyles.external,
         markerEnd: { type: MarkerType.ArrowClosed, color: "#10b981" },
         labelStyle: edgeLabelStyle,
     },
 
-    // API Integrations
-    {
-        id: "e35-api-external",
-        source: "api-laravel",
-        target: "ext-apis",
-        label: "🌐 External APIs",
-        style: edgeStyles.external,
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#10b981" },
-        labelStyle: edgeLabelStyle,
-    },
-    {
-        id: "e36-mobile-external",
-        source: "app-mobile",
-        target: "ext-apis",
-        label: "📊 Analytics & Feedback",
-        style: edgeStyles.interaction,
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" },
-        labelStyle: edgeLabelStyle,
-    },
-
-    // Direct Mobile-API Connection (bypassing external services for core functionality)
-    {
-        id: "e37-mobile-api",
-        source: "app-mobile",
-        target: "api-laravel",
-        label: "🔄 API Requests",
-        animated: true,
-        style: { ...edgeStyles.primary, stroke: "#06b6d4" },
-        markerEnd: { type: MarkerType.ArrowClosed, color: "#06b6d4" },
-        labelStyle: edgeLabelStyle,
-    },
+    
 ]
 
 export default function TargetArchitectureSlide() {
@@ -1378,6 +1350,7 @@ export default function TargetArchitectureSlide() {
         },
         [setEdges],
     )
+    
 
     if (isSSR || (typeof ReactFlow !== "function" && (typeof ReactFlow !== "object" || !ReactFlow))) {
         return (
