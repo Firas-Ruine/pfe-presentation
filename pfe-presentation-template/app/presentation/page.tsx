@@ -11,6 +11,7 @@ import DevOpsGlobalImpactSlide from "@/components/presentation/slides/introducti
 import CompanyPresentationTitleSlide from "@/components/presentation/slides/company-context/company-presentation-title-slide"
 import CurrentArchitectureProblemsSlide from "@/components/presentation/slides/problem-analysis/current-architecture-problems-slide"
 import ProposedSolutionSlide from "@/components/presentation/slides/problem-analysis/proposed-solution-slide"
+import ArchitectureTitleSlide from "@/components/presentation/slides/problem-analysis/architecture-title-slide"
 import TargetArchitectureSlide from "@/components/presentation/slides/problem-analysis/target-architecture-slide"
 import CompanyOverviewSlide from "@/components/presentation/slides/company-context/company-overview-slide"
 import ProjectObjectivesSlide from "@/components/presentation/slides/project-management/project-objectives-slide"
@@ -71,39 +72,40 @@ export default function PresentationPage() {
       <CompanyOverviewSlide key="company-context" />, // 7
       <CurrentArchitectureProblemsSlide key="problem" />, // 8
       <ProposedSolutionSlide key="proposed-solution" />, // 9
-      <TargetArchitectureSlide key="target-architecture" />, // 10
-      <ProjectObjectivesSlide key="objectives" />, // 11
-      <ProjectScopeProgressSlide key="scope-progress" />, // 12
-      <DevelopmentMethodologySlide key="methodology" />, // 13
-      <MicroservicesArchitectureSlide key="architecture" />, // 14
-      <TechStackOverviewSlide key="tech-stack" />, // 15
-      <Sprint1Slide key="sprint1" />, // 16
-      <Sprint2Slide key="sprint2" />, // 17
-      <Sprint34Slide key="sprint3-4" />, // 18
-      <Sprint5Slide key="sprint5" />, // 19
-      <Sprint6Slide key="sprint6" />, // 20
-      <SecurityImplementationSlide key="security" />, // 21
-      <PerformanceBenchmarksSlide key="perf-metrics" />, // 22
-      <MobileAppFeaturesSlide key="mobile-app" />, // 23
-      <MonitoringObservabilitySlide key="monitoring" />, // 24
-      <ChallengesResolvedSlide key="challenges-solutions" />, // 25
-      <ProjectResultsSlide key="results-achievements" />, // 26
+      <ArchitectureTitleSlide key="architecture-title" />, // 10
+      <TargetArchitectureSlide key="target-architecture" />, // 11
+      <ProjectObjectivesSlide key="objectives" />, // 12
+      <ProjectScopeProgressSlide key="scope-progress" />, // 13
+      <DevelopmentMethodologySlide key="methodology" />, // 14
+      <MicroservicesArchitectureSlide key="architecture" />, // 15
+      <TechStackOverviewSlide key="tech-stack" />, // 16
+      <Sprint1Slide key="sprint1" />, // 17
+      <Sprint2Slide key="sprint2" />, // 18
+      <Sprint34Slide key="sprint3-4" />, // 19
+      <Sprint5Slide key="sprint5" />, // 20
+      <Sprint6Slide key="sprint6" />, // 21
+      <SecurityImplementationSlide key="security" />, // 22
+      <PerformanceBenchmarksSlide key="perf-metrics" />, // 23
+      <MobileAppFeaturesSlide key="mobile-app" />, // 24
+      <MonitoringObservabilitySlide key="monitoring" />, // 25
+      <ChallengesResolvedSlide key="challenges-solutions" />, // 26
+      <ProjectResultsSlide key="results-achievements" />, // 27
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 27
+      />, // 28
       <PlaceholderSlide
         key="demo"
         title="Démonstration Live"
         content="Checklist de préparation, fonctionnalités clés."
-      />, // 28
-      <ConclusionSlide key="conclusion" />, // 29
+      />, // 29
+      <ConclusionSlide key="conclusion" />, // 30
       <PlaceholderSlide
         key="thanks"
         title="Merci!"
         content="Questions & Discussion"
-      />, // 30
+      />, // 31
     ],
     [],
   )
@@ -120,7 +122,8 @@ export default function PresentationPage() {
       "Présentation de l'entreprise",
       "Maison du Web",
       "Défis de l'Architecture Actuelle",
-      "Solution Microservices Proposée",
+      "Solution Microservices Proposée", 
+      "Architecture Cible",
       "Architecture Cible",
       "Objectifs du Projet",
       "Périmètre & Progression", 
