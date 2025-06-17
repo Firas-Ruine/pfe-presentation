@@ -11,6 +11,7 @@ import DevOpsGlobalImpactSlide from "@/components/presentation/slides/introducti
 import CompanyPresentationTitleSlide from "@/components/presentation/slides/company-context/company-presentation-title-slide"
 import CurrentArchitectureProblemsSlide from "@/components/presentation/slides/problem-analysis/current-architecture-problems-slide"
 import ProposedSolutionSlide from "@/components/presentation/slides/problem-analysis/proposed-solution-slide"
+import TargetArchitectureSlide from "@/components/presentation/slides/problem-analysis/target-architecture-slide"
 import CompanyOverviewSlide from "@/components/presentation/slides/company-context/company-overview-slide"
 import ProjectObjectivesSlide from "@/components/presentation/slides/project-management/project-objectives-slide"
 import ProjectScopeProgressSlide from "@/components/presentation/slides/project-management/project-scope-progress-slide"
@@ -70,38 +71,39 @@ export default function PresentationPage() {
       <CompanyOverviewSlide key="company-context" />, // 7
       <CurrentArchitectureProblemsSlide key="problem" />, // 8
       <ProposedSolutionSlide key="proposed-solution" />, // 9
-      <ProjectObjectivesSlide key="objectives" />, // 10
-      <ProjectScopeProgressSlide key="scope-progress" />, // 11
-      <DevelopmentMethodologySlide key="methodology" />, // 12
-      <MicroservicesArchitectureSlide key="architecture" />, // 13
-      <TechStackOverviewSlide key="tech-stack" />, // 14
-      <Sprint1Slide key="sprint1" />, // 15
-      <Sprint2Slide key="sprint2" />, // 16
-      <Sprint34Slide key="sprint3-4" />, // 17
-      <Sprint5Slide key="sprint5" />, // 18
-      <Sprint6Slide key="sprint6" />, // 19
-      <SecurityImplementationSlide key="security" />, // 20
-      <PerformanceBenchmarksSlide key="perf-metrics" />, // 21
-      <MobileAppFeaturesSlide key="mobile-app" />, // 22
-      <MonitoringObservabilitySlide key="monitoring" />, // 23
-      <ChallengesResolvedSlide key="challenges-solutions" />, // 24
-      <ProjectResultsSlide key="results-achievements" />, // 25
+      <TargetArchitectureSlide key="target-architecture" />, // 10
+      <ProjectObjectivesSlide key="objectives" />, // 11
+      <ProjectScopeProgressSlide key="scope-progress" />, // 12
+      <DevelopmentMethodologySlide key="methodology" />, // 13
+      <MicroservicesArchitectureSlide key="architecture" />, // 14
+      <TechStackOverviewSlide key="tech-stack" />, // 15
+      <Sprint1Slide key="sprint1" />, // 16
+      <Sprint2Slide key="sprint2" />, // 17
+      <Sprint34Slide key="sprint3-4" />, // 18
+      <Sprint5Slide key="sprint5" />, // 19
+      <Sprint6Slide key="sprint6" />, // 20
+      <SecurityImplementationSlide key="security" />, // 21
+      <PerformanceBenchmarksSlide key="perf-metrics" />, // 22
+      <MobileAppFeaturesSlide key="mobile-app" />, // 23
+      <MonitoringObservabilitySlide key="monitoring" />, // 24
+      <ChallengesResolvedSlide key="challenges-solutions" />, // 25
+      <ProjectResultsSlide key="results-achievements" />, // 26
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 26
+      />, // 27
       <PlaceholderSlide
         key="demo"
         title="Démonstration Live"
         content="Checklist de préparation, fonctionnalités clés."
-      />, // 27
-      <ConclusionSlide key="conclusion" />, // 28
+      />, // 28
+      <ConclusionSlide key="conclusion" />, // 29
       <PlaceholderSlide
         key="thanks"
         title="Merci!"
         content="Questions & Discussion"
-      />, // 29
+      />, // 30
     ],
     [],
   )
@@ -119,6 +121,7 @@ export default function PresentationPage() {
       "Maison du Web",
       "Défis de l'Architecture Actuelle",
       "Solution Microservices Proposée",
+      "Architecture Cible",
       "Objectifs du Projet",
       "Périmètre & Progression", 
       "Méthodologie Agile",
