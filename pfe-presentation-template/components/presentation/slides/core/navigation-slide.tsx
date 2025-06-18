@@ -32,13 +32,13 @@ interface NavigationSlideProps {
 const sections = [
   { title: "Introduction", icon: BookOpen, time: "5 min", targetSlide: 2 },
   { title: "Contexte général", icon: Building, time: "8 min", targetSlide: 6 },
-  { title: "Problématique et Besoins Métier", icon: AlertTriangle, time: "10 min", targetSlide: 8 },
+  { title: "Problématique", icon: AlertTriangle, time: "10 min", targetSlide: 8 },
   { title: "Solution proposée et Architecture Cible", icon: Rocket, time: "12 min", targetSlide: 10 },
-  { title: "Méthodologie & Approche d'Ingénierie", icon: Settings, time: "10 min", targetSlide: 12 },
-  { title: "Conception & Implémentation des Microservices", icon: Code, time: "15 min", targetSlide: 16 },
-  { title: "CI/CD, Monitoring, Tests & Sécurité", icon: TestTube, time: "15 min", targetSlide: 19 },
-  { title: "Validation, Résultats et Retours", icon: Award, time: "12 min", targetSlide: 24 },
-  { title: "Conclusion et Perspectives", icon: GraduationCap, time: "8 min", targetSlide: 30 },
+  { title: "Méthodologie", icon: Settings, time: "10 min", targetSlide: 12 },
+  { title: "Conception & Implémentation des Microservices", icon: Code, time: "15 min", targetSlide: 17 },
+  { title: "CI/CD, Monitoring, Tests & Sécurité", icon: TestTube, time: "15 min", targetSlide: 20 },
+  { title: "Validation, Résultats et Retours", icon: Award, time: "12 min", targetSlide: 25 },
+  { title: "Conclusion et Perspectives", icon: GraduationCap, time: "8 min", targetSlide: 31 },
 ]
 
 export default function NavigationSlide({ onNavigate }: NavigationSlideProps) {
