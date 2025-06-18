@@ -35,10 +35,10 @@ const sections = [
   { title: "Problématique", icon: AlertTriangle, time: "10 min", targetSlide: 8 },
   { title: "Solution proposée et Architecture Cible", icon: Rocket, time: "12 min", targetSlide: 10 },
   { title: "Méthodologie", icon: Settings, time: "10 min", targetSlide: 12 },
-  { title: "Conception & Implémentation des Microservices", icon: Code, time: "15 min", targetSlide: 17 },
-  { title: "CI/CD, Monitoring, Tests & Sécurité", icon: TestTube, time: "15 min", targetSlide: 20 },
-  { title: "Validation, Résultats et Retours", icon: Award, time: "12 min", targetSlide: 25 },
-  { title: "Conclusion et Perspectives", icon: GraduationCap, time: "8 min", targetSlide: 31 },
+  { title: "Conception & Implémentation des Microservices", icon: Code, time: "15 min", targetSlide: 15 },
+  { title: "CI/CD, Monitoring, Tests & Sécurité", icon: TestTube, time: "15 min", targetSlide: 21 },
+  { title: "Validation, Résultats et Retours", icon: Award, time: "12 min", targetSlide: 26 },
+  { title: "Conclusion et Perspectives", icon: GraduationCap, time: "8 min", targetSlide: 32 },
 ]
 
 export default function NavigationSlide({ onNavigate }: NavigationSlideProps) {

@@ -17,9 +17,10 @@ import MethodologyTitleSlide from "@/components/presentation/slides/problem-anal
 import ScrumMethodologySlide from "@/components/presentation/slides/problem-analysis/scrum-methodology-slide"
 import ScrumCyclePhotoSlide from "@/components/presentation/slides/problem-analysis/scrum-cycle-photo-slide"
 import CompanyOverviewSlide from "@/components/presentation/slides/company-context/company-overview-slide"
-import ProjectObjectivesSlide from "@/components/presentation/slides/project-management/project-objectives-slide"
-import ProjectScopeProgressSlide from "@/components/presentation/slides/project-management/project-scope-progress-slide"
+import ClassDiagramAlertsSlide from "@/components/presentation/slides/project-management/class-diagram-alerts-slide"
+import HmvcDiagramAlertsSlide from "@/components/presentation/slides/project-management/hmvc-diagram-alerts-slide"
 import DevelopmentMethodologySlide from "@/components/presentation/slides/project-management/development-methodology-slide"
+import ConceptionImplementationTitleSlide from "@/components/presentation/slides/technical-implementation/conception-implementation-title-slide"
 import MicroservicesArchitectureSlide from "@/components/presentation/slides/technical-implementation/microservices-architecture-slide"
 import TechStackOverviewSlide from "@/components/presentation/slides/technical-implementation/tech-stack-overview-slide"
 import Sprint1Slide from "@/components/presentation/slides/development-sprints/sprint1-slide"
@@ -80,38 +81,39 @@ export default function PresentationPage() {
       <MethodologyTitleSlide key="methodology-title" />, // 12
       <ScrumMethodologySlide key="scrum-methodology" />, // 13
       <ScrumCyclePhotoSlide key="scrum-cycle-photo" />, // 14
-      <ProjectObjectivesSlide key="objectives" />, // 15
-      <ProjectScopeProgressSlide key="scope-progress" />, // 16
-      <DevelopmentMethodologySlide key="methodology" />, // 17
-      <MicroservicesArchitectureSlide key="architecture" />, // 18
-      <TechStackOverviewSlide key="tech-stack" />, // 19
-      <Sprint1Slide key="sprint1" />, // 20
-      <Sprint2Slide key="sprint2" />, // 21
-      <Sprint34Slide key="sprint3-4" />, // 22
-      <Sprint5Slide key="sprint5" />, // 23
-      <Sprint6Slide key="sprint6" />, // 24
-      <SecurityImplementationSlide key="security" />, // 25
-      <PerformanceBenchmarksSlide key="perf-metrics" />, // 26
-      <MobileAppFeaturesSlide key="mobile-app" />, // 27
-      <MonitoringObservabilitySlide key="monitoring" />, // 28
-      <ChallengesResolvedSlide key="challenges-solutions" />, // 29
-      <ProjectResultsSlide key="results-achievements" />, // 30
+      <ConceptionImplementationTitleSlide key="conception-implementation-title" />, // 15
+      <ClassDiagramAlertsSlide key="class-diagram-alerts" />, // 16
+      <HmvcDiagramAlertsSlide key="hmvc-diagram-alerts" />, // 17
+      <DevelopmentMethodologySlide key="methodology" />, // 18
+      <MicroservicesArchitectureSlide key="architecture" />, // 19
+      <TechStackOverviewSlide key="tech-stack" />, // 20
+      <Sprint1Slide key="sprint1" />, // 21
+      <Sprint2Slide key="sprint2" />, // 22
+      <Sprint34Slide key="sprint3-4" />, // 23
+      <Sprint5Slide key="sprint5" />, // 24
+      <Sprint6Slide key="sprint6" />, // 25
+      <SecurityImplementationSlide key="security" />, // 26
+      <PerformanceBenchmarksSlide key="perf-metrics" />, // 27
+      <MobileAppFeaturesSlide key="mobile-app" />, // 28
+      <MonitoringObservabilitySlide key="monitoring" />, // 29
+      <ChallengesResolvedSlide key="challenges-solutions" />, // 30
+      <ProjectResultsSlide key="results-achievements" />, // 31
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 31
+      />, // 32
       <PlaceholderSlide
         key="demo"
         title="Démonstration Live"
         content="Checklist de préparation, fonctionnalités clés."
-      />, // 32
-      <ConclusionSlide key="conclusion" />, // 33
+      />, // 33
+      <ConclusionSlide key="conclusion" />, // 34
       <PlaceholderSlide
         key="thanks"
         title="Merci!"
         content="Questions & Discussion"
-      />, // 34
+      />, // 35
     ],
     [],
   )
@@ -134,26 +136,27 @@ export default function PresentationPage() {
       "Méthodologie", // 12
       "Scrum - Méthodologie Agile", // 13
       "Cycle Scrum", // 14
-      "Objectifs du Projet", // 15
-      "Périmètre & Progression", // 16
-      "Méthodologie Agile", // 17
-      "Architecture Microservices", // 18
-      "Stack Technologique", // 19
-      "Sprint 1: Conception", // 20
-      "Sprint 2: CI/CD", // 21
-      "Sprints 3-4: Développement", // 22
-      "Sprint 5: Performance", // 23
-      "Sprint 6: Validation", // 24
-      "Sécurité", // 25
-      "Métriques Performance", // 26
-      "Application Mobile", // 27
-      "Monitoring & Observabilité", // 28
-      "Défis & Solutions", // 29
-      "Résultats & Réalisations", // 30
-      "Feuille de Route Future", // 31
-      "Démonstration Live", // 32
-      "Conclusion & Perspectives", // 33
-      "Remerciements", // 34
+      "Conception & Implémentation", // 15
+      "Diagramme de Classe - Alertes", // 16
+      "Architecture HMVC - Alertes", // 17
+      "Méthodologie Agile", // 18
+      "Architecture Microservices", // 19
+      "Stack Technologique", // 20
+      "Sprint 1: Conception", // 21
+      "Sprint 2: CI/CD", // 22
+      "Sprints 3-4: Développement", // 23
+      "Sprint 5: Performance", // 24
+      "Sprint 6: Validation", // 25
+      "Sécurité", // 26
+      "Métriques Performance", // 27
+      "Application Mobile", // 28
+      "Monitoring & Observabilité", // 29
+      "Défis & Solutions", // 30
+      "Résultats & Réalisations", // 31
+      "Feuille de Route Future", // 32
+      "Démonstration Live", // 33
+      "Conclusion & Perspectives", // 34
+      "Remerciements", // 35
     ],
     [],
   )

@@ -1,3 +1,3 @@
-export { default as ProjectObjectivesSlide } from './project-objectives-slide'
-export { default as ProjectScopeProgressSlide } from './project-scope-progress-slide'
+export { default as ClassDiagramAlertsSlide } from './class-diagram-alerts-slide'
+export { default as HmvcDiagramAlertsSlide } from './hmvc-diagram-alerts-slide'
 export { default as DevelopmentMethodologySlide } from './development-methodology-slide'
