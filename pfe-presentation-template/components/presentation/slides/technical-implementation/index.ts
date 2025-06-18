@@ -1,4 +1,7 @@
 export { default as ConceptionImplementationTitleSlide } from './conception-implementation-title-slide'
 export { default as CicdTitleSlide } from './cicd-title-slide'
+export { default as WhatIsCicdSlide } from './what-is-cicd-slide'
+export { default as BranchingStrategySlide } from './branching-strategy-slide'
+export { default as GlobalCicdArchitectureSlide } from './global-cicd-architecture-slide'
 export { default as MicroservicesArchitectureSlide } from './microservices-architecture-slide'
 export { default as TechStackOverviewSlide } from './tech-stack-overview-slide'

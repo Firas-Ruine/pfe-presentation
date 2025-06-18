@@ -25,6 +25,9 @@ import ContractArchitectureSlide from "@/components/presentation/slides/project-
 import RabbitMQmsInteractionsSlide from "@/components/presentation/slides/project-management/rabbitmq-ms-interactions-slide"
 import ConceptionImplementationTitleSlide from "@/components/presentation/slides/technical-implementation/conception-implementation-title-slide"
 import CicdTitleSlide from "@/components/presentation/slides/technical-implementation/cicd-title-slide"
+import WhatIsCicdSlide from "@/components/presentation/slides/technical-implementation/what-is-cicd-slide"
+import BranchingStrategySlide from "@/components/presentation/slides/technical-implementation/branching-strategy-slide"
+import GlobalCicdArchitectureSlide from "@/components/presentation/slides/technical-implementation/global-cicd-architecture-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -79,6 +82,9 @@ export default function PresentationPage() {
       <ContractArchitectureSlide key="contract-architecture" />, // 20
       <RabbitMQmsInteractionsSlide key="rabbitmq-ms-interactions" />, // 21
       <CicdTitleSlide key="cicd-title" />, // 22
+      <WhatIsCicdSlide key="what-is-cicd" />, // 23
+      <BranchingStrategySlide key="branching-strategy" />, // 24
+      <GlobalCicdArchitectureSlide key="global-cicd-architecture" />, // 25
     ],
     [],
   )
@@ -109,6 +115,9 @@ export default function PresentationPage() {
       "Architecture Orientée Contrat", // 20
       "Interactions RabbitMQ Microservices", // 21
       "CI/CD", // 22
+      "Qu'est-ce que le CI/CD ?", // 23
+      "Stratégie de Branchement", // 24
+      "Architecture Globale CI/CD", // 25
     ],
     [],
   )
