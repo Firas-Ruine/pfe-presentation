@@ -23,22 +23,8 @@ import TestCoverageReportSlide from "@/components/presentation/slides/project-ma
 import ClassDiagramNotificationsSlide from "@/components/presentation/slides/project-management/class-diagram-notifications-slide"
 import ContractArchitectureSlide from "@/components/presentation/slides/project-management/contract-architecture-slide"
 import RabbitMQmsInteractionsSlide from "@/components/presentation/slides/project-management/rabbitmq-ms-interactions-slide"
-import DevelopmentMethodologySlide from "@/components/presentation/slides/project-management/development-methodology-slide"
 import ConceptionImplementationTitleSlide from "@/components/presentation/slides/technical-implementation/conception-implementation-title-slide"
-import MicroservicesArchitectureSlide from "@/components/presentation/slides/technical-implementation/microservices-architecture-slide"
-import TechStackOverviewSlide from "@/components/presentation/slides/technical-implementation/tech-stack-overview-slide"
-import Sprint1Slide from "@/components/presentation/slides/development-sprints/sprint1-slide"
-import Sprint2Slide from "@/components/presentation/slides/development-sprints/sprint2-slide"
-import Sprint34Slide from "@/components/presentation/slides/development-sprints/sprint34-slide"
-import Sprint5Slide from "@/components/presentation/slides/development-sprints/sprint5-slide"
-import Sprint6Slide from "@/components/presentation/slides/development-sprints/sprint6-slide"
-import SecurityImplementationSlide from "@/components/presentation/slides/system-features/security-implementation-slide"
-import PerformanceBenchmarksSlide from "@/components/presentation/slides/system-features/performance-benchmarks-slide"
-import MobileAppFeaturesSlide from "@/components/presentation/slides/system-features/mobile-app-features-slide"
-import MonitoringObservabilitySlide from "@/components/presentation/slides/system-features/monitoring-observability-slide"
-import ChallengesResolvedSlide from "@/components/presentation/slides/results-conclusion/challenges-resolved-slide"
-import ProjectResultsSlide from "@/components/presentation/slides/results-conclusion/project-results-slide"
-import ConclusionSlide from "@/components/presentation/slides/results-conclusion/conclusion-slide"
+import CicdTitleSlide from "@/components/presentation/slides/technical-implementation/cicd-title-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -92,36 +78,7 @@ export default function PresentationPage() {
       <ClassDiagramNotificationsSlide key="class-diagram-notifications" />, // 19
       <ContractArchitectureSlide key="contract-architecture" />, // 20
       <RabbitMQmsInteractionsSlide key="rabbitmq-ms-interactions" />, // 21
-      <DevelopmentMethodologySlide key="methodology" />, // 22
-      <MicroservicesArchitectureSlide key="architecture" />, // 23
-      <TechStackOverviewSlide key="tech-stack" />, // 24
-      <Sprint1Slide key="sprint1" />, // 25
-      <Sprint2Slide key="sprint2" />, // 26
-      <Sprint34Slide key="sprint3-4" />, // 27
-      <Sprint5Slide key="sprint5" />, // 28
-      <Sprint6Slide key="sprint6" />, // 29
-      <SecurityImplementationSlide key="security" />, // 30
-      <PerformanceBenchmarksSlide key="perf-metrics" />, // 31
-      <MobileAppFeaturesSlide key="mobile-app" />, // 32
-      <MonitoringObservabilitySlide key="monitoring" />, // 33
-      <ChallengesResolvedSlide key="challenges-solutions" />, // 34
-      <ProjectResultsSlide key="results-achievements" />, // 35
-      <PlaceholderSlide
-        key="roadmap" 
-        title="Feuille de Route Future"
-        content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 36
-      <PlaceholderSlide
-        key="demo"
-        title="Démonstration Live"
-        content="Checklist de préparation, fonctionnalités clés."
-      />, // 37
-      <ConclusionSlide key="conclusion" />, // 38
-      <PlaceholderSlide
-        key="thanks"
-        title="Merci!"
-        content="Questions & Discussion"
-      />, // 39
+      <CicdTitleSlide key="cicd-title" />, // 22
     ],
     [],
   )
@@ -151,24 +108,7 @@ export default function PresentationPage() {
       "Diagramme de Classe - Notifications", // 19
       "Architecture Orientée Contrat", // 20
       "Interactions RabbitMQ Microservices", // 21
-      "Méthodologie Agile", // 22
-      "Architecture Microservices", // 23
-      "Stack Technologique", // 24
-      "Sprint 1: Conception", // 25
-      "Sprint 2: CI/CD", // 26
-      "Sprints 3-4: Développement", // 27
-      "Sprint 5: Performance", // 28
-      "Sprint 6: Validation", // 29
-      "Sécurité", // 30
-      "Métriques Performance", // 31
-      "Application Mobile", // 32
-      "Monitoring & Observabilité", // 33
-      "Défis & Solutions", // 34
-      "Résultats & Réalisations", // 35
-      "Feuille de Route Future", // 36
-      "Démonstration Live", // 37
-      "Conclusion & Perspectives", // 38
-      "Remerciements", // 39
+      "CI/CD", // 22
     ],
     [],
   )
