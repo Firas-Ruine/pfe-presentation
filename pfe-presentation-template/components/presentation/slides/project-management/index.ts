@@ -1,3 +1,7 @@
 export { default as ClassDiagramAlertsSlide } from './class-diagram-alerts-slide'
 export { default as HmvcDiagramAlertsSlide } from './hmvc-diagram-alerts-slide'
+export { default as TestCoverageReportSlide } from './test-coverage-report-slide'
+export { default as ClassDiagramNotificationsSlide } from './class-diagram-notifications-slide'
+export { default as ContractArchitectureSlide } from './contract-architecture-slide'
+export { default as RabbitMQmsInteractionsSlide } from './rabbitmq-ms-interactions-slide'
 export { default as DevelopmentMethodologySlide } from './development-methodology-slide'

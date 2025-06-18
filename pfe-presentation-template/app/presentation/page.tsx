@@ -19,6 +19,10 @@ import ScrumCyclePhotoSlide from "@/components/presentation/slides/problem-analy
 import CompanyOverviewSlide from "@/components/presentation/slides/company-context/company-overview-slide"
 import ClassDiagramAlertsSlide from "@/components/presentation/slides/project-management/class-diagram-alerts-slide"
 import HmvcDiagramAlertsSlide from "@/components/presentation/slides/project-management/hmvc-diagram-alerts-slide"
+import TestCoverageReportSlide from "@/components/presentation/slides/project-management/test-coverage-report-slide"
+import ClassDiagramNotificationsSlide from "@/components/presentation/slides/project-management/class-diagram-notifications-slide"
+import ContractArchitectureSlide from "@/components/presentation/slides/project-management/contract-architecture-slide"
+import RabbitMQmsInteractionsSlide from "@/components/presentation/slides/project-management/rabbitmq-ms-interactions-slide"
 import DevelopmentMethodologySlide from "@/components/presentation/slides/project-management/development-methodology-slide"
 import ConceptionImplementationTitleSlide from "@/components/presentation/slides/technical-implementation/conception-implementation-title-slide"
 import MicroservicesArchitectureSlide from "@/components/presentation/slides/technical-implementation/microservices-architecture-slide"
@@ -84,36 +88,40 @@ export default function PresentationPage() {
       <ConceptionImplementationTitleSlide key="conception-implementation-title" />, // 15
       <ClassDiagramAlertsSlide key="class-diagram-alerts" />, // 16
       <HmvcDiagramAlertsSlide key="hmvc-diagram-alerts" />, // 17
-      <DevelopmentMethodologySlide key="methodology" />, // 18
-      <MicroservicesArchitectureSlide key="architecture" />, // 19
-      <TechStackOverviewSlide key="tech-stack" />, // 20
-      <Sprint1Slide key="sprint1" />, // 21
-      <Sprint2Slide key="sprint2" />, // 22
-      <Sprint34Slide key="sprint3-4" />, // 23
-      <Sprint5Slide key="sprint5" />, // 24
-      <Sprint6Slide key="sprint6" />, // 25
-      <SecurityImplementationSlide key="security" />, // 26
-      <PerformanceBenchmarksSlide key="perf-metrics" />, // 27
-      <MobileAppFeaturesSlide key="mobile-app" />, // 28
-      <MonitoringObservabilitySlide key="monitoring" />, // 29
-      <ChallengesResolvedSlide key="challenges-solutions" />, // 30
-      <ProjectResultsSlide key="results-achievements" />, // 31
+      <TestCoverageReportSlide key="test-coverage-report" />, // 18
+      <ClassDiagramNotificationsSlide key="class-diagram-notifications" />, // 19
+      <ContractArchitectureSlide key="contract-architecture" />, // 20
+      <RabbitMQmsInteractionsSlide key="rabbitmq-ms-interactions" />, // 21
+      <DevelopmentMethodologySlide key="methodology" />, // 22
+      <MicroservicesArchitectureSlide key="architecture" />, // 23
+      <TechStackOverviewSlide key="tech-stack" />, // 24
+      <Sprint1Slide key="sprint1" />, // 25
+      <Sprint2Slide key="sprint2" />, // 26
+      <Sprint34Slide key="sprint3-4" />, // 27
+      <Sprint5Slide key="sprint5" />, // 28
+      <Sprint6Slide key="sprint6" />, // 29
+      <SecurityImplementationSlide key="security" />, // 30
+      <PerformanceBenchmarksSlide key="perf-metrics" />, // 31
+      <MobileAppFeaturesSlide key="mobile-app" />, // 32
+      <MonitoringObservabilitySlide key="monitoring" />, // 33
+      <ChallengesResolvedSlide key="challenges-solutions" />, // 34
+      <ProjectResultsSlide key="results-achievements" />, // 35
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 32
+      />, // 36
       <PlaceholderSlide
         key="demo"
         title="Démonstration Live"
         content="Checklist de préparation, fonctionnalités clés."
-      />, // 33
-      <ConclusionSlide key="conclusion" />, // 34
+      />, // 37
+      <ConclusionSlide key="conclusion" />, // 38
       <PlaceholderSlide
         key="thanks"
         title="Merci!"
         content="Questions & Discussion"
-      />, // 35
+      />, // 39
     ],
     [],
   )
@@ -139,24 +147,28 @@ export default function PresentationPage() {
       "Conception & Implémentation", // 15
       "Diagramme de Classe - Alertes", // 16
       "Architecture HMVC - Alertes", // 17
-      "Méthodologie Agile", // 18
-      "Architecture Microservices", // 19
-      "Stack Technologique", // 20
-      "Sprint 1: Conception", // 21
-      "Sprint 2: CI/CD", // 22
-      "Sprints 3-4: Développement", // 23
-      "Sprint 5: Performance", // 24
-      "Sprint 6: Validation", // 25
-      "Sécurité", // 26
-      "Métriques Performance", // 27
-      "Application Mobile", // 28
-      "Monitoring & Observabilité", // 29
-      "Défis & Solutions", // 30
-      "Résultats & Réalisations", // 31
-      "Feuille de Route Future", // 32
-      "Démonstration Live", // 33
-      "Conclusion & Perspectives", // 34
-      "Remerciements", // 35
+      "Rapport de Couverture de Tests", // 18
+      "Diagramme de Classe - Notifications", // 19
+      "Architecture Orientée Contrat", // 20
+      "Interactions RabbitMQ Microservices", // 21
+      "Méthodologie Agile", // 22
+      "Architecture Microservices", // 23
+      "Stack Technologique", // 24
+      "Sprint 1: Conception", // 25
+      "Sprint 2: CI/CD", // 26
+      "Sprints 3-4: Développement", // 27
+      "Sprint 5: Performance", // 28
+      "Sprint 6: Validation", // 29
+      "Sécurité", // 30
+      "Métriques Performance", // 31
+      "Application Mobile", // 32
+      "Monitoring & Observabilité", // 33
+      "Défis & Solutions", // 34
+      "Résultats & Réalisations", // 35
+      "Feuille de Route Future", // 36
+      "Démonstration Live", // 37
+      "Conclusion & Perspectives", // 38
+      "Remerciements", // 39
     ],
     [],
   )
