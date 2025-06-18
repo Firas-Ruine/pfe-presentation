@@ -2,3 +2,5 @@ export { default as CurrentArchitectureProblemsSlide } from './current-architect
 export { default as ProposedSolutionSlide } from './proposed-solution-slide'
 export { default as ArchitectureTitleSlide } from './architecture-title-slide'
 export { default as TargetArchitectureSlide } from './target-architecture-slide'
+export { default as MethodologyTitleSlide } from './methodology-title-slide'
+export { default as ScrumMethodologySlide } from './scrum-methodology-slide'

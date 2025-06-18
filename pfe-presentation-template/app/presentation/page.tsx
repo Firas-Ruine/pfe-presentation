@@ -13,6 +13,8 @@ import CurrentArchitectureProblemsSlide from "@/components/presentation/slides/p
 import ProposedSolutionSlide from "@/components/presentation/slides/problem-analysis/proposed-solution-slide"
 import ArchitectureTitleSlide from "@/components/presentation/slides/problem-analysis/architecture-title-slide"
 import TargetArchitectureSlide from "@/components/presentation/slides/problem-analysis/target-architecture-slide"
+import MethodologyTitleSlide from "@/components/presentation/slides/problem-analysis/methodology-title-slide"
+import ScrumMethodologySlide from "@/components/presentation/slides/problem-analysis/scrum-methodology-slide"
 import CompanyOverviewSlide from "@/components/presentation/slides/company-context/company-overview-slide"
 import ProjectObjectivesSlide from "@/components/presentation/slides/project-management/project-objectives-slide"
 import ProjectScopeProgressSlide from "@/components/presentation/slides/project-management/project-scope-progress-slide"
@@ -74,38 +76,40 @@ export default function PresentationPage() {
       <ProposedSolutionSlide key="proposed-solution" />, // 9
       <ArchitectureTitleSlide key="architecture-title" />, // 10
       <TargetArchitectureSlide key="target-architecture" />, // 11
-      <ProjectObjectivesSlide key="objectives" />, // 12
-      <ProjectScopeProgressSlide key="scope-progress" />, // 13
-      <DevelopmentMethodologySlide key="methodology" />, // 14
-      <MicroservicesArchitectureSlide key="architecture" />, // 15
-      <TechStackOverviewSlide key="tech-stack" />, // 16
-      <Sprint1Slide key="sprint1" />, // 17
-      <Sprint2Slide key="sprint2" />, // 18
-      <Sprint34Slide key="sprint3-4" />, // 19
-      <Sprint5Slide key="sprint5" />, // 20
-      <Sprint6Slide key="sprint6" />, // 21
-      <SecurityImplementationSlide key="security" />, // 22
-      <PerformanceBenchmarksSlide key="perf-metrics" />, // 23
-      <MobileAppFeaturesSlide key="mobile-app" />, // 24
-      <MonitoringObservabilitySlide key="monitoring" />, // 25
-      <ChallengesResolvedSlide key="challenges-solutions" />, // 26
-      <ProjectResultsSlide key="results-achievements" />, // 27
+      <MethodologyTitleSlide key="methodology-title" />, // 12
+      <ScrumMethodologySlide key="scrum-methodology" />, // 13
+      <ProjectObjectivesSlide key="objectives" />, // 14
+      <ProjectScopeProgressSlide key="scope-progress" />, // 15
+      <DevelopmentMethodologySlide key="methodology" />, // 16
+      <MicroservicesArchitectureSlide key="architecture" />, // 17
+      <TechStackOverviewSlide key="tech-stack" />, // 18
+      <Sprint1Slide key="sprint1" />, // 19
+      <Sprint2Slide key="sprint2" />, // 20
+      <Sprint34Slide key="sprint3-4" />, // 21
+      <Sprint5Slide key="sprint5" />, // 22
+      <Sprint6Slide key="sprint6" />, // 23
+      <SecurityImplementationSlide key="security" />, // 24
+      <PerformanceBenchmarksSlide key="perf-metrics" />, // 25
+      <MobileAppFeaturesSlide key="mobile-app" />, // 26
+      <MonitoringObservabilitySlide key="monitoring" />, // 27
+      <ChallengesResolvedSlide key="challenges-solutions" />, // 28
+      <ProjectResultsSlide key="results-achievements" />, // 29
       <PlaceholderSlide
         key="roadmap" 
         title="Feuille de Route Future"
         content="Service mesh, chaos engineering, stratégie multi-cloud."
-      />, // 28
+      />, // 30
       <PlaceholderSlide
         key="demo"
         title="Démonstration Live"
         content="Checklist de préparation, fonctionnalités clés."
-      />, // 29
-      <ConclusionSlide key="conclusion" />, // 30
+      />, // 31
+      <ConclusionSlide key="conclusion" />, // 32
       <PlaceholderSlide
         key="thanks"
         title="Merci!"
         content="Questions & Discussion"
-      />, // 31
+      />, // 33
     ],
     [],
   )
@@ -113,38 +117,40 @@ export default function PresentationPage() {
   // For brevity, I'm using generic titles for placeholders.
   const slideTitles = useMemo(
     () => [
-      "Introduction",
-      "Plan de la Présentation", 
-      "Introduction",
-      "Contexte du Projet",
-      "Qu'est-ce que le DevOps ?",
-      "Impact du DevOps",
-      "Présentation de l'entreprise",
-      "Maison du Web",
-      "Défis de l'Architecture Actuelle",
-      "Solution Microservices Proposée", 
-      "Architecture Cible",
-      "Architecture Cible",
-      "Objectifs du Projet",
-      "Périmètre & Progression", 
-      "Méthodologie Agile",
-      "Architecture Microservices",
-      "Stack Technologique",
-      "Sprint 1: Conception",
-      "Sprint 2: CI/CD",
-      "Sprints 3-4: Développement",
-      "Sprint 5: Performance",
-      "Sprint 6: Validation",
-      "Sécurité",
-      "Métriques Performance",
-      "Application Mobile",
-      "Monitoring & Observabilité",
-      "Défis & Solutions",
-      "Résultats & Réalisations",
-      "Feuille de Route Future",
-      "Démonstration Live",
-      "Conclusion & Perspectives",
-      "Remerciements",
+      "Accueil", // 0
+      "Plan de la Présentation", // 1
+      "Introduction", // 2
+      "Contexte du Projet", // 3
+      "Qu'est-ce que le DevOps ?", // 4
+      "Impact du DevOps", // 5
+      "Présentation de l'entreprise", // 6
+      "Maison du Web", // 7
+      "Défis de l'Architecture Actuelle", // 8
+      "Solution Microservices Proposée", // 9
+      "Architecture Cible", // 10
+      "Architecture Cible - Diagramme", // 11
+      "Méthodologie", // 12
+      "Scrum - Méthodologie Agile", // 13
+      "Objectifs du Projet", // 14
+      "Périmètre & Progression", // 15
+      "Méthodologie Agile", // 16
+      "Architecture Microservices", // 17
+      "Stack Technologique", // 18
+      "Sprint 1: Conception", // 19
+      "Sprint 2: CI/CD", // 20
+      "Sprints 3-4: Développement", // 21
+      "Sprint 5: Performance", // 22
+      "Sprint 6: Validation", // 23
+      "Sécurité", // 24
+      "Métriques Performance", // 25
+      "Application Mobile", // 26
+      "Monitoring & Observabilité", // 27
+      "Défis & Solutions", // 28
+      "Résultats & Réalisations", // 29
+      "Feuille de Route Future", // 30
+      "Démonstration Live", // 31
+      "Conclusion & Perspectives", // 32
+      "Remerciements", // 33
     ],
     [],
   )
