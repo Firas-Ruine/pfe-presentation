@@ -10,5 +10,7 @@ export { default as GlobalMonitoringArchitectureSlide } from './global-monitorin
 export { default as GrafanaDashboardsSlide } from './grafana-dashboards-slide'
 export { default as PerformanceTestTitleSlide } from './performance-test-title-slide'
 export { default as WhatIsPerformanceTestingSlide } from './what-is-performance-testing-slide'
+export { default as WhatIsGrafanaK6Slide } from './what-is-grafana-k6-slide'
+export { default as DeploymentTitleSlide } from './deployment-title-slide'
 export { default as MicroservicesArchitectureSlide } from './microservices-architecture-slide'
 export { default as TechStackOverviewSlide } from './tech-stack-overview-slide'

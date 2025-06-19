@@ -35,6 +35,8 @@ import GlobalMonitoringArchitectureSlide from "@/components/presentation/slides/
 import GrafanaDashboardsSlide from "@/components/presentation/slides/technical-implementation/grafana-dashboards-slide"
 import PerformanceTestTitleSlide from "@/components/presentation/slides/technical-implementation/performance-test-title-slide"
 import WhatIsPerformanceTestingSlide from "@/components/presentation/slides/technical-implementation/what-is-performance-testing-slide"
+import WhatIsGrafanaK6Slide from "@/components/presentation/slides/technical-implementation/what-is-grafana-k6-slide"
+import DeploymentTitleSlide from "@/components/presentation/slides/technical-implementation/deployment-title-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -99,6 +101,8 @@ export default function PresentationPage() {
       <GrafanaDashboardsSlide key="grafana-dashboards" />, // 30
       <PerformanceTestTitleSlide key="performance-test-title" />, // 31
       <WhatIsPerformanceTestingSlide key="what-is-performance-testing" />, // 32
+      <WhatIsGrafanaK6Slide key="what-is-grafana-k6" />, // 33
+      <DeploymentTitleSlide key="deployment-title" />, // 34
     ],
     [],
   )
@@ -139,6 +143,8 @@ export default function PresentationPage() {
       "Dashboards Grafana", // 30
       "Tests de Performance", // 31
       "Qu'est-ce que les Tests de Performance ?", // 32
+      "Qu'est-ce que Grafana K6 ?", // 33
+      "Déploiement", // 34
     ],
     [],
   )
