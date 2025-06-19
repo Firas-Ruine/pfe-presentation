@@ -6,8 +6,7 @@ import HeroSlide from "@/components/presentation/slides/core/hero-slide"
 import NavigationSlide from "@/components/presentation/slides/core/navigation-slide"
 import IntroductionTitleSlide from "@/components/presentation/slides/introduction/introduction-title-slide"
 import ProjectContextSlide from "@/components/presentation/slides/introduction/project-context-slide"
-import WhatIsDevOpsSlide from "@/components/presentation/slides/introduction/what-is-devops-slide"
-import DevOpsGlobalImpactSlide from "@/components/presentation/slides/introduction/devops-global-impact-slide"
+
 import CompanyPresentationTitleSlide from "@/components/presentation/slides/company-context/company-presentation-title-slide"
 import CurrentArchitectureProblemsSlide from "@/components/presentation/slides/problem-analysis/current-architecture-problems-slide"
 import ProposedSolutionSlide from "@/components/presentation/slides/problem-analysis/proposed-solution-slide"
@@ -81,46 +80,44 @@ export default function PresentationPage() {
       <NavigationSlide key="nav" onNavigate={handleNavigateToSlide} />, // 1
       <IntroductionTitleSlide key="intro-title" />, // 2
       <ProjectContextSlide key="intro-content" />, // 3
-      <WhatIsDevOpsSlide key="devops-definition" />, // 4
-      <DevOpsGlobalImpactSlide key="devops-impact" />, // 5
-      <CompanyPresentationTitleSlide key="company-presentation-title" />, // 6
-      <CompanyOverviewSlide key="company-context" />, // 7
-      <CurrentArchitectureProblemsSlide key="problem" />, // 8
-      <ProposedSolutionSlide key="proposed-solution" />, // 9
-      <ArchitectureTitleSlide key="architecture-title" />, // 10
-      <TargetArchitectureSlide key="target-architecture" />, // 11
-      <MethodologyTitleSlide key="methodology-title" />, // 12
-      <ScrumMethodologySlide key="scrum-methodology" />, // 13
-      <ScrumCyclePhotoSlide key="scrum-cycle-photo" />, // 14
-      <ConceptionImplementationTitleSlide key="conception-implementation-title" />, // 15
-      <ClassDiagramAlertsSlide key="class-diagram-alerts" />, // 16
-      <HmvcDiagramAlertsSlide key="hmvc-diagram-alerts" />, // 17
-      <TestCoverageReportSlide key="test-coverage-report" />, // 18
-      <ClassDiagramNotificationsSlide key="class-diagram-notifications" />, // 19
-      <ContractArchitectureSlide key="contract-architecture" />, // 20
-      <RabbitMQmsInteractionsSlide key="rabbitmq-ms-interactions" />, // 21
-      <CicdTitleSlide key="cicd-title" />, // 22
-      <WhatIsCicdSlide key="what-is-cicd" />, // 23
-      <BranchingStrategySlide key="branching-strategy" />, // 24
-      <GlobalCicdArchitectureSlide key="global-cicd-architecture" />, // 25
-      <MonitoringTitleSlide key="monitoring-title" />, // 26
-      <WhatIsMonitoringSlide key="what-is-monitoring" />, // 27
-      <MonitoringComponentsSlide key="monitoring-components" />, // 28
-      <GlobalMonitoringArchitectureSlide key="global-monitoring-architecture" />, // 29
-      <GrafanaDashboardsSlide key="grafana-dashboards" />, // 30
-      <PerformanceTestTitleSlide key="performance-test-title" />, // 31
-      <WhatIsPerformanceTestingSlide key="what-is-performance-testing" />, // 32
-      <WhatIsGrafanaK6Slide key="what-is-grafana-k6" />, // 33
-      <DeploymentTitleSlide key="deployment-title" />, // 34
-      <AutomatedDeploymentWorkflowSlide key="automated-deployment-workflow" />, // 35
-      <AnomalyDetectionSlide key="anomaly-detection" />, // 36
-      <CicdMetricsImprovementsSlide key="cicd-metrics-improvements" />, // 37
-      <RealisationTitleSlide key="realisation-title" />, // 38
-      <EnvironmentToolsSlide key="environment-tools" />, // 39
-      <VideoExampleSlide key="video-example" />, // 40
-      <ConclusionPerspectivesTitleSlide key="conclusion-perspectives-title" />, // 41
-      <ConclusionContentSlide key="conclusion-content" />, // 42
-      <ThankYouSlide key="thank-you" />, // 43
+      <CompanyPresentationTitleSlide key="company-presentation-title" />, // 4
+      <CompanyOverviewSlide key="company-context" />, // 5
+      <CurrentArchitectureProblemsSlide key="problem" />, // 6
+      <ProposedSolutionSlide key="proposed-solution" />, // 7
+      <ArchitectureTitleSlide key="architecture-title" />, // 8
+      <TargetArchitectureSlide key="target-architecture" />, // 9
+      <MethodologyTitleSlide key="methodology-title" />, // 10
+      <ScrumMethodologySlide key="scrum-methodology" />, // 11
+      <ScrumCyclePhotoSlide key="scrum-cycle-photo" />, // 12
+      <ConceptionImplementationTitleSlide key="conception-implementation-title" />, // 13
+      <ClassDiagramAlertsSlide key="class-diagram-alerts" />, // 14
+      <HmvcDiagramAlertsSlide key="hmvc-diagram-alerts" />, // 15
+      <TestCoverageReportSlide key="test-coverage-report" />, // 16
+      <ClassDiagramNotificationsSlide key="class-diagram-notifications" />, // 17
+      <ContractArchitectureSlide key="contract-architecture" />, // 18
+      <RabbitMQmsInteractionsSlide key="rabbitmq-ms-interactions" />, // 19
+      <CicdTitleSlide key="cicd-title" />, // 20
+      <WhatIsCicdSlide key="what-is-cicd" />, // 21
+      <BranchingStrategySlide key="branching-strategy" />, // 22
+      <GlobalCicdArchitectureSlide key="global-cicd-architecture" />, // 23
+      <MonitoringTitleSlide key="monitoring-title" />, // 24
+      <WhatIsMonitoringSlide key="what-is-monitoring" />, // 25
+      <MonitoringComponentsSlide key="monitoring-components" />, // 26
+      <GlobalMonitoringArchitectureSlide key="global-monitoring-architecture" />, // 27
+      <GrafanaDashboardsSlide key="grafana-dashboards" />, // 28
+      <PerformanceTestTitleSlide key="performance-test-title" />, // 29
+      <WhatIsPerformanceTestingSlide key="what-is-performance-testing" />, // 30
+      <WhatIsGrafanaK6Slide key="what-is-grafana-k6" />, // 31
+      <DeploymentTitleSlide key="deployment-title" />, // 32
+      <AutomatedDeploymentWorkflowSlide key="automated-deployment-workflow" />, // 33
+      <AnomalyDetectionSlide key="anomaly-detection" />, // 34
+      <CicdMetricsImprovementsSlide key="cicd-metrics-improvements" />, // 35
+      <RealisationTitleSlide key="realisation-title" />, // 36
+      <EnvironmentToolsSlide key="environment-tools" />, // 37
+      <VideoExampleSlide key="video-example" />, // 38
+      <ConclusionPerspectivesTitleSlide key="conclusion-perspectives-title" />, // 39
+      <ConclusionContentSlide key="conclusion-content" />, // 40
+      <ThankYouSlide key="thank-you" />, // 41
     ],
     [],
   )
@@ -132,46 +129,44 @@ export default function PresentationPage() {
       "Plan de la Présentation", // 1
       "Introduction", // 2
       "Contexte du Projet", // 3
-      "Qu'est-ce que le DevOps ?", // 4
-      "Impact du DevOps", // 5
-      "Présentation de l'entreprise", // 6
-      "Maison du Web", // 7
-      "Défis de l'Architecture Actuelle", // 8
-      "Solution Microservices Proposée", // 9
-      "Architecture Cible", // 10
-      "Architecture Cible - Diagramme", // 11
-      "Méthodologie", // 12
-      "Scrum - Méthodologie Agile", // 13
-      "Cycle Scrum", // 14
-      "Conception & Implémentation", // 15
-      "Diagramme de Classe - Alertes", // 16
-      "Architecture HMVC - Alertes", // 17
-      "Rapport de Couverture de Tests", // 18
-      "Diagramme de Classe - Notifications", // 19
-      "Architecture Orientée Contrat", // 20
-      "Interactions RabbitMQ Microservices", // 21
-      "CI/CD", // 22
-      "Qu'est-ce que le CI/CD ?", // 23
-      "Stratégie de Branchement", // 24
-      "Architecture Globale CI/CD", // 25
-      "Monitoring", // 26
-      "Qu'est-ce que le Monitoring ?", // 27
-      "Piliers de l'Observabilité", // 28
-      "Architecture Globale du Monitoring", // 29
-      "Dashboards Grafana", // 30
-      "Tests de Performance", // 31
-      "Qu'est-ce que les Tests de Performance ?", // 32
-      "Qu'est-ce que Grafana K6 ?", // 33
-      "Déploiement", // 34
-      "Workflow de Déploiement Automatisé", // 35
-      "Mécanismes de Détection d'Anomalies", // 36
-      "Métriques d'Amélioration CI/CD", // 37
-      "Réalisation", // 38
-      "Environnement et Outils Utilisés", // 39
-      "Démonstration Vidéo", // 40
-      "Conclusion et perspectives", // 41
-      "Conclusion Générale", // 42
-      "Merci pour votre attention", // 43
+      "Présentation de l'entreprise", // 4
+      "Maison du Web", // 5
+      "Défis de l'Architecture Actuelle", // 6
+      "Solution Microservices Proposée", // 7
+      "Architecture Cible", // 8
+      "Architecture Cible - Diagramme", // 9
+      "Méthodologie", // 10
+      "Scrum - Méthodologie Agile", // 11
+      "Cycle Scrum", // 12
+      "Conception & Implémentation", // 13
+      "Diagramme de Classe - Alertes", // 14
+      "Architecture HMVC - Alertes", // 15
+      "Rapport de Couverture de Tests", // 16
+      "Diagramme de Classe - Notifications", // 17
+      "Architecture Orientée Contrat", // 18
+      "Interactions RabbitMQ Microservices", // 19
+      "CI/CD", // 20
+      "Qu'est-ce que le CI/CD ?", // 21
+      "Stratégie de Branchement", // 22
+      "Architecture Globale CI/CD", // 23
+      "Monitoring", // 24
+      "Qu'est-ce que le Monitoring ?", // 25
+      "Piliers de l'Observabilité", // 26
+      "Architecture Globale du Monitoring", // 27
+      "Dashboards Grafana", // 28
+      "Tests de Performance", // 29
+      "Qu'est-ce que les Tests de Performance ?", // 30
+      "Qu'est-ce que Grafana K6 ?", // 31
+      "Déploiement", // 32
+      "Workflow de Déploiement Automatisé", // 33
+      "Mécanismes de Détection d'Anomalies", // 34
+      "Métriques d'Amélioration CI/CD", // 35
+      "Réalisation", // 36
+      "Environnement et Outils Utilisés", // 37
+      "Démonstration Vidéo", // 38
+      "Conclusion et perspectives", // 39
+      "Conclusion Générale", // 40
+      "Merci pour votre attention", // 41
     ],
     [],
   )
