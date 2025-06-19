@@ -43,6 +43,9 @@ import AnomalyDetectionSlide from "@/components/presentation/slides/technical-im
 import RealisationTitleSlide from "@/components/presentation/slides/results-conclusion/realisation-title-slide"
 import EnvironmentToolsSlide from "@/components/presentation/slides/results-conclusion/environment-tools-slide"
 import VideoExampleSlide from "@/components/presentation/slides/results-conclusion/video-example-slide"
+import ConclusionPerspectivesTitleSlide from "@/components/presentation/slides/results-conclusion/conclusion-perspectives-title-slide"
+import ConclusionContentSlide from "@/components/presentation/slides/results-conclusion/conclusion-content-slide"
+import ThankYouSlide from "@/components/presentation/slides/results-conclusion/thank-you-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -115,6 +118,9 @@ export default function PresentationPage() {
       <RealisationTitleSlide key="realisation-title" />, // 38
       <EnvironmentToolsSlide key="environment-tools" />, // 39
       <VideoExampleSlide key="video-example" />, // 40
+      <ConclusionPerspectivesTitleSlide key="conclusion-perspectives-title" />, // 41
+      <ConclusionContentSlide key="conclusion-content" />, // 42
+      <ThankYouSlide key="thank-you" />, // 43
     ],
     [],
   )
@@ -163,6 +169,9 @@ export default function PresentationPage() {
       "Réalisation", // 38
       "Environnement et Outils Utilisés", // 39
       "Démonstration Vidéo", // 40
+      "Conclusion et perspectives", // 41
+      "Conclusion Générale", // 42
+      "Merci pour votre attention", // 43
     ],
     [],
   )
