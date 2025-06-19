@@ -93,7 +93,6 @@ export default function WhatIsCicdSlide() {
           className="mb-8 px-8 pt-10 md:px-12 md:pt-12"
         />
 
-        <div className="flex-1 overflow-y-auto px-8 md:px-12 pb-12">
           <div className="grid md:grid-cols-2 gap-10 lg:gap-12">
             {/* Partie gauche - Définition CI/CD */}
             <div className="flex flex-col space-y-8">
@@ -196,7 +195,6 @@ export default function WhatIsCicdSlide() {
             </div>
           </div>
         </div>
-      </div>
     </SlideWrapper>
     )
 }

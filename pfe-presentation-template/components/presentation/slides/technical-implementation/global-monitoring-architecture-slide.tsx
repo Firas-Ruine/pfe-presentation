@@ -1,0 +1,35 @@
+"use client"
+import SlideWrapper from "../../slide-wrapper"
+import SlideHeader from "../../slide-header"
+import { Card, CardContent } from "@/components/ui/card"
+import Image from "next/image"
+
+export default function GlobalMonitoringArchitectureSlide() {
+  return (
+    <SlideWrapper>
+      <div className="space-y-8">
+        {/* En-tête */}
+        <SlideHeader
+          badge="7 • Monitoring"
+          title="Architecture Globale du Système d'Observabilité"
+          //subtitle=""
+        />
+
+        <div className="flex-1 flex items-center justify-center w-full">
+          <Card className="bg-white/95 backdrop-blur border-0 shadow-2xl rounded-2xl overflow-hidden max-w-full">
+            <CardContent className="p-0">
+              <Image
+                src="/global_observability_system_diagram.png"
+                alt="Global Monitoring Architecture"
+                width={750}
+                height={300}
+                className="block max-w-full h-auto rounded-2xl"
+                priority
+              />
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </SlideWrapper>
+  )
+}

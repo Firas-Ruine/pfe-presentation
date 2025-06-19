@@ -28,6 +28,11 @@ import CicdTitleSlide from "@/components/presentation/slides/technical-implement
 import WhatIsCicdSlide from "@/components/presentation/slides/technical-implementation/what-is-cicd-slide"
 import BranchingStrategySlide from "@/components/presentation/slides/technical-implementation/branching-strategy-slide"
 import GlobalCicdArchitectureSlide from "@/components/presentation/slides/technical-implementation/global-cicd-architecture-slide"
+import MonitoringTitleSlide from "@/components/presentation/slides/technical-implementation/monitoring-title-slide"
+import WhatIsMonitoringSlide from "@/components/presentation/slides/technical-implementation/what-is-monitoring-slide"
+import MonitoringComponentsSlide from "@/components/presentation/slides/technical-implementation/monitoring-components-slide"
+import GlobalMonitoringArchitectureSlide from "@/components/presentation/slides/technical-implementation/global-monitoring-architecture-slide"
+import GrafanaDashboardsSlide from "@/components/presentation/slides/technical-implementation/grafana-dashboards-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -85,6 +90,11 @@ export default function PresentationPage() {
       <WhatIsCicdSlide key="what-is-cicd" />, // 23
       <BranchingStrategySlide key="branching-strategy" />, // 24
       <GlobalCicdArchitectureSlide key="global-cicd-architecture" />, // 25
+      <MonitoringTitleSlide key="monitoring-title" />, // 26
+      <WhatIsMonitoringSlide key="what-is-monitoring" />, // 27
+      <MonitoringComponentsSlide key="monitoring-components" />, // 28
+      <GlobalMonitoringArchitectureSlide key="global-monitoring-architecture" />, // 29
+      <GrafanaDashboardsSlide key="grafana-dashboards" />, // 30
     ],
     [],
   )
@@ -118,6 +128,11 @@ export default function PresentationPage() {
       "Qu'est-ce que le CI/CD ?", // 23
       "Stratégie de Branchement", // 24
       "Architecture Globale CI/CD", // 25
+      "Monitoring", // 26
+      "Qu'est-ce que le Monitoring ?", // 27
+      "Piliers de l'Observabilité", // 28
+      "Architecture Globale du Monitoring", // 29
+      "Dashboards Grafana", // 30
     ],
     [],
   )
