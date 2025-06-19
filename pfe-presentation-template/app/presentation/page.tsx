@@ -28,6 +28,7 @@ import CicdTitleSlide from "@/components/presentation/slides/technical-implement
 import WhatIsCicdSlide from "@/components/presentation/slides/technical-implementation/what-is-cicd-slide"
 import BranchingStrategySlide from "@/components/presentation/slides/technical-implementation/branching-strategy-slide"
 import GlobalCicdArchitectureSlide from "@/components/presentation/slides/technical-implementation/global-cicd-architecture-slide"
+import CicdMetricsImprovementsSlide from "@/components/presentation/slides/technical-implementation/cicd-metrics-improvements-slide"
 import MonitoringTitleSlide from "@/components/presentation/slides/technical-implementation/monitoring-title-slide"
 import WhatIsMonitoringSlide from "@/components/presentation/slides/technical-implementation/what-is-monitoring-slide"
 import MonitoringComponentsSlide from "@/components/presentation/slides/technical-implementation/monitoring-components-slide"
@@ -37,6 +38,8 @@ import PerformanceTestTitleSlide from "@/components/presentation/slides/technica
 import WhatIsPerformanceTestingSlide from "@/components/presentation/slides/technical-implementation/what-is-performance-testing-slide"
 import WhatIsGrafanaK6Slide from "@/components/presentation/slides/technical-implementation/what-is-grafana-k6-slide"
 import DeploymentTitleSlide from "@/components/presentation/slides/technical-implementation/deployment-title-slide"
+import AutomatedDeploymentWorkflowSlide from "@/components/presentation/slides/technical-implementation/automated-deployment-workflow-slide"
+import AnomalyDetectionSlide from "@/components/presentation/slides/technical-implementation/anomaly-detection-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -103,6 +106,9 @@ export default function PresentationPage() {
       <WhatIsPerformanceTestingSlide key="what-is-performance-testing" />, // 32
       <WhatIsGrafanaK6Slide key="what-is-grafana-k6" />, // 33
       <DeploymentTitleSlide key="deployment-title" />, // 34
+      <AutomatedDeploymentWorkflowSlide key="automated-deployment-workflow" />, // 35
+      <AnomalyDetectionSlide key="anomaly-detection" />, // 36
+      <CicdMetricsImprovementsSlide key="cicd-metrics-improvements" />, // 37
     ],
     [],
   )
@@ -145,6 +151,9 @@ export default function PresentationPage() {
       "Qu'est-ce que les Tests de Performance ?", // 32
       "Qu'est-ce que Grafana K6 ?", // 33
       "Déploiement", // 34
+      "Workflow de Déploiement Automatisé", // 35
+      "Mécanismes de Détection d'Anomalies", // 36
+      "Métriques d'Amélioration CI/CD", // 37
     ],
     [],
   )
