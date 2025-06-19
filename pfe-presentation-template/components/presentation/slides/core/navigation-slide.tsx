@@ -36,8 +36,8 @@ const sections = [
   { title: "Solution proposée et Architecture Cible", icon: Rocket, time: "12 min", targetSlide: 10 },
   { title: "Méthodologie", icon: Settings, time: "10 min", targetSlide: 12 },
   { title: "Conception & Implémentation des Microservices", icon: Code, time: "15 min", targetSlide: 15 },
-  { title: "CI/CD, Monitoring, Tests & Sécurité", icon: TestTube, time: "15 min", targetSlide: 25 },
-  { title: "Validation, Résultats et Retours", icon: Award, time: "12 min", targetSlide: 30 },
+  { title: "CI/CD, Monitoring et Tests", icon: TestTube, time: "15 min", targetSlide: 25 },
+  { title: "Validation, Résultats et Réalisation", icon: Award, time: "12 min", targetSlide: 30 },
   { title: "Conclusion et Perspectives", icon: GraduationCap, time: "8 min", targetSlide: 36 },
 ]
 

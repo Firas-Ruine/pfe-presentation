@@ -1,3 +1,6 @@
 export { default as ChallengesResolvedSlide } from './challenges-resolved-slide'
 export { default as ProjectResultsSlide } from './project-results-slide'
 export { default as ConclusionSlide } from './conclusion-slide'
+export { default as RealisationTitleSlide } from './realisation-title-slide'
+export { default as EnvironmentToolsSlide } from './environment-tools-slide'
+export { default as VideoExampleSlide } from './video-example-slide'

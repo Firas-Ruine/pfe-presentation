@@ -40,6 +40,9 @@ import WhatIsGrafanaK6Slide from "@/components/presentation/slides/technical-imp
 import DeploymentTitleSlide from "@/components/presentation/slides/technical-implementation/deployment-title-slide"
 import AutomatedDeploymentWorkflowSlide from "@/components/presentation/slides/technical-implementation/automated-deployment-workflow-slide"
 import AnomalyDetectionSlide from "@/components/presentation/slides/technical-implementation/anomaly-detection-slide"
+import RealisationTitleSlide from "@/components/presentation/slides/results-conclusion/realisation-title-slide"
+import EnvironmentToolsSlide from "@/components/presentation/slides/results-conclusion/environment-tools-slide"
+import VideoExampleSlide from "@/components/presentation/slides/results-conclusion/video-example-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -109,6 +112,9 @@ export default function PresentationPage() {
       <AutomatedDeploymentWorkflowSlide key="automated-deployment-workflow" />, // 35
       <AnomalyDetectionSlide key="anomaly-detection" />, // 36
       <CicdMetricsImprovementsSlide key="cicd-metrics-improvements" />, // 37
+      <RealisationTitleSlide key="realisation-title" />, // 38
+      <EnvironmentToolsSlide key="environment-tools" />, // 39
+      <VideoExampleSlide key="video-example" />, // 40
     ],
     [],
   )
@@ -154,6 +160,9 @@ export default function PresentationPage() {
       "Workflow de Déploiement Automatisé", // 35
       "Mécanismes de Détection d'Anomalies", // 36
       "Métriques d'Amélioration CI/CD", // 37
+      "Réalisation", // 38
+      "Environnement et Outils Utilisés", // 39
+      "Démonstration Vidéo", // 40
     ],
     [],
   )

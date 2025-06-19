@@ -19,6 +19,7 @@ import {
   Rocket,
   Gauge,
   ShieldCheck,
+  Trophy,
   Users,
 } from "lucide-react"
 
@@ -132,128 +133,107 @@ export default function CicdMetricsImprovementsSlide() {
           subtitle="Résultats quantifiables de l'automatisation des processus DevOps"
         />
 
-        <div className="flex-1 space-y-8">
-          <Card className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 shadow-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-100">
-                <BarChart3 className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+        <div className="flex-1 space-y-6">
+          {/* Main Metrics Section */}
+          <div className="space-y-4">
+            <div className="text-center mb-6">
+              <h2 className="flex items-center justify-center gap-3 text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-100 mb-2">
+                <BarChart3 className="h-8 w-8 text-emerald-600 dark:text-emerald-400" />
                 Comparaison des Métriques Clés
-              </CardTitle>
-              <CardDescription className="text-slate-600 dark:text-slate-400">
-                Analyse comparative avant et après l'implémentation du CI/CD.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {metrics.map((metric, index) => (
-                  <div
-                    key={index}
-                    className="group relative flex flex-col rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/30 p-5 transition-all duration-300 hover:shadow-md hover:border-slate-300 dark:hover:border-slate-700"
-                  >
-                    <div className="flex items-start justify-between mb-4">
-                      <div className={`p-3 rounded-lg ${metric.iconContainerClass}`}>
-                        <metric.icon className={`h-6 w-6 ${metric.iconClass}`} />
-                      </div>
-                      <div className="flex items-center gap-1">
-                        {metric.trend === "up" ? (
-                          <ArrowUp className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                        ) : (
-                          <ArrowDown className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
-                        )}
-                        <span className="text-emerald-600 dark:text-emerald-400 font-bold text-base">
-                          {metric.improvement}
-                        </span>
-                      </div>
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 text-lg">
+                Analyse comparative avant et après l'implémentation du CI/CD
+              </p>
+            </div>
+
+            {/* Horizontal Metrics Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
+              {metrics.map((metric, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 p-4 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 hover:-translate-y-1"
+                >
+                  {/* Header with icon and improvement */}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className={`p-2 rounded-lg ${metric.iconContainerClass} ring-1 ring-white/20`}>
+                      <metric.icon className={`h-4 w-4 ${metric.iconClass}`} />
                     </div>
-
-                    <h3 className="text-md font-semibold text-slate-800 dark:text-slate-100 mb-1">{metric.title}</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4 flex-grow">{metric.description}</p>
-
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between items-center">
-                        <span className="text-slate-500 dark:text-slate-400">Avant:</span>
-                        <span className="font-medium text-rose-600 dark:text-rose-400">{metric.before}</span>
-                      </div>
-                      <div className="flex justify-between items-center">
-                        <span className="text-slate-500 dark:text-slate-400">Après:</span>
-                        <span className="font-medium text-emerald-600 dark:text-emerald-400">{metric.after}</span>
-                      </div>
+                    <div className="flex items-center gap-1 bg-emerald-50 dark:bg-emerald-900/30 px-2 py-1 rounded-full">
+                      {metric.trend === "up" ? (
+                        <ArrowUp className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
+                      ) : (
+                        <ArrowDown className="h-3 w-3 text-emerald-600 dark:text-emerald-400" />
+                      )}
+                      <span className="text-emerald-700 dark:text-emerald-300 font-bold text-xs">
+                        {metric.improvement}
+                      </span>
                     </div>
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
 
-          <Card className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 shadow-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-xl md:text-2xl font-semibold text-slate-800 dark:text-slate-100">
-                <TrendingUp className="h-6 w-6 text-sky-600 dark:text-sky-400" />
-                Impact Global de l'Automatisation
-              </CardTitle>
-              <CardDescription className="text-slate-600 dark:text-slate-400">
-                Indicateurs clés de performance et de satisfaction.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                {summaryStats.map((stat, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col items-center text-center p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/30"
-                  >
-                    <div className="p-3 rounded-full bg-slate-100 dark:bg-slate-800 mb-3">
-                      <stat.icon className={`h-7 w-7 ${stat.iconClass}`} />
+                  {/* Title and description */}
+                  <h3 className="text-sm font-bold text-slate-800 dark:text-slate-100 mb-2 leading-tight">
+                    {metric.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mb-3 leading-relaxed">
+                    {metric.description}
+                  </p>
+
+                  {/* Before/After comparison */}
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between p-2 bg-rose-50 dark:bg-rose-900/20 rounded border border-rose-100 dark:border-rose-800/30">
+                      <span className="text-xs font-medium text-slate-700 dark:text-slate-300">Avant</span>
+                      <span className="font-bold text-xs text-rose-700 dark:text-rose-400">{metric.before}</span>
                     </div>
-                    <div className={`text-3xl font-bold ${stat.iconClass} mb-1`}>{stat.value}</div>
-                    <div className="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-1">{stat.label}</div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">{stat.description}</p>
+                    <div className="flex items-center justify-between p-2 bg-emerald-50 dark:bg-emerald-900/20 rounded border border-emerald-100 dark:border-emerald-800/30">
+                      <span className="text-xs font-medium text-slate-700 dark:text-slate-300">Après</span>
+                      <span className="font-bold text-xs text-emerald-700 dark:text-emerald-400">{metric.after}</span>
+                    </div>
                   </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          <div className="mt-6 p-6 rounded-lg bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800/50">
-            <div className="flex items-start gap-4">
-              <CheckCircle className="h-10 w-10 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-1" />
-              <div>
-                <h4 className="font-semibold text-lg text-emerald-800 dark:text-emerald-200 mb-2">
-                  Mission Accomplie : Transformation DevOps Réussie
-                </h4>
-                <p className="text-sm text-emerald-700 dark:text-emerald-300 mb-4">
-                  Ces chiffres démontrent l'efficacité de l'automatisation pour réduire les délais, augmenter la
-                  fréquence des livraisons et améliorer la stabilité globale du système.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <Badge
-                    variant="outline"
-                    className="border-emerald-300 text-emerald-700 dark:border-emerald-700 dark:text-emerald-300 bg-white dark:bg-emerald-900/50"
-                  >
-                    <Rocket className="mr-1.5 h-3.5 w-3.5" /> Innovation
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="border-sky-300 text-sky-700 dark:border-sky-700 dark:text-sky-300 bg-white dark:bg-sky-900/50"
-                  >
-                    <Zap className="mr-1.5 h-3.5 w-3.5" /> Performance
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="border-violet-300 text-violet-700 dark:border-violet-700 dark:text-violet-300 bg-white dark:bg-violet-900/50"
-                  >
-                    <Activity className="mr-1.5 h-3.5 w-3.5" /> Processus Automatisés
-                  </Badge>
-                  <Badge
-                    variant="outline"
-                    className="border-amber-300 text-amber-700 dark:border-amber-700 dark:text-amber-300 bg-white dark:bg-amber-900/50"
-                  >
-                    <BarChart3 className="mr-1.5 h-3.5 w-3.5" /> Résultats Mesurables
-                  </Badge>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
+
+          {/* Summary Section */}
+          <div className="space-y-4">
+            <div className="text-center mb-4">
+              <h3 className="flex items-center justify-center gap-3 text-xl font-bold text-emerald-800 dark:text-emerald-200 mb-2">
+                <Trophy className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+                Impact Global de l'Implémentation
+              </h3>
+              <p className="text-slate-600 dark:text-slate-400 text-sm">
+                Indicateurs clés de performance et de satisfaction
+              </p>
+            </div>
+
+            {/* Summary Stats Cards */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {summaryStats.map((stat, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 p-4 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 hover:-translate-y-1 text-center"
+                >
+                  {/* Icon */}
+                  <div className="flex justify-center mb-3">
+                    <div className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700">
+                      <stat.icon className={`h-4 w-4 ${stat.iconClass}`} />
+                    </div>
+                  </div>
+
+                  {/* Value */}
+                  <div className={`text-xl font-bold ${stat.iconClass} mb-1`}>{stat.value}</div>
+                  
+                  {/* Label */}
+                  <div className="text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">{stat.label}</div>
+                  
+                  {/* Description */}
+                  <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{stat.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+    
         </div>
       </div>
     </SlideWrapper>
