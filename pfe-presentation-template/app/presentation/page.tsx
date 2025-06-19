@@ -33,6 +33,8 @@ import WhatIsMonitoringSlide from "@/components/presentation/slides/technical-im
 import MonitoringComponentsSlide from "@/components/presentation/slides/technical-implementation/monitoring-components-slide"
 import GlobalMonitoringArchitectureSlide from "@/components/presentation/slides/technical-implementation/global-monitoring-architecture-slide"
 import GrafanaDashboardsSlide from "@/components/presentation/slides/technical-implementation/grafana-dashboards-slide"
+import PerformanceTestTitleSlide from "@/components/presentation/slides/technical-implementation/performance-test-title-slide"
+import WhatIsPerformanceTestingSlide from "@/components/presentation/slides/technical-implementation/what-is-performance-testing-slide"
 // Import other slides here as they are created
 
 // Placeholder for a generic slide content
@@ -95,6 +97,8 @@ export default function PresentationPage() {
       <MonitoringComponentsSlide key="monitoring-components" />, // 28
       <GlobalMonitoringArchitectureSlide key="global-monitoring-architecture" />, // 29
       <GrafanaDashboardsSlide key="grafana-dashboards" />, // 30
+      <PerformanceTestTitleSlide key="performance-test-title" />, // 31
+      <WhatIsPerformanceTestingSlide key="what-is-performance-testing" />, // 32
     ],
     [],
   )
@@ -133,6 +137,8 @@ export default function PresentationPage() {
       "Piliers de l'Observabilité", // 28
       "Architecture Globale du Monitoring", // 29
       "Dashboards Grafana", // 30
+      "Tests de Performance", // 31
+      "Qu'est-ce que les Tests de Performance ?", // 32
     ],
     [],
   )

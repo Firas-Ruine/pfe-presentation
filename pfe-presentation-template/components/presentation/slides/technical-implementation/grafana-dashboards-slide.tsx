@@ -23,7 +23,7 @@ export default function GrafanaDashboardsSlide() {
                 <Image
                   src="/mysql-dashboard-general.png"
                   alt="Grafana Dashboard - System Metrics"
-                  width={800}
+                  width={850}
                   height={600}
                   className="block max-w-full h-auto rounded-2xl"
                   priority
@@ -37,7 +37,7 @@ export default function GrafanaDashboardsSlide() {
                 <Image
                   src="/redis-dashboard.png"
                   alt="Grafana Dashboard - Application Performance"
-                  width={800}
+                  width={850}
                   height={600}
                   className="block max-w-full h-auto rounded-2xl"
                   priority
