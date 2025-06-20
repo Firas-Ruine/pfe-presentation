@@ -19,7 +19,7 @@ export default function VideoExampleSlide() {
             <CardContent className="p-0">
               <div className="aspect-video w-full">
                 <iframe
-                  src="https://www.youtube.com/embed/UUO3oosbh34"
+                  src="https://www.youtube.com/embed/7WaSyJ58RyQ"
                   title="DevOps Implementation Demo"
                   className="w-full h-full rounded-2xl"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
