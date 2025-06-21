@@ -25,7 +25,6 @@ import RabbitMQmsInteractionsSlide from "@/components/presentation/slides/projec
 import ConceptionImplementationTitleSlide from "@/components/presentation/slides/technical-implementation/conception-implementation-title-slide"
 import CicdTitleSlide from "@/components/presentation/slides/technical-implementation/cicd-title-slide"
 import WhatIsCicdSlide from "@/components/presentation/slides/technical-implementation/what-is-cicd-slide"
-import BranchingStrategySlide from "@/components/presentation/slides/technical-implementation/branching-strategy-slide"
 import GlobalCicdArchitectureSlide from "@/components/presentation/slides/technical-implementation/global-cicd-architecture-slide"
 import CicdMetricsImprovementsSlide from "@/components/presentation/slides/technical-implementation/cicd-metrics-improvements-slide"
 import MonitoringTitleSlide from "@/components/presentation/slides/technical-implementation/monitoring-title-slide"
@@ -98,26 +97,25 @@ export default function PresentationPage() {
       <RabbitMQmsInteractionsSlide key="rabbitmq-ms-interactions" />, // 19
       <CicdTitleSlide key="cicd-title" />, // 20
       <WhatIsCicdSlide key="what-is-cicd" />, // 21
-      <BranchingStrategySlide key="branching-strategy" />, // 22
-      <GlobalCicdArchitectureSlide key="global-cicd-architecture" />, // 23
-      <MonitoringTitleSlide key="monitoring-title" />, // 24
-      <WhatIsMonitoringSlide key="what-is-monitoring" />, // 25
-      <MonitoringComponentsSlide key="monitoring-components" />, // 26
-      <GlobalMonitoringArchitectureSlide key="global-monitoring-architecture" />, // 27
-      <GrafanaDashboardsSlide key="grafana-dashboards" />, // 28
-      <PerformanceTestTitleSlide key="performance-test-title" />, // 29
-      <WhatIsPerformanceTestingSlide key="what-is-performance-testing" />, // 30
-      <WhatIsGrafanaK6Slide key="what-is-grafana-k6" />, // 31
-      <DeploymentTitleSlide key="deployment-title" />, // 32
-      <AutomatedDeploymentWorkflowSlide key="automated-deployment-workflow" />, // 33
-      <AnomalyDetectionSlide key="anomaly-detection" />, // 34
-      <CicdMetricsImprovementsSlide key="cicd-metrics-improvements" />, // 35
-      <RealisationTitleSlide key="realisation-title" />, // 36
-      <EnvironmentToolsSlide key="environment-tools" />, // 37
-      <VideoExampleSlide key="video-example" />, // 38
-      <ConclusionPerspectivesTitleSlide key="conclusion-perspectives-title" />, // 39
-      <ConclusionContentSlide key="conclusion-content" />, // 40
-      <ThankYouSlide key="thank-you" />, // 41
+      <GlobalCicdArchitectureSlide key="global-cicd-architecture" />, // 22
+      <MonitoringTitleSlide key="monitoring-title" />, // 23
+      <WhatIsMonitoringSlide key="what-is-monitoring" />, // 24
+      <MonitoringComponentsSlide key="monitoring-components" />, // 25
+      <GlobalMonitoringArchitectureSlide key="global-monitoring-architecture" />, // 26
+      <GrafanaDashboardsSlide key="grafana-dashboards" />, // 27
+      <PerformanceTestTitleSlide key="performance-test-title" />, // 28
+      <WhatIsPerformanceTestingSlide key="what-is-performance-testing" />, // 29
+      <WhatIsGrafanaK6Slide key="what-is-grafana-k6" />, // 30
+      <DeploymentTitleSlide key="deployment-title" />, // 31
+      <AutomatedDeploymentWorkflowSlide key="automated-deployment-workflow" />, // 32
+      <AnomalyDetectionSlide key="anomaly-detection" />, // 33
+      <CicdMetricsImprovementsSlide key="cicd-metrics-improvements" />, // 34
+      <RealisationTitleSlide key="realisation-title" />, // 35
+      <EnvironmentToolsSlide key="environment-tools" />, // 36
+      <VideoExampleSlide key="video-example" />, // 37
+      <ConclusionPerspectivesTitleSlide key="conclusion-perspectives-title" />, // 38
+      <ConclusionContentSlide key="conclusion-content" />, // 39
+      <ThankYouSlide key="thank-you" />, // 40
     ],
     [],
   )
@@ -147,26 +145,25 @@ export default function PresentationPage() {
       "Interactions RabbitMQ Microservices", // 19
       "CI/CD", // 20
       "Qu'est-ce que le CI/CD ?", // 21
-      "Stratégie de Branchement", // 22
-      "Architecture Globale CI/CD", // 23
-      "Monitoring", // 24
-      "Qu'est-ce que le Monitoring ?", // 25
-      "Piliers de l'Observabilité", // 26
-      "Architecture Globale du Monitoring", // 27
-      "Dashboards Grafana", // 28
-      "Tests de Performance", // 29
-      "Qu'est-ce que les Tests de Performance ?", // 30
-      "Qu'est-ce que Grafana K6 ?", // 31
-      "Déploiement", // 32
-      "Workflow de Déploiement Automatisé", // 33
-      "Mécanismes de Détection d'Anomalies", // 34
-      "Métriques d'Amélioration CI/CD", // 35
-      "Réalisation", // 36
-      "Environnement et Outils Utilisés", // 37
-      "Démonstration Vidéo", // 38
-      "Conclusion et perspectives", // 39
-      "Conclusion Générale", // 40
-      "Merci pour votre attention", // 41
+      "Architecture Globale CI/CD", // 22
+      "Monitoring", // 23
+      "Qu'est-ce que le Monitoring ?", // 24
+      "Piliers de l'Observabilité", // 25
+      "Architecture Globale du Monitoring", // 26
+      "Dashboards Grafana", // 27
+      "Tests de Performance", // 28
+      "Qu'est-ce que les Tests de Performance ?", // 29
+      "Qu'est-ce que Grafana K6 ?", // 30
+      "Déploiement", // 31
+      "Workflow de Déploiement Automatisé", // 32
+      "Mécanismes de Détection d'Anomalies", // 33
+      "Métriques d'Amélioration CI/CD", // 34
+      "Réalisation", // 35
+      "Environnement et Outils Utilisés", // 36
+      "Démonstration Vidéo", // 37
+      "Conclusion et perspectives", // 38
+      "Conclusion Générale", // 39
+      "Merci pour votre attention", // 40
     ],
     [],
   )

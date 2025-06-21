@@ -1,7 +1,6 @@
 export { default as ConceptionImplementationTitleSlide } from './conception-implementation-title-slide'
 export { default as CicdTitleSlide } from './cicd-title-slide'
 export { default as WhatIsCicdSlide } from './what-is-cicd-slide'
-export { default as BranchingStrategySlide } from './branching-strategy-slide'
 export { default as GlobalCicdArchitectureSlide } from './global-cicd-architecture-slide'
 export { default as CicdMetricsImprovementsSlide } from './cicd-metrics-improvements-slide'
 export { default as MonitoringTitleSlide } from './monitoring-title-slide'
