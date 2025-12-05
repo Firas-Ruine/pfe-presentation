@@ -3,14 +3,13 @@ import SlideWrapper from "../../slide-wrapper"
 import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Brain, ArrowRight, TrendingUp, Workflow, Search, Bot, Cog, Lightbulb } from "lucide-react"
-import Image from "next/image"
+import { Brain, Zap, CheckCircle, ArrowRight, TrendingUp, Workflow, Search, Bot, Cog, Lightbulb } from "lucide-react"
 
 const solutionPillars = [
-  { icon: Search, title: "Smart Detection", description: "Reactive + predictive alerts with deduplication", features: ["Redis Dedup 5min", "ML Prediction", "Cross-correlation"], color: "blue" },
-  { icon: Bot, title: "Multi-Agent Investigation", description: "Specialized parallel agents for analysis", features: ["Metrics Agent", "Incident Agent", "Runbook Agent"], color: "purple" },
-  { icon: Brain, title: "LLM Reasoning", description: "Contextual analysis and action planning", features: ["Evidence Synthesis", "Action Plan", "Validation"], color: "green" },
-  { icon: Cog, title: "Safe Execution", description: "Auto-remediation with policies & rollback", features: ["Policy Engine", "Circuit Breaker", "Post-validation"], color: "orange" },
+  { icon: Search, title: "Smart Detection", description: "Reactive + predictive alerts with deduplication", features: ["Redis Dedup", "ML Prediction", "Cross-correlation"], color: "blue" },
+  { icon: Bot, title: "Multi-Agent Investigation", description: "Specialized parallel agents for deep analysis", features: ["Metrics Agent", "Incident Agent", "Runbook Agent"], color: "purple" },
+  { icon: Brain, title: "LLM Reasoning", description: "Contextual analysis and action plan generation", features: ["Evidence Synthesis", "Action Plan", "Validation"], color: "green" },
+  { icon: Cog, title: "Safe Execution", description: "Automatic remediation with policies and rollback", features: ["Policy Engine", "Circuit Breaker", "Post-validation"], color: "orange" },
 ]
 
 const kpiImprovements = [
@@ -20,24 +19,11 @@ const kpiImprovements = [
   { metric: "Manual", before: "100%", after: "15%", improvement: "↓ 85%" },
 ]
 
-export default function ProposedSolutionSlide() {
+export default function SolutionSlide() {
   return (
     <SlideWrapper>
       <div className="h-full flex flex-col">
-        {/* Header with AutoSphere Logo - BIGGER */}
-        <div className="flex items-center gap-6 mb-4">
-          <div className="relative w-24 h-24 flex-shrink-0">
-            <Image
-              src="/Logo-autoshpere.png"
-              alt="AutoSphere Logo"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <div className="flex-1">
-            <SlideHeader badge="3 • Proposed Solution" title="AutoSphere" subtitle="Intelligent Self-Healing System based on Agentic AI" />
-          </div>
-        </div>
+        <SlideHeader badge="3 • Proposed Solution" title="AutoSphere" subtitle="Intelligent Self-Healing System based on Agentic AI" />
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div className="lg:col-span-2 space-y-3">
             <div className="flex items-center space-x-2 mb-2">
