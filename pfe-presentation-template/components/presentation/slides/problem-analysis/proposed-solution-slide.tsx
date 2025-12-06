@@ -1,199 +1,110 @@
+"use client"
 import SlideWrapper from "../../slide-wrapper"
 import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-    CheckCircle,
-    TrendingUp,
-    Container,
-    Network,
-    Users,
-    Settings,
-    Zap,
-    Shield,
-    Database,
-    Server,
-    GitBranch,
-    MonitorSpeaker,
-    BarChart3,
-    Target,
-    ShieldCheck,
-    Rocket,
-    Sparkles,
-    ArrowRight
-} from "lucide-react"
+import { Brain, ArrowRight, TrendingUp, Workflow, Search, Bot, Cog, Lightbulb } from "lucide-react"
+import Image from "next/image"
 
-const microservicesBenefitsData = [
-    { icon: Container, text: "Extraction des fonctionnalités critiques (alertes/notifications)", color: "text-green-600" },
-    {
-        icon: Network,
-        text: "Communication asynchrone via RabbitMQ entre services",
-        color: "text-green-600",
-    },
-    { icon: Shield, text: "Infrastructure cloud scalable et résiliente", color: "text-green-600" },
-    {
-        icon: Zap,
-        text: "Pipelines CI/CD automatisés pour tests et déploiements",
-        color: "text-green-600",
-    },
-    { icon: TrendingUp, text: "Performances optimisées en situation de charge élevée", color: "text-green-600" },
-    { icon: Settings, text: "Architecture moderne et évolutive pour l'avantage concurrentiel", color: "text-green-600" },
+const solutionPillars = [
+  { icon: Search, title: "Smart Detection", description: "Reactive + predictive alerts with deduplication", features: ["Redis Dedup 5min", "ML Prediction", "Cross-correlation"], color: "blue" },
+  { icon: Bot, title: "Multi-Agent Investigation", description: "Specialized parallel agents for analysis", features: ["Metrics Agent", "Incident Agent", "Runbook Agent"], color: "purple" },
+  { icon: Brain, title: "LLM Reasoning", description: "Contextual analysis and action planning", features: ["Evidence Synthesis", "Action Plan", "Validation"], color: "green" },
+  { icon: Cog, title: "Safe Execution", description: "Auto-remediation with policies & rollback", features: ["Policy Engine", "Circuit Breaker", "Post-validation"], color: "orange" },
 ]
 
-const impactMetricsData = [
-    {
-        category: "Scalabilité & Performances",
-        icon: TrendingUp,
-        color: "blue",
-        metrics: [
-            { label: "Pics de charge", before: "Saturation fréquente", after: "Auto-scaling cloud", improvement: "Élastique" },
-            { label: "Temps de réponse", before: "Dégradés en charge", after: "Optimisés constants", improvement: "Stable" },
-        ]
-    },
-    {
-        category: "Résilience & Isolation",
-        icon: Shield,
-        color: "green",
-        metrics: [
-            { label: "Composants critiques", before: "Couplage fort", after: "Services isolés", improvement: "Isolation" },
-            { label: "Résilience système", before: "Point de défaillance unique", after: "Fault tolerance", improvement: "Robuste" },
-        ]
-    },
-    {
-        category: "Expérience Utilisateur",
-        icon: Zap,
-        color: "purple",
-        metrics: [
-            { label: "Expérience utilisateur", before: "Variable", after: "Prévisible", improvement: "Constante" },
-            { label: "Gestion de charge", before: "Limitations", after: "Haute disponibilité", improvement: "Scalable" },
-        ]
-    },
-    {
-        category: "Agilité & DevOps",
-        icon: Rocket,
-        color: "green",
-        metrics: [
-            { label: "Déploiements", before: "Manuels lents", after: "CI/CD automatisés", improvement: "Accélérés" },
-            { label: "Maintenance", before: "Complexe monolithique", after: "Modulaire évolutive", improvement: "Simplifiée" },
-        ]
-    },
+const kpiImprovements = [
+  { metric: "MTTD", before: "~5 min", after: "-15 min", improvement: "↓ 20 min" },
+  { metric: "MTTR", before: "~30 min", after: "~30 sec", improvement: "↓ 93%" },
+  { metric: "Volume", before: "1000/day", after: "300/day", improvement: "↓ 70%" },
+  { metric: "Manual", before: "100%", after: "15%", improvement: "↓ 85%" },
 ]
 
 export default function ProposedSolutionSlide() {
-    return (
-        <SlideWrapper>
-            <div className="h-full flex flex-col">
-
-                <SlideHeader
-                    badge="2 • Contexte Général"
-                    title="Solution Proposée"
-                    subtitle="Solution moderne et évolutive pour répondre aux défis identifiés"
-                />
-
-                {/* Layout Principal - 2 Colonnes Optimisées */}
-                <div className="flex-1 grid grid-cols-1 gap-4 min-h-0">
-
-                    <Card className="w-full bg-white border border-slate-200 shadow-xl rounded-xl overflow-hidden">
-                        <CardHeader className="bg-green-50 p-6 border-b border-green-200">
-                            <div className="flex items-center mb-2">
-                                <Sparkles className="h-8 w-8 text-green-600 mr-3" />
-                                <CardTitle className="text-2xl md:text-3xl font-bold text-green-800">
-                                    Vers une Architecture Microservices Performante
-                                </CardTitle>
-                            </div>
-                            <p className="text-green-700 text-sm md:text-base">
-                                La transition vers une architecture microservices débloquera l'agilité, la scalabilité et l'innovation
-                                nécessaires à la croissance future.
-                            </p>
-                        </CardHeader>
-
-                        <CardContent className="p-6 md:p-8 space-y-8">
-                            {/* Section: Bénéfices Clés */}
-                            <div>
-                                <h3 className="text-xl font-semibold text-slate-700 mb-4 flex items-center">
-                                    <CheckCircle className="h-6 w-6 mr-2 text-green-500" />
-                                    Bénéfices Clés de l'Architecture Microservices
-                                </h3>
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                    {microservicesBenefitsData.map((benefit, index) => (
-                                        <div
-                                            key={index}
-                                            className="flex items-start p-3 bg-green-50/70 rounded-lg border border-green-200/80 hover:border-green-300 transition-colors"
-                                        >
-                                            <benefit.icon className={`h-5 w-5 mr-3 mt-1 flex-shrink-0 ${benefit.color}`} />
-                                            <span className="text-sm font-medium text-slate-700">{benefit.text}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* Section: Impacts Attendus et Métriques Clés */}
-                            <div>
-                                <h3 className="text-xl font-semibold text-slate-700 mb-5 flex items-center">
-                                    <BarChart3 className="h-6 w-6 mr-2 text-green-500" />
-                                    Impacts Attendus et Métriques Clés
-                                </h3>
-                                <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
-                                    {impactMetricsData.map((categoryData) => (
-                                        <div
-                                            key={categoryData.category}
-                                            className={`bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden transition-all hover:shadow-2xl hover:-translate-y-1 border-t-4 
-                                                ${categoryData.color === "green" && "border-t-green-500"}
-                                                ${categoryData.color === "blue" && "border-t-blue-500"}
-                                                ${categoryData.color === "purple" && "border-t-purple-500"}
-                                            `}
-                                        >
-                                            <div className="p-5">
-                                                <div className="flex items-center mb-4">
-                                                    <div
-                                                        className={`p-2 rounded-lg mr-3
-                                                            ${categoryData.color === "green" && "bg-green-100"}
-                                                            ${categoryData.color === "blue" && "bg-blue-100"}
-                                                            ${categoryData.color === "purple" && "bg-purple-100"}
-                                                        `}
-                                                    >
-                                                        <categoryData.icon
-                                                            className={`h-6 w-6 
-                                                                ${categoryData.color === "green" && "text-green-600"}
-                                                                ${categoryData.color === "blue" && "text-blue-600"}
-                                                                ${categoryData.color === "purple" && "text-purple-600"}
-                                                            `}
-                                                        />
-                                                    </div>
-                                                    <h4 className="text-lg font-bold text-slate-800">{categoryData.category}</h4>
-                                                </div>
-                                                <div className="space-y-4">
-                                                    {categoryData.metrics.map((metric) => (
-                                                        <div key={metric.label}>
-                                                            <div className="text-sm font-semibold text-slate-600 mb-2">{metric.label}</div>
-                                                            <div className="flex items-center justify-between bg-slate-50 p-3 rounded-lg">
-                                                                <div className="flex items-center space-x-2 text-sm">
-                                                                    <span className="text-slate-500 font-medium">{metric.before}</span>
-                                                                    <ArrowRight className="h-4 w-4 text-slate-400" />
-                                                                    <span className="text-slate-800 font-bold">{metric.after}</span>
-                                                                </div>
-                                                                <Badge
-                                                                    className={`text-xs font-bold
-                                                                        ${categoryData.color === "green" && "bg-green-500 hover:bg-green-600"}
-                                                                        ${categoryData.color === "blue" && "bg-blue-500 hover:bg-blue-600"}
-                                                                        ${categoryData.color === "purple" && "bg-purple-500 hover:bg-purple-600"}
-                                                                    `}
-                                                                >
-                                                                    {metric.improvement}
-                                                                </Badge>
-                                                            </div>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
+  return (
+    <SlideWrapper>
+      <div className="h-full flex flex-col">
+        {/* Header with AutoSphere Logo - BIGGER */}
+        <div className="flex items-center gap-6 mb-6">
+          <div className="relative w-28 h-28 flex-shrink-0">
+            <Image
+              src="/Logo-autoshpere.png"
+              alt="AutoSphere Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="flex-1">
+            <SlideHeader badge="3 • Proposed Solution" title="AutoSphere" subtitle="Intelligent Self-Healing System based on Agentic AI" />
+          </div>
+        </div>
+        
+        {/* Main Content - Full Page */}
+        <div className="flex-1 flex flex-col gap-3">
+          {/* Solution Pillars Section */}
+          <div className="flex-1 flex flex-col min-h-0">
+            <div className="flex items-center space-x-3 mb-3">
+              <Workflow className="h-7 w-7 text-primary" />
+              <h3 className="text-xl font-bold">Solution Pillars</h3>
             </div>
-        </SlideWrapper>
-    )
+            <div className="grid grid-cols-2 gap-2.5 flex-1">
+              {solutionPillars.map((pillar, index) => (
+                <Card key={index} className={`shadow-lg hover:shadow-xl transition-shadow border-t-4 h-full ${pillar.color === 'blue' ? 'border-t-blue-500' : pillar.color === 'purple' ? 'border-t-purple-500' : pillar.color === 'green' ? 'border-t-green-500' : 'border-t-orange-500'}`}>
+                  <CardContent className="p-4 h-full flex items-center">
+                    <div className="flex items-center space-x-3 w-full">
+                      <div className={`p-3 rounded-xl flex-shrink-0 ${pillar.color === 'blue' ? 'bg-blue-100 dark:bg-blue-900/30' : pillar.color === 'purple' ? 'bg-purple-100 dark:bg-purple-900/30' : pillar.color === 'green' ? 'bg-green-100 dark:bg-green-900/30' : 'bg-orange-100 dark:bg-orange-900/30'}`}>
+                        <pillar.icon className={`h-10 w-10 ${pillar.color === 'blue' ? 'text-blue-600' : pillar.color === 'purple' ? 'text-purple-600' : pillar.color === 'green' ? 'text-green-600' : 'text-orange-600'}`} />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-base mb-1.5">{pillar.title}</h4>
+                        <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{pillar.description}</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {pillar.features.map((feature, idx) => (<Badge key={idx} variant="outline" className="text-xs px-2 py-0.5">{feature}</Badge>))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Section - Workflow and Innovation */}
+          <div className="grid grid-cols-3 gap-2.5">
+            {/* Workflow */}
+            <div className="col-span-2">
+              <Card className="shadow-lg bg-muted/30 h-full">
+                <CardContent className="p-4 flex items-center justify-center h-full">
+                  <div className="flex items-center justify-center space-x-3">
+                    <Badge className="bg-blue-500 px-4 py-2 text-sm font-medium">Alert</Badge>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <Badge className="bg-purple-500 px-4 py-2 text-sm font-medium">Investigation</Badge>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <Badge className="bg-green-500 px-4 py-2 text-sm font-medium">Reasoning</Badge>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <Badge className="bg-orange-500 px-4 py-2 text-sm font-medium">Action</Badge>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <Badge className="bg-emerald-500 px-4 py-2 text-sm font-medium">Validation</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Key Innovation */}
+            <Card className="shadow-lg border-2 border-primary/20">
+              <CardContent className="p-4 flex flex-col justify-center h-full">
+                <h4 className="font-bold text-primary mb-2 flex items-center text-base">
+                  <Lightbulb className="h-6 w-6 mr-2" />
+                  Key Innovation
+                </h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Using <span className="font-semibold text-primary">LangGraph</span> to orchestrate specialized AI agents with a dynamic <span className="font-semibold">Orchestrator-Worker</span> pattern.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </SlideWrapper>
+  )
 }

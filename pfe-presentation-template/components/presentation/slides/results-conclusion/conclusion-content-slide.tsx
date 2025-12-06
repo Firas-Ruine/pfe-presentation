@@ -1,146 +1,100 @@
 "use client"
 import SlideWrapper from "../../slide-wrapper"
 import SlideHeader from "../../slide-header"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  CheckCircle,
-  TrendingUp,
-  Users,
-  Shield,
-  Zap,
-  Target,
-  Award,
-  Rocket,
-  Brain,
-  Globe,
-} from "lucide-react"
+import { CheckCircle, TrendingUp, Lightbulb, ArrowRight, Target, Brain, Rocket, Award } from "lucide-react"
+
+const achievements = [
+  { icon: TrendingUp, title: "93% MTTR Reduction", description: "From 30 minutes to ~30 seconds (fast path)" },
+  { icon: CheckCircle, title: "85% Less Manual Work", description: "Auto-approval for low-risk, high-confidence actions" },
+  { icon: Target, title: "70% Alert Reduction", description: "Deduplication and correlation eliminate noise" },
+  { icon: Brain, title: "20 min Earlier Detection", description: "Predictive ML alerts before problems occur" },
+]
+
+const futureWork = [
+  { term: "Short-term (3 months)", items: ["Multi-node commands", "Command validation", "AWX auto-selection"] },
+  { term: "Long-term (6-12 months)", items: ["Multi-cloud support", "Advanced anomaly detection", "Self-improving prompts"] },
+]
+
+const keyLearnings = [
+  "LangGraph excels at complex multi-agent orchestration",
+  "Rule-based routing is faster than LLM classification",
+  "Self-diagnosing agents are essential for production",
+  "YAML-driven policies enable flexible governance",
+]
 
 export default function ConclusionContentSlide() {
-  const achievements = [
-    { label: "3000 utilisateurs simultanés", icon: Users, color: "text-blue-600" },
-    { label: "Temps de réponse P95: 380ms", icon: Zap, color: "text-green-600" },
-    { label: "Disponibilité: 99.98%", icon: Target, color: "text-emerald-600" },
-    { label: "MTTR: 4.2 minutes", icon: CheckCircle, color: "text-orange-600" },
-    { label: "90% réduction temps déploiement", icon: TrendingUp, color: "text-purple-600" },
-    { label: "Zéro vulnérabilité critique", icon: Shield, color: "text-red-600" },
-  ]
-
-  const transformationPillars = [
-    {
-      title: "Architecture Microservices",
-      description: "Scalabilité granulaire et résilience accrue",
-      icon: Globe,
-    },
-    {
-      title: "Chaîne CI/CD Complète", 
-      description: "Automatisation avec Trivy, SonarQube et Argo CD",
-      icon: Rocket,
-    },
-    {
-      title: "Observabilité PLG",
-      description: "Visibilité temps réel du système distribué",
-      icon: Brain,
-    },
-  ]
-
   return (
-    <SlideWrapper className="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50">
-      <div className="h-full flex flex-col p-4 md:p-6 space-y-6">
-        <SlideHeader
-          badge="12 • Conclusion et Perspectives"
-          title="Conclusion et Perspectives"
-          //subtitle="Bilan et perspectives de la transformation DevOps"
-        />
-
-        <div className="flex-1 space-y-6">
-          {/* Summary Section */}
-          <Card className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800">
-            <CardContent className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Award className="h-6 w-6 text-emerald-600" />
-                <h3 className="text-xl font-bold text-slate-800 dark:text-slate-100">
-                  Transformation Réussie d'ARVEA Business
-                </h3>
-              </div>
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                Migration réussie d'une architecture monolithique Laravel vers un écosystème de 
-                <strong> microservices cloud-native moderne</strong>. À travers <strong>six sprints méthodiquement orchestrés</strong>, 
-                cette approche DevOps rigoureuse a produit des <strong>résultats exceptionnels</strong> 
-                dans un contexte de modernisation technologique complexe.
-              </p>
-            </CardContent>
-          </Card>
-
-          {/* Three Pillars */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {transformationPillars.map((pillar, index) => (
-              <Card key={index} className="bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800">
-                <CardContent className="p-4 text-center">
-                  <div className="flex justify-center mb-3">
-                    <div className="p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-full">
-                      <pillar.icon className="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+    <SlideWrapper>
+      <div className="h-full flex flex-col">
+        <SlideHeader badge="Conclusion" title="Summary & Perspectives" subtitle="Key achievements, learnings, and future roadmap" />
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4" style={{ minHeight: 0 }}>
+          <div className="space-y-4 flex flex-col">
+            <Card className="shadow-lg bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 flex-1">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center text-green-700 dark:text-green-400">
+                  <Award className="h-6 w-6 mr-2" />Key Achievements
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {achievements.map((item, index) => (
+                  <div key={index} className="flex items-center space-x-3 p-3 bg-background/50 rounded-lg">
+                    <item.icon className="h-7 w-7 text-green-500" />
+                    <div>
+                      <span className="font-semibold text-base">{item.title}</span>
+                      <p className="text-sm text-muted-foreground">{item.description}</p>
                     </div>
                   </div>
-                  <Badge variant="outline" className="mb-2">{index + 1}</Badge>
-                  <h4 className="font-bold text-slate-800 dark:text-slate-100 mb-2">
-                    {pillar.title}
-                  </h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    {pillar.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* Results Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-
-            {/* Operational Benefits */}
-            <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-900/30 border-blue-200 dark:border-blue-800">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-bold text-blue-800 dark:text-blue-200 mb-4 text-center">
-                  💡 Bénéfices Opérationnels
-                </h3>
-                <div className="space-y-3 text-sm text-blue-700 dark:text-blue-300">
-                  <div className="p-2 bg-white/80 dark:bg-slate-800/80 rounded-lg">
-                    <p><strong>Productivité :</strong> +45-60h/mois</p>
-                  </div>
-                  <div className="p-2 bg-white/80 dark:bg-slate-800/80 rounded-lg">
-                    <p><strong>Déploiements :</strong> x5 plus fréquents</p>
-                  </div>
-                  <div className="p-2 bg-white/80 dark:bg-slate-800/80 rounded-lg">
-                    <p><strong>Culture :</strong> DevOps mature</p>
-                  </div>
-                  <div className="p-2 bg-white/80 dark:bg-slate-800/80 rounded-lg">
-                    <p><strong>Sécurité :</strong> "Security by design"</p>
-                  </div>
-                </div>
+                ))}
               </CardContent>
             </Card>
-
-            {/* Future Perspectives */}
-            <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-900/30 border-purple-200 dark:border-purple-800">
-              <CardContent className="p-6">
-                <h3 className="text-lg font-bold text-purple-800 dark:text-purple-200 mb-4 text-center">
-                  🚀 Perspectives d'Avenir
-                </h3>
-                <div className="space-y-3 text-sm text-purple-700 dark:text-purple-300">
-                  <div className="p-2 bg-white/80 dark:bg-slate-800/80 rounded-lg">
-                    <p><strong>Service Mesh</strong> pour communication sécurisée</p>
+            <Card className="shadow-lg">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center"><Lightbulb className="h-6 w-6 mr-2 text-primary" />Key Learnings</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-2.5">
+                {keyLearnings.map((learning, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="text-sm">{learning}</span>
                   </div>
-                  <div className="p-2 bg-white/80 dark:bg-slate-800/80 rounded-lg">
-                    <p><strong>Chaos Engineering</strong> pour la résilience</p>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
+          <div className="space-y-4 flex flex-col">
+            <Card className="shadow-lg flex-1">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center"><Rocket className="h-6 w-6 mr-2 text-primary" />Future Work</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                {futureWork.map((period, index) => (
+                  <div key={index}>
+                    <Badge variant="secondary" className="mb-2.5 text-sm">{period.term}</Badge>
+                    <ul className="space-y-2">
+                      {period.items.map((item, idx) => (
+                        <li key={idx} className="flex items-center space-x-2 text-sm">
+                          <ArrowRight className="h-4 w-4 text-muted-foreground" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <div className="p-2 bg-white/80 dark:bg-slate-800/80 rounded-lg">
-                    <p><strong>Multi-Cloud</strong> architecture</p>
-                  </div>
-                  <div className="p-2 bg-white/80 dark:bg-slate-800/80 rounded-lg">
-                    <p><strong>IA Prédictive</strong> pour l'observabilité</p>
-                  </div>
+                ))}
+              </CardContent>
+            </Card>
+            <Card className="shadow-lg border-2 border-primary/20 bg-gradient-to-r from-primary/5 to-secondary/5">
+              <CardContent className="p-5 text-center">
+                <h4 className="font-bold text-xl text-primary mb-3">Production-Ready System</h4>
+                <div className="flex justify-center space-x-3 mb-3">
+                  <Badge className="bg-green-500 text-sm px-3 py-1">125/125 Tests</Badge>
+                  <Badge className="bg-blue-500 text-sm px-3 py-1">20+ Nodes</Badge>
+                  <Badge className="bg-purple-500 text-sm px-3 py-1">3 MCP Servers</Badge>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  AutoSphere demonstrates that Agentic AI can transform SRE operations
+                </p>
               </CardContent>
             </Card>
           </div>
