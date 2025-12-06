@@ -79,23 +79,23 @@ export default function TechnologiesUsedSlide() {
     <SlideWrapper>
       <div className="h-full flex flex-col">
         <SlideHeader badge="4 • Specifications" title="Technologies Used" subtitle="Complete technology stack powering AutoSphere" />
-        <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="flex-1 grid grid-cols-4 gap-3" style={{ minHeight: 0 }}>
           {technologies.map((category, index) => (
-            <Card key={index} className="shadow-md">
-              <CardHeader className="pb-1 pt-2 px-3">
-                <CardTitle className="text-xs flex items-center">
-                  <category.icon className="h-3 w-3 mr-1 text-primary" />
+            <Card key={index} className="shadow-md flex flex-col">
+              <CardHeader className="pb-3 pt-4 px-5">
+                <CardTitle className="text-base font-bold flex items-center">
+                  <category.icon className="h-6 w-6 mr-3 text-primary" />
                   {category.category}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-1.5 px-3 pb-2">
+              <CardContent className="space-y-2.5 px-5 pb-4 flex-1">
                 {category.items.map((item, idx) => (
-                  <div key={idx} className="flex items-center space-x-2 p-1.5 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors">
-                    <div className="w-6 h-6 flex-shrink-0 flex items-center justify-center bg-white rounded p-0.5">
+                  <div key={idx} className="flex items-center space-x-3 p-2.5 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors">
+                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center bg-white rounded p-1.5">
                       <img 
                         src={item.logo} 
                         alt={item.name}
-                        className="w-5 h-5 object-contain"
+                        className="w-full h-full object-contain"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
@@ -103,8 +103,8 @@ export default function TechnologiesUsedSlide() {
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="font-semibold text-xs block truncate">{item.name}</span>
-                      <p className="text-xs text-muted-foreground truncate">{item.description}</p>
+                      <span className="font-semibold text-base block">{item.name}</span>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -112,27 +112,6 @@ export default function TechnologiesUsedSlide() {
             </Card>
           ))}
         </div>
-        <Card className="mt-2 shadow-md bg-gradient-to-r from-primary/5 to-secondary/5">
-          <CardContent className="p-2">
-            <div className="flex items-center justify-center space-x-6 flex-wrap gap-2">
-              <div className="flex items-center space-x-1">
-                <Cloud className="h-4 w-4 text-blue-500" />
-                <span className="text-xs font-medium">K8s Production</span>
-                <Badge variant="outline" className="text-xs py-0">24+ Pods • 5 Namespaces</Badge>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Activity className="h-4 w-4 text-orange-500" />
-                <span className="text-xs font-medium">Full Observability</span>
-                <Badge variant="outline" className="text-xs py-0">Metrics + Logs + Traces</Badge>
-              </div>
-              <div className="flex items-center space-x-1">
-                <Network className="h-4 w-4 text-green-500" />
-                <span className="text-xs font-medium">3 MCP Servers</span>
-                <Badge variant="outline" className="text-xs py-0">Grafana + AWX + Redmine</Badge>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
     </SlideWrapper>
   )

@@ -32,20 +32,20 @@ export default function ActorsRequirementsSlide() {
     <SlideWrapper>
       <div className="h-full flex flex-col">
         <SlideHeader badge="4 • Specifications" title="Actors & Requirements" subtitle="System actors, functional and non-functional requirements" />
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="space-y-3">
-            <h3 className="text-base font-semibold flex items-center"><Users className="h-4 w-4 mr-2 text-primary" />System Actors</h3>
-            <div className="space-y-2">
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-6" style={{ minHeight: 0 }}>
+          <div className="flex flex-col space-y-4">
+            <h3 className="text-lg font-semibold flex items-center"><Users className="h-6 w-6 mr-3 text-primary" />System Actors</h3>
+            <div className="space-y-3">
               {actors.map((actor, index) => (
                 <Card key={index} className="shadow-md">
-                  <CardContent className="p-3">
-                    <div className="flex items-start space-x-3">
-                      <div className="p-2 rounded-lg bg-primary/10"><actor.icon className="h-5 w-5 text-primary" /></div>
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"><actor.icon className="h-8 w-8 text-primary" /></div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-sm">{actor.name}</h4>
-                        <p className="text-xs text-muted-foreground">{actor.description}</p>
-                        <div className="flex flex-wrap gap-1 mt-1">
-                          {actor.permissions.map((perm, idx) => (<Badge key={idx} variant="outline" className="text-xs py-0">{perm}</Badge>))}
+                        <h4 className="font-semibold text-base mb-1">{actor.name}</h4>
+                        <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{actor.description}</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {actor.permissions.map((perm, idx) => (<Badge key={idx} variant="outline" className="text-xs px-2 py-1">{perm}</Badge>))}
                         </div>
                       </div>
                     </div>
@@ -53,16 +53,16 @@ export default function ActorsRequirementsSlide() {
                 </Card>
               ))}
             </div>
-            <h3 className="text-base font-semibold flex items-center mt-4"><Lock className="h-4 w-4 mr-2 text-primary" />Non-Functional Requirements</h3>
-            <div className="grid grid-cols-2 gap-2">
+            <h3 className="text-lg font-semibold flex items-center"><Lock className="h-6 w-6 mr-3 text-primary" />Non-Functional Requirements</h3>
+            <div className="grid grid-cols-2 gap-3">
               {nonFunctionalRequirements.map((req, index) => (
                 <Card key={index} className="shadow-sm">
-                  <CardContent className="p-2">
-                    <div className="flex items-center space-x-2">
-                      <req.icon className="h-4 w-4 text-primary" />
+                  <CardContent className="p-3">
+                    <div className="flex items-start space-x-3">
+                      <req.icon className="h-6 w-6 text-primary flex-shrink-0" />
                       <div>
-                        <h5 className="font-semibold text-xs">{req.title}</h5>
-                        <p className="text-xs text-muted-foreground">{req.description}</p>
+                        <h5 className="font-semibold text-sm mb-1">{req.title}</h5>
+                        <p className="text-xs text-muted-foreground leading-relaxed">{req.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -70,18 +70,18 @@ export default function ActorsRequirementsSlide() {
               ))}
             </div>
           </div>
-          <div className="space-y-3">
-            <h3 className="text-base font-semibold flex items-center"><CheckCircle className="h-4 w-4 mr-2 text-primary" />Functional Requirements</h3>
+          <div className="flex flex-col space-y-4">
+            <h3 className="text-lg font-semibold flex items-center"><CheckCircle className="h-6 w-6 mr-3 text-primary" />Functional Requirements</h3>
             <Card className="shadow-lg">
-              <CardContent className="p-3">
-                <div className="space-y-2">
+              <CardContent className="p-4">
+                <div className="space-y-2.5">
                   {functionalRequirements.map((req, index) => (
-                    <div key={index} className="flex items-center justify-between p-2 bg-muted/30 rounded-lg">
-                      <div className="flex items-center space-x-2">
-                        <Badge variant="secondary" className="text-xs">{req.id}</Badge>
-                        <span className="text-xs">{req.description}</span>
+                    <div key={index} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+                      <div className="flex items-center space-x-3 flex-1">
+                        <Badge variant="secondary" className="text-sm px-3 py-1 flex-shrink-0">{req.id}</Badge>
+                        <span className="text-sm">{req.description}</span>
                       </div>
-                      <Badge className={`text-xs ${req.priority === 'High' ? 'bg-red-500' : 'bg-yellow-500'}`}>{req.priority}</Badge>
+                      <Badge className={`text-xs px-3 py-1 flex-shrink-0 ml-2 ${req.priority === 'High' ? 'bg-red-500' : 'bg-yellow-500'}`}>{req.priority}</Badge>
                     </div>
                   ))}
                 </div>

@@ -56,18 +56,18 @@ export default function GanttChartSlide() {
     <SlideWrapper>
       <div className="h-full flex flex-col">
         <SlideHeader badge="5 • Planning" title="Project Timeline" subtitle="Gantt chart and key milestones" />
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className="lg:col-span-2 space-y-2">
-            <Card className="shadow-lg">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center"><Calendar className="h-4 w-4 mr-2 text-primary" />Development Phases</CardTitle>
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-5" style={{ minHeight: 0 }}>
+          <div className="lg:col-span-2 flex flex-col">
+            <Card className="shadow-lg flex-1 flex flex-col">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center"><Calendar className="h-6 w-6 mr-3 text-primary" />Development Phases</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-4 flex-1">
                 {phases.map((phase, index) => (
-                  <div key={index} className="space-y-1">
+                  <div key={index} className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <Badge className={`text-xs ${
+                        <Badge className={`text-sm px-3 py-1 ${
                           phase.color === 'blue' ? 'bg-blue-500' :
                           phase.color === 'purple' ? 'bg-purple-500' :
                           phase.color === 'green' ? 'bg-green-500' :
@@ -75,11 +75,11 @@ export default function GanttChartSlide() {
                           'bg-cyan-500'
                         }`}>{phase.name}</Badge>
                       </div>
-                      <span className="text-xs text-muted-foreground">{phase.duration}</span>
+                      <span className="text-sm text-muted-foreground font-medium">{phase.duration}</span>
                     </div>
-                    <div className="w-full bg-muted rounded-full h-2">
+                    <div className="w-full bg-muted rounded-full h-3">
                       <div 
-                        className={`h-2 rounded-full ${
+                        className={`h-3 rounded-full ${
                           phase.color === 'blue' ? 'bg-blue-500' :
                           phase.color === 'purple' ? 'bg-purple-500' :
                           phase.color === 'green' ? 'bg-green-500' :
@@ -89,9 +89,9 @@ export default function GanttChartSlide() {
                         style={{ width: `${phase.progress}%` }}
                       />
                     </div>
-                    <div className="flex flex-wrap gap-1">
+                    <div className="flex flex-wrap gap-2">
                       {phase.tasks.map((task, idx) => (
-                        <span key={idx} className="text-xs text-muted-foreground">• {task}</span>
+                        <span key={idx} className="text-sm text-muted-foreground">• {task}</span>
                       ))}
                     </div>
                   </div>
@@ -99,38 +99,38 @@ export default function GanttChartSlide() {
               </CardContent>
             </Card>
           </div>
-          <div className="space-y-3">
-            <Card className="shadow-lg">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center"><Target className="h-4 w-4 mr-2 text-primary" />Key Milestones</CardTitle>
+          <div className="flex flex-col space-y-4">
+            <Card className="shadow-lg flex-1">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center"><Target className="h-6 w-6 mr-3 text-primary" />Key Milestones</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent className="space-y-3">
                 {milestones.map((milestone, index) => (
-                  <div key={index} className={`flex items-center justify-between p-2 rounded-lg ${
-                    milestone.status === 'current' ? 'bg-primary/10 border border-primary' : 'bg-muted/30'
+                  <div key={index} className={`flex items-center justify-between p-3 rounded-lg ${
+                    milestone.status === 'current' ? 'bg-primary/10 border-2 border-primary' : 'bg-muted/30'
                   }`}>
-                    <div className="flex items-center space-x-2">
-                      <CheckCircle className={`h-4 w-4 ${
+                    <div className="flex items-center space-x-2.5">
+                      <CheckCircle className={`h-5 w-5 flex-shrink-0 ${
                         milestone.status === 'completed' ? 'text-green-500' : 'text-primary'
                       }`} />
-                      <span className="text-xs font-medium">{milestone.name}</span>
+                      <span className="text-sm font-medium">{milestone.name}</span>
                     </div>
-                    <Badge variant="outline" className="text-xs">{milestone.date}</Badge>
+                    <Badge variant="outline" className="text-xs px-2 py-1 flex-shrink-0">{milestone.date}</Badge>
                   </div>
                 ))}
               </CardContent>
             </Card>
             <Card className="shadow-lg bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
-              <CardContent className="p-3">
-                <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2 flex items-center text-sm">
-                  <Clock className="h-4 w-4 mr-2" />Project Status
+              <CardContent className="p-4">
+                <h4 className="font-semibold text-green-700 dark:text-green-400 mb-3 flex items-center text-base">
+                  <Clock className="h-5 w-5 mr-2" />Project Status
                 </h4>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600">95%</div>
-                  <p className="text-xs text-muted-foreground">Overall Progress</p>
+                  <div className="text-3xl font-bold text-green-600">95%</div>
+                  <p className="text-sm text-muted-foreground">Overall Progress</p>
                 </div>
-                <div className="w-full bg-background/50 rounded-full h-2 mt-2">
-                  <div className="bg-green-500 h-2 rounded-full" style={{ width: '95%' }} />
+                <div className="w-full bg-background/50 rounded-full h-3 mt-3">
+                  <div className="bg-green-500 h-3 rounded-full" style={{ width: '95%' }} />
                 </div>
               </CardContent>
             </Card>

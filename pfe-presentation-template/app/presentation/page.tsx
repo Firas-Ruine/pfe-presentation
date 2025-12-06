@@ -10,6 +10,7 @@ import NavigationSlide from "@/components/presentation/slides/core/navigation-sl
 // Introduction slides
 import IntroductionTitleSlide from "@/components/presentation/slides/introduction/introduction-title-slide"
 import ProjectContextSlide from "@/components/presentation/slides/introduction/project-context-slide"
+import ProjectInfrastructureSlide from "@/components/presentation/slides/introduction/project-infrastructure-slide"
 
 // Company context slides
 import CompanyPresentationTitleSlide from "@/components/presentation/slides/company-context/company-presentation-title-slide"
@@ -68,9 +69,10 @@ export default function PresentationPage() {
       // 1 - Navigation
       <NavigationSlide key="nav" onNavigate={handleNavigateToSlide} />,
 
-      // SECTION 1: Introduction (slides 2-5) - includes company presentation
+      // SECTION 1: Introduction (slides 2-6) - includes company presentation
       <IntroductionTitleSlide key="intro-title" />,
       <ProjectContextSlide key="project-context" />,
+      <ProjectInfrastructureSlide key="project-infrastructure" />,
       <CompanyOverviewSlide key="company-overview" />,
 
       // SECTION 2: General Context / Problématique (slides 6-7)

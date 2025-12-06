@@ -90,14 +90,14 @@ export default function KpiImprovementsSlide() {
           subtitle="Quantified operational impact of AutoSphere" 
         />
         
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-5" style={{ minHeight: 0 }}>
           {/* KPI Metrics Grid */}
-          <div className="space-y-2">
-            <h3 className="text-sm font-semibold flex items-center">
-              <TrendingUp className="h-4 w-4 mr-2 text-green-500" />
+          <div className="flex flex-col">
+            <h3 className="text-base font-semibold flex items-center mb-3">
+              <TrendingUp className="h-6 w-6 mr-3 text-green-500" />
               Before vs After Comparison
             </h3>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-3 flex-1">
               {kpiMetrics.map((metric) => (
                 <Card key={metric.kpi} className={`shadow-md border-l-4 ${
                   metric.color === 'blue' ? 'border-l-blue-500' :
@@ -107,10 +107,10 @@ export default function KpiImprovementsSlide() {
                   metric.color === 'cyan' ? 'border-l-cyan-500' :
                   'border-l-red-500'
                 }`}>
-                  <CardContent className="p-2">
-                    <div className="flex items-center justify-between mb-1">
-                      <div className="flex items-center gap-1">
-                        <metric.icon className={`h-4 w-4 ${
+                  <CardContent className="p-3">
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <metric.icon className={`h-5 w-5 ${
                           metric.color === 'blue' ? 'text-blue-500' :
                           metric.color === 'purple' ? 'text-purple-500' :
                           metric.color === 'green' ? 'text-green-500' :
@@ -118,18 +118,18 @@ export default function KpiImprovementsSlide() {
                           metric.color === 'cyan' ? 'text-cyan-500' :
                           'text-red-500'
                         }`} />
-                        <span className="font-bold text-sm">{metric.kpi}</span>
+                        <span className="font-bold text-base">{metric.kpi}</span>
                       </div>
-                      <Badge className="bg-green-500 text-white text-xs">{metric.improvement}</Badge>
+                      <Badge className="bg-green-500 text-white text-xs px-2 py-1">{metric.improvement}</Badge>
                     </div>
-                    <p className="text-xs text-muted-foreground mb-1">{metric.fullName}</p>
-                    <div className="flex items-center gap-2 text-xs">
+                    <p className="text-sm text-muted-foreground mb-2">{metric.fullName}</p>
+                    <div className="flex items-center gap-2 text-sm mb-2">
                       <span className="text-red-500 line-through">{metric.before}</span>
-                      <ArrowRight className="h-3 w-3 text-muted-foreground" />
+                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
                       <span className="text-green-600 font-semibold">{metric.after}</span>
                     </div>
-                    <div className="mt-1">
-                      <Badge variant="outline" className="text-xs py-0">{metric.mechanism}</Badge>
+                    <div>
+                      <Badge variant="outline" className="text-xs px-2 py-1">{metric.mechanism}</Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -138,20 +138,20 @@ export default function KpiImprovementsSlide() {
           </div>
 
           {/* Feature Impact Breakdown */}
-          <div className="space-y-3">
+          <div className="flex flex-col space-y-3">
             <Card className="shadow-lg">
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center">
-                  <Zap className="h-4 w-4 mr-2 text-yellow-500" />
+                <CardTitle className="text-base flex items-center">
+                  <Zap className="h-5 w-5 mr-2 text-yellow-500" />
                   Feature Impact Breakdown
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
                 {featureImpact.map((item, index) => (
                   <div key={index} className="p-2 bg-muted/30 rounded-lg">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-semibold text-xs">{item.feature}</span>
-                      <Badge className="bg-green-500 text-white text-xs">{item.impact}</Badge>
+                    <div className="flex items-center justify-between mb-0.5">
+                      <span className="font-semibold text-sm">{item.feature}</span>
+                      <Badge className="bg-green-500 text-white text-xs px-2 py-0.5">{item.impact}</Badge>
                     </div>
                     <p className="text-xs text-muted-foreground">{item.desc}</p>
                   </div>
@@ -161,22 +161,22 @@ export default function KpiImprovementsSlide() {
 
             {/* Summary Stats */}
             <Card className="shadow-lg bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
-              <CardContent className="p-4">
-                <h4 className="font-semibold text-center text-green-700 dark:text-green-400 mb-3">
+              <CardContent className="p-3 flex flex-col items-center justify-center">
+                <h4 className="font-semibold text-center text-green-700 dark:text-green-400 mb-3 text-sm">
                   Total Operational Impact
                 </h4>
-                <div className="grid grid-cols-3 gap-3 text-center">
-                  <div>
+                <div className="grid grid-cols-3 gap-3 w-full text-center">
+                  <div className="flex flex-col items-center justify-center">
                     <div className="text-3xl font-bold text-green-600">93%</div>
-                    <div className="text-xs text-muted-foreground">MTTR Reduction</div>
+                    <div className="text-xs text-muted-foreground mt-1">MTTR Reduction</div>
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center justify-center">
                     <div className="text-3xl font-bold text-green-600">85%</div>
-                    <div className="text-xs text-muted-foreground">Less Manual Work</div>
+                    <div className="text-xs text-muted-foreground mt-1">Less Manual Work</div>
                   </div>
-                  <div>
+                  <div className="flex flex-col items-center justify-center">
                     <div className="text-3xl font-bold text-green-600">70%</div>
-                    <div className="text-xs text-muted-foreground">Fewer Alerts</div>
+                    <div className="text-xs text-muted-foreground mt-1">Fewer Alerts</div>
                   </div>
                 </div>
               </CardContent>
@@ -186,10 +186,10 @@ export default function KpiImprovementsSlide() {
             <Card className="shadow-lg border-2 border-primary/20">
               <CardContent className="p-3">
                 <div className="flex items-start gap-2">
-                  <Brain className="h-5 w-5 text-primary mt-0.5" />
+                  <Brain className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
-                    <h4 className="font-semibold text-sm">Key Insight</h4>
-                    <p className="text-xs text-muted-foreground">
+                    <h4 className="font-semibold text-sm mb-1">Key Insight</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">
                       The combination of <strong>predictive detection</strong> and <strong>fast-path routing</strong> 
                       enables AutoSphere to resolve 85% of incidents without human intervention, 
                       while maintaining safety through policy-driven governance.

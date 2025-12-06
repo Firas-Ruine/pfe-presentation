@@ -38,66 +38,64 @@ export default function EnvironmentToolsSlide() {
     <SlideWrapper>
       <div className="h-full flex flex-col">
         <SlideHeader badge="7 • Implementation" title="Development Environment" subtitle="Tools, frameworks, and project structure" />
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className="space-y-3">
+        <div className="flex-1 grid grid-cols-2 gap-5" style={{ minHeight: 0 }}>
+          <div className="flex flex-col space-y-4">
             <Card className="shadow-lg">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center"><Terminal className="h-4 w-4 mr-2 text-primary" />Development Tools</CardTitle>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center"><Terminal className="h-6 w-6 mr-3 text-primary" />Development Tools</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent className="space-y-3">
                 {developmentTools.map((tool, index) => (
-                  <div key={index} className="flex items-center space-x-2 p-2 bg-muted/30 rounded-lg">
-                    <tool.icon className="h-4 w-4 text-primary" />
+                  <div key={index} className="flex items-center space-x-3 p-3 bg-muted/30 rounded-lg">
+                    <tool.icon className="h-6 w-6 text-primary flex-shrink-0" />
                     <div>
-                      <span className="font-semibold text-xs">{tool.name}</span>
-                      <p className="text-xs text-muted-foreground">{tool.description}</p>
+                      <span className="font-semibold text-sm block">{tool.name}</span>
+                      <p className="text-sm text-muted-foreground">{tool.description}</p>
                     </div>
                   </div>
                 ))}
               </CardContent>
             </Card>
             <Card className="shadow-lg">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center"><Eye className="h-4 w-4 mr-2 text-primary" />Observability</CardTitle>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center"><Brain className="h-6 w-6 mr-3 text-primary" />Core Frameworks</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
-                {observability.map((item, index) => (
-                  <div key={index} className="p-2 bg-muted/30 rounded-lg">
-                    <span className="font-semibold text-xs">{item.name}</span>
-                    <p className="text-xs text-muted-foreground">{item.description}</p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          </div>
-          <div className="space-y-3">
-            <Card className="shadow-lg">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center"><Brain className="h-4 w-4 mr-2 text-primary" />Core Frameworks</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent className="space-y-3">
                 {frameworks.map((fw, index) => (
-                  <div key={index} className="flex items-center justify-between p-2 bg-muted/30 rounded-lg">
-                    <div>
-                      <span className="font-semibold text-xs">{fw.name}</span>
-                      <p className="text-xs text-muted-foreground">{fw.description}</p>
+                  <div key={index} className="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+                    <div className="flex-1">
+                      <span className="font-semibold text-sm block">{fw.name}</span>
+                      <p className="text-sm text-muted-foreground">{fw.description}</p>
                     </div>
-                    <Badge variant="outline" className="text-xs">{fw.version}</Badge>
+                    <Badge variant="outline" className="text-sm px-2 py-1 ml-2 flex-shrink-0">{fw.version}</Badge>
                   </div>
                 ))}
               </CardContent>
             </Card>
           </div>
-          <div className="space-y-3">
+          <div className="flex flex-col space-y-4">
             <Card className="shadow-lg">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-sm flex items-center"><Folder className="h-4 w-4 mr-2 text-primary" />Project Structure</CardTitle>
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center"><Folder className="h-6 w-6 mr-3 text-primary" />Project Structure</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent className="space-y-3">
                 {projectStructure.map((item, index) => (
-                  <div key={index} className="p-2 bg-muted/30 rounded-lg">
-                    <code className="font-mono text-xs text-primary">{item.folder}</code>
-                    <p className="text-xs text-muted-foreground">{item.description}</p>
+                  <div key={index} className="p-3 bg-muted/30 rounded-lg">
+                    <code className="font-mono text-sm text-primary block">{item.folder}</code>
+                    <p className="text-sm text-muted-foreground mt-1">{item.description}</p>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+            <Card className="shadow-lg">
+              <CardHeader className="pb-3">
+                <CardTitle className="text-base flex items-center"><Eye className="h-6 w-6 mr-3 text-primary" />Observability</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {observability.map((item, index) => (
+                  <div key={index} className="p-3 bg-muted/30 rounded-lg">
+                    <span className="font-semibold text-sm block">{item.name}</span>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
                   </div>
                 ))}
               </CardContent>

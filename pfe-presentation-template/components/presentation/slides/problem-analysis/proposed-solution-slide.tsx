@@ -25,8 +25,8 @@ export default function ProposedSolutionSlide() {
     <SlideWrapper>
       <div className="h-full flex flex-col">
         {/* Header with AutoSphere Logo - BIGGER */}
-        <div className="flex items-center gap-6 mb-4">
-          <div className="relative w-24 h-24 flex-shrink-0">
+        <div className="flex items-center gap-6 mb-6">
+          <div className="relative w-28 h-28 flex-shrink-0">
             <Image
               src="/Logo-autoshpere.png"
               alt="AutoSphere Logo"
@@ -38,25 +38,28 @@ export default function ProposedSolutionSlide() {
             <SlideHeader badge="3 • Proposed Solution" title="AutoSphere" subtitle="Intelligent Self-Healing System based on Agentic AI" />
           </div>
         </div>
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className="lg:col-span-2 space-y-3">
-            <div className="flex items-center space-x-2 mb-2">
-              <Workflow className="h-5 w-5 text-primary" />
-              <h3 className="text-base font-semibold">Solution Pillars</h3>
+        
+        {/* Main Content - Full Page */}
+        <div className="flex-1 flex flex-col gap-3">
+          {/* Solution Pillars Section */}
+          <div className="flex-1 flex flex-col min-h-0">
+            <div className="flex items-center space-x-3 mb-3">
+              <Workflow className="h-7 w-7 text-primary" />
+              <h3 className="text-xl font-bold">Solution Pillars</h3>
             </div>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-2 gap-2.5 flex-1">
               {solutionPillars.map((pillar, index) => (
-                <Card key={index} className={`shadow-md hover:shadow-lg transition-shadow border-t-4 ${pillar.color === 'blue' ? 'border-t-blue-500' : pillar.color === 'purple' ? 'border-t-purple-500' : pillar.color === 'green' ? 'border-t-green-500' : 'border-t-orange-500'}`}>
-                  <CardContent className="p-3">
-                    <div className="flex items-start space-x-2">
-                      <div className={`p-2 rounded-lg ${pillar.color === 'blue' ? 'bg-blue-100 dark:bg-blue-900/30' : pillar.color === 'purple' ? 'bg-purple-100 dark:bg-purple-900/30' : pillar.color === 'green' ? 'bg-green-100 dark:bg-green-900/30' : 'bg-orange-100 dark:bg-orange-900/30'}`}>
-                        <pillar.icon className={`h-5 w-5 ${pillar.color === 'blue' ? 'text-blue-600' : pillar.color === 'purple' ? 'text-purple-600' : pillar.color === 'green' ? 'text-green-600' : 'text-orange-600'}`} />
+                <Card key={index} className={`shadow-lg hover:shadow-xl transition-shadow border-t-4 h-full ${pillar.color === 'blue' ? 'border-t-blue-500' : pillar.color === 'purple' ? 'border-t-purple-500' : pillar.color === 'green' ? 'border-t-green-500' : 'border-t-orange-500'}`}>
+                  <CardContent className="p-4 h-full flex items-center">
+                    <div className="flex items-center space-x-3 w-full">
+                      <div className={`p-3 rounded-xl flex-shrink-0 ${pillar.color === 'blue' ? 'bg-blue-100 dark:bg-blue-900/30' : pillar.color === 'purple' ? 'bg-purple-100 dark:bg-purple-900/30' : pillar.color === 'green' ? 'bg-green-100 dark:bg-green-900/30' : 'bg-orange-100 dark:bg-orange-900/30'}`}>
+                        <pillar.icon className={`h-10 w-10 ${pillar.color === 'blue' ? 'text-blue-600' : pillar.color === 'purple' ? 'text-purple-600' : pillar.color === 'green' ? 'text-green-600' : 'text-orange-600'}`} />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-sm">{pillar.title}</h4>
-                        <p className="text-xs text-muted-foreground">{pillar.description}</p>
-                        <div className="flex flex-wrap gap-1 mt-2">
-                          {pillar.features.map((feature, idx) => (<Badge key={idx} variant="outline" className="text-xs py-0">{feature}</Badge>))}
+                        <h4 className="font-bold text-base mb-1.5">{pillar.title}</h4>
+                        <p className="text-sm text-muted-foreground mb-2 leading-relaxed">{pillar.description}</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {pillar.features.map((feature, idx) => (<Badge key={idx} variant="outline" className="text-xs px-2 py-0.5">{feature}</Badge>))}
                         </div>
                       </div>
                     </div>
@@ -64,45 +67,39 @@ export default function ProposedSolutionSlide() {
                 </Card>
               ))}
             </div>
-            <Card className="shadow-md bg-muted/30">
-              <CardContent className="p-3">
-                <div className="flex items-center justify-center space-x-2 text-sm">
-                  <Badge className="bg-blue-500">Alert</Badge>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                  <Badge className="bg-purple-500">Investigation</Badge>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                  <Badge className="bg-green-500">Reasoning</Badge>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                  <Badge className="bg-orange-500">Action</Badge>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                  <Badge className="bg-emerald-500">Validation</Badge>
-                </div>
-              </CardContent>
-            </Card>
           </div>
-          <div className="space-y-3">
-            <Card className="shadow-lg bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
-              <CardHeader className="pb-2"><CardTitle className="text-base flex items-center text-green-700 dark:text-green-400"><TrendingUp className="h-4 w-4 mr-2" />KPI Improvements</CardTitle></CardHeader>
-              <CardContent className="space-y-2">
-                {kpiImprovements.map((kpi, index) => (
-                  <div key={index} className="p-2 bg-background/50 rounded-lg">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="font-semibold text-sm">{kpi.metric}</span>
-                      <Badge className="bg-green-500 text-white text-xs">{kpi.improvement}</Badge>
-                    </div>
-                    <div className="flex items-center text-xs text-muted-foreground">
-                      <span className="text-red-500">{kpi.before}</span>
-                      <ArrowRight className="h-3 w-3 mx-2" />
-                      <span className="text-green-600 font-medium">{kpi.after}</span>
-                    </div>
+
+          {/* Bottom Section - Workflow and Innovation */}
+          <div className="grid grid-cols-3 gap-2.5">
+            {/* Workflow */}
+            <div className="col-span-2">
+              <Card className="shadow-lg bg-muted/30 h-full">
+                <CardContent className="p-4 flex items-center justify-center h-full">
+                  <div className="flex items-center justify-center space-x-3">
+                    <Badge className="bg-blue-500 px-4 py-2 text-sm font-medium">Alert</Badge>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <Badge className="bg-purple-500 px-4 py-2 text-sm font-medium">Investigation</Badge>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <Badge className="bg-green-500 px-4 py-2 text-sm font-medium">Reasoning</Badge>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <Badge className="bg-orange-500 px-4 py-2 text-sm font-medium">Action</Badge>
+                    <ArrowRight className="h-6 w-6 text-muted-foreground" />
+                    <Badge className="bg-emerald-500 px-4 py-2 text-sm font-medium">Validation</Badge>
                   </div>
-                ))}
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Key Innovation */}
             <Card className="shadow-lg border-2 border-primary/20">
-              <CardContent className="p-3">
-                <h4 className="font-semibold text-primary mb-2 flex items-center text-sm"><Lightbulb className="h-4 w-4 mr-2" />Key Innovation</h4>
-                <p className="text-xs text-muted-foreground">Using <span className="font-semibold text-primary">LangGraph</span> to orchestrate specialized AI agents with a dynamic <span className="font-semibold">Orchestrator-Worker</span> pattern.</p>
+              <CardContent className="p-4 flex flex-col justify-center h-full">
+                <h4 className="font-bold text-primary mb-2 flex items-center text-base">
+                  <Lightbulb className="h-6 w-6 mr-2" />
+                  Key Innovation
+                </h4>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Using <span className="font-semibold text-primary">LangGraph</span> to orchestrate specialized AI agents with a dynamic <span className="font-semibold">Orchestrator-Worker</span> pattern.
+                </p>
               </CardContent>
             </Card>
           </div>
