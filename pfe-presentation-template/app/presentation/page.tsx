@@ -46,7 +46,6 @@ import RealisationTitleSlide from "@/components/presentation/slides/results-conc
 import EnvironmentToolsSlide from "@/components/presentation/slides/results-conclusion/environment-tools-slide"
 import KpiImprovementsSlide from "@/components/presentation/slides/results-conclusion/kpi-improvements-slide"
 import TestResultsSlide from "@/components/presentation/slides/results-conclusion/test-results-slide"
-import ChallengesSolutionsSlide from "@/components/presentation/slides/results-conclusion/challenges-solutions-slide"
 import ConclusionContentSlide from "@/components/presentation/slides/results-conclusion/conclusion-content-slide"
 import FutureRoadmapSlide from "@/components/presentation/slides/results-conclusion/future-roadmap-slide"
 import ThankYouSlide from "@/components/presentation/slides/results-conclusion/thank-you-slide"
@@ -105,14 +104,13 @@ export default function PresentationPage() {
       <ExecutionPipelineSlide key="execution-pipeline" />,
       <McpConnectorsSlide key="mcp-connectors" />,
 
-      // SECTION 7: Implementation (slides 26-30)
+      // SECTION 7: Implementation (slides 26-29)
       <RealisationTitleSlide key="realisation-title" />,
       <EnvironmentToolsSlide key="environment-tools" />,
       <KpiImprovementsSlide key="kpi-improvements" />,
       <TestResultsSlide key="test-results" />,
-      <ChallengesSolutionsSlide key="challenges-solutions" />,
 
-      // SECTION 8: Conclusion (slides 31-33)
+      // SECTION 8: Conclusion (slides 30-32)
       <ConclusionContentSlide key="conclusion" />,
       <FutureRoadmapSlide key="future-roadmap" />,
       <ThankYouSlide key="thank-you" />,
@@ -151,10 +149,9 @@ export default function PresentationPage() {
       "Development Environment", // 26
       "KPI Improvements", // 27
       "Test Results", // 28
-      "Challenges & Solutions", // 29
-      "Summary & Perspectives", // 30
-      "Future Roadmap", // 31
-      "Thank You", // 32
+      "Summary & Perspectives", // 29
+      "Future Roadmap", // 30
+      "Thank You", // 31
     ],
     []
   )
