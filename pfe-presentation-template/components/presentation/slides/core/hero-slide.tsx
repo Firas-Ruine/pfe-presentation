@@ -29,13 +29,17 @@ export default function HeroSlide({ onStartPresentation }: HeroSlideProps) {
           />
         </div>
 
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent max-w-5xl leading-tight">
-          AutoSphere: Intelligent Self-Healing System for Cloud Infrastructure
-        </h1>
-
-        <p className="text-lg md:text-xl text-muted-foreground max-w-3xl">
-          AI-Driven Agentic Automation for Incident Detection, Investigation, and Remediation
-        </p>
+        <div className="space-y-3">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-primary via-purple-500 to-secondary bg-clip-text text-transparent">
+            AutoSphere
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground/90">
+            AI-Driven Self-Healing Infrastructure
+          </p>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl">
+            Multi-Agent LLM System for Autonomous OpenStack Operations
+          </p>
+        </div>
 
         <p className="text-lg md:text-xl font-medium">
           Presented by: <span className="font-bold text-primary">BenKhalifa Mohamed Naceur</span>
