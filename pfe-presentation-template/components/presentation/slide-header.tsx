@@ -10,14 +10,14 @@ interface SlideHeaderProps {
 export default function SlideHeader({ badge, title, subtitle, className = "" }: SlideHeaderProps) {
   return (
     <div className={`text-center mb-8 ${className}`}>
-      <Badge variant="outline" className="mb-4 text-lg px-4 py-2">
+      <Badge variant="outline" className="mb-4 text-2xl px-6 py-3">
         {badge}
       </Badge>
-      <h1 className="text-4xl md:text-6xl font-bold mb-4 text-primary">
+      <h1 className="text-6xl md:text-8xl font-bold mb-4 text-primary">
         {title}
       </h1>
       {subtitle && (
-        <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+        <p className="text-3xl text-muted-foreground max-w-4xl mx-auto">
           {subtitle}
         </p>
       )}

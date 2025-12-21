@@ -145,11 +145,11 @@ export default function AnomalyDetectionSlide() {
                 <div className="flex-1">
                     <Card className="shadow-md hover:shadow-lg transition-shadow duration-300 h-full">
                         <CardHeader>
-                            <CardTitle className="flex items-center gap-2 text-xl text-slate-800">
-                                <AlertTriangle className="h-6 w-6 text-red-600" />
+                            <CardTitle className="flex items-center gap-3 text-2xl text-slate-800">
+                                <AlertTriangle className="h-8 w-8 text-red-600" />
                                 Critères de Déclenchement du Rollback
                             </CardTitle>
-                            <p className="text-sm text-slate-600 mt-2">
+                            <p className="text-xl text-slate-600 mt-2">
                                 Seuils automatiques déclenchant un retour à la version stable précédente
                             </p>
                         </CardHeader>
@@ -166,10 +166,10 @@ export default function AnomalyDetectionSlide() {
                                             {/* Icon & Severity */}
                                             <div className="flex flex-col items-center gap-2 mb-3">
                                                 <div className={`p-3 rounded-xl bg-gradient-to-br ${criteria.color} shadow-lg`}>
-                                                    <criteria.icon className="h-5 w-5 text-white" />
+                                                    <criteria.icon className="h-7 w-7 text-white" />
                                                 </div>
                                                 <Badge 
-                                                    className={`text-xs font-medium ${
+                                                    className={`text-base font-medium ${
                                                         criteria.severity === 'critical' 
                                                             ? 'bg-red-100 text-red-700' 
                                                             : 'bg-orange-100 text-orange-700'
@@ -181,21 +181,21 @@ export default function AnomalyDetectionSlide() {
 
                                             {/* Content */}
                                             <div className="flex-1 text-center">
-                                                <h3 className="font-semibold text-sm text-slate-800 group-hover:text-red-600 transition-colors mb-2">
+                                                <h3 className="font-semibold text-lg text-slate-800 group-hover:text-red-600 transition-colors mb-2">
                                                     {criteria.title}
                                                 </h3>
-                                                <p className="text-slate-600 text-xs mb-3">
+                                                <p className="text-slate-600 text-base mb-3">
                                                     {criteria.description}
                                                 </p>
                                                 
                                                 <div className="space-y-2">
                                                     <div className="p-2 bg-slate-50 rounded-lg border border-slate-100">
-                                                        <div className="text-xs text-slate-500 mb-1">Seuil</div>
-                                                        <div className="font-bold text-xs text-slate-800">{criteria.threshold}</div>
+                                                        <div className="text-base text-slate-500 mb-1">Seuil</div>
+                                                        <div className="font-bold text-base text-slate-800">{criteria.threshold}</div>
                                                     </div>
                                                     <div className="p-2 bg-slate-50 rounded-lg border border-slate-100">
-                                                        <div className="text-xs text-slate-500 mb-1">Durée</div>
-                                                        <div className="font-bold text-xs text-slate-800">{criteria.duration}</div>
+                                                        <div className="text-base text-slate-500 mb-1">Durée</div>
+                                                        <div className="font-bold text-base text-slate-800">{criteria.duration}</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -205,14 +205,14 @@ export default function AnomalyDetectionSlide() {
                             </div>
 
                             {/* Action Flow */}
-                            <div className="mt-6 p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border border-red-200">
-                                <div className="flex items-center justify-center gap-3">
-                                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                                        <RotateCcw className="h-5 w-5 text-red-600" />
+                            <div className="mt-6 p-5 bg-gradient-to-r from-red-50 to-orange-50 rounded-xl border border-red-200">
+                                <div className="flex items-center justify-center gap-4">
+                                    <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                        <RotateCcw className="h-7 w-7 text-red-600" />
                                     </div>
                                     <div className="text-center">
-                                        <h4 className="font-semibold text-red-800">Rollback Automatique Déclenché</h4>
-                                        <p className="text-xs text-red-600">
+                                        <h4 className="font-semibold text-xl text-red-800">Rollback Automatique Déclenché</h4>
+                                        <p className="text-lg text-red-600">
                                             Retour immédiat à la version stable précédente avec notification des équipes
                                         </p>
                                     </div>

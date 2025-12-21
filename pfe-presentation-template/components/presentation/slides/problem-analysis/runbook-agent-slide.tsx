@@ -23,14 +23,12 @@ import { Button } from "@/components/ui/button"
 import {
   BookOpen,
   Search,
-  Play,
   CheckCircle,
   Cog,
   Server,
   AlertTriangle,
   Terminal,
   FileCode,
-  LucideIcon,
   Lock,
   Unlock,
   RotateCcw,
@@ -55,17 +53,17 @@ function AlertInputNode({ data }: NodeProps) {
   return (
     <div className="relative">
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-red-900/80 to-rose-900/80 border-2 border-red-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-red-900/80 to-rose-900/80 border-2 border-red-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           pulse ? "scale-105" : ""
         }`}
         style={{ boxShadow: pulse ? "0 0 25px rgba(239,68,68,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-1">
-          <AlertTriangle className={`h-5 w-5 text-red-400 ${pulse ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">Alert</span>
+          <AlertTriangle className={`h-6 w-6 text-red-400 ${pulse ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">Alert</span>
         </div>
-        <p className="text-[10px] text-red-300">{nodeData.alert}</p>
-        <Badge className="bg-red-500/30 text-red-200 text-[9px] mt-1">{nodeData.service}</Badge>
+        <p className="text-sm text-red-300">{nodeData.alert}</p>
+        <Badge className="bg-red-500/30 text-red-200 text-sm mt-1">{nodeData.service}</Badge>
       </div>
       <Handle type="source" position={Position.Right} className="w-3 h-3 !bg-blue-500" />
     </div>
@@ -89,20 +87,20 @@ function PatternNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-blue-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-blue-900/80 to-indigo-900/80 border-2 border-blue-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-blue-900/80 to-indigo-900/80 border-2 border-blue-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           extracting ? "scale-105" : ""
         }`}
         style={{ boxShadow: extracting ? "0 0 30px rgba(59,130,246,0.6)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <Search className={`h-5 w-5 text-blue-400 ${extracting ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">Pattern Extract</span>
+          <Search className={`h-6 w-6 text-blue-400 ${extracting ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">Pattern Extract</span>
         </div>
         <div className="flex flex-wrap gap-1">
           {patterns.map((p, i) => (
             <Badge
               key={i}
-              className={`text-[9px] transition-all ${
+              className={`text-sm transition-all ${
                 extracting ? "bg-blue-500 text-white" : "bg-blue-900/50 text-blue-300"
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -145,18 +143,18 @@ function CatalogNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-purple-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-purple-900/80 to-violet-900/80 border-2 border-purple-500/50 shadow-lg backdrop-blur-sm min-w-[180px] transition-all duration-300`}
+        className={`p-4 rounded-xl bg-gradient-to-br from-purple-900/80 to-violet-900/80 border-2 border-purple-500/50 shadow-lg backdrop-blur-sm min-w-[200px] transition-all duration-300`}
         style={{ boxShadow: searching ? "0 0 35px rgba(168,85,247,0.6)" : "0 0 15px rgba(168,85,247,0.3)" }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <BookOpen className={`h-5 w-5 text-purple-400 ${searching ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">AWX Catalog</span>
+          <BookOpen className={`h-6 w-6 text-purple-400 ${searching ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">AWX Catalog</span>
         </div>
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           {templates.map((t) => (
             <div
               key={t.id}
-              className={`px-2 py-1 rounded text-[10px] font-mono transition-all duration-300 ${
+              className={`px-2 py-1.5 rounded text-sm font-mono transition-all duration-300 ${
                 matchedTemplate === t.id
                   ? "bg-green-500 text-white scale-[1.02]"
                   : "bg-purple-900/50 text-purple-300"
@@ -167,7 +165,7 @@ function CatalogNode({ data }: NodeProps) {
             </div>
           ))}
         </div>
-        <Badge className="bg-purple-500/30 text-purple-200 text-[9px] mt-2">47 templates</Badge>
+        <Badge className="bg-purple-500/30 text-purple-200 text-sm mt-2">47 templates</Badge>
       </div>
       <Handle type="source" position={Position.Right} className="w-3 h-3 !bg-orange-500" />
     </div>
@@ -194,18 +192,18 @@ function ParamNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-orange-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-orange-900/80 to-amber-900/80 border-2 border-orange-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-orange-900/80 to-amber-900/80 border-2 border-orange-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           active ? "scale-105" : ""
         }`}
         style={{ boxShadow: active ? "0 0 25px rgba(249,115,22,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <Cog className={`h-5 w-5 text-orange-400 ${active ? "animate-spin" : ""}`} />
-          <span className="font-bold text-sm text-white">Parameters</span>
+          <Cog className={`h-6 w-6 text-orange-400 ${active ? "animate-spin" : ""}`} />
+          <span className="font-bold text-base text-white">Parameters</span>
         </div>
         <div className="space-y-1">
           {params.map((p, i) => (
-            <div key={i} className="text-[10px] font-mono">
+            <div key={i} className="text-sm font-mono">
               <span className="text-orange-300">{p.key}</span>
               <span className="text-gray-500"> = </span>
               <span className="text-yellow-400">"{p.value}"</span>
@@ -234,20 +232,20 @@ function CommandNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-green-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-green-900/80 to-emerald-900/80 border-2 border-green-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-green-900/80 to-emerald-900/80 border-2 border-green-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           pulse ? "scale-105" : ""
         }`}
         style={{ boxShadow: pulse ? "0 0 30px rgba(34,197,94,0.6)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <Terminal className={`h-5 w-5 text-green-400 ${pulse ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">Generated</span>
+          <Terminal className={`h-6 w-6 text-green-400 ${pulse ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">Generated</span>
         </div>
-        <div className="p-2 bg-slate-900/80 rounded text-[9px] font-mono text-green-300">
+        <div className="p-2 bg-slate-900/80 rounded text-sm font-mono text-green-300">
           awx job_template launch 78
         </div>
-        <Badge className="bg-green-500/30 text-green-200 text-[9px] mt-2 flex items-center gap-1">
-          <CheckCircle className="h-3 w-3" />
+        <Badge className="bg-green-500/30 text-green-200 text-sm mt-2 flex items-center gap-1">
+          <CheckCircle className="h-4 w-4" />
           92% confidence
         </Badge>
       </div>
@@ -265,16 +263,16 @@ const nodeTypes = {
 
 const initialNodes: Node[] = [
   { id: "alert", type: "alertInput", position: { x: 0, y: 100 }, data: { alert: "RabbitMQ Queue Backlog", service: "cinder-scheduler" } },
-  { id: "pattern", type: "pattern", position: { x: 180, y: 90 }, data: {} },
-  { id: "catalog", type: "catalog", position: { x: 380, y: 60 }, data: {} },
-  { id: "param", type: "param", position: { x: 620, y: 80 }, data: {} },
-  { id: "command", type: "command", position: { x: 820, y: 90 }, data: {} },
+  { id: "pattern", type: "pattern", position: { x: 200, y: 90 }, data: {} },
+  { id: "catalog", type: "catalog", position: { x: 430, y: 60 }, data: {} },
+  { id: "param", type: "param", position: { x: 700, y: 80 }, data: {} },
+  { id: "command", type: "command", position: { x: 940, y: 90 }, data: {} },
 ]
 
 const initialEdges: Edge[] = [
   { id: "e1", source: "alert", target: "pattern", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#3b82f6" } },
-  { id: "e2", source: "pattern", target: "catalog", animated: true, style: { stroke: "#8b5cf6", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" }, label: "BM25", labelStyle: { fill: "#8b5cf6", fontSize: 9 }, labelBgStyle: { fill: "transparent" } },
-  { id: "e3", source: "catalog", target: "param", animated: true, style: { stroke: "#f97316", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#f97316" }, label: "#78", labelStyle: { fill: "#f97316", fontSize: 9 }, labelBgStyle: { fill: "transparent" } },
+  { id: "e2", source: "pattern", target: "catalog", animated: true, style: { stroke: "#8b5cf6", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" }, label: "BM25", labelStyle: { fill: "#8b5cf6", fontSize: 11 }, labelBgStyle: { fill: "transparent" } },
+  { id: "e3", source: "catalog", target: "param", animated: true, style: { stroke: "#f97316", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#f97316" }, label: "#78", labelStyle: { fill: "#f97316", fontSize: 11 }, labelBgStyle: { fill: "transparent" } },
   { id: "e4", source: "param", target: "command", animated: true, style: { stroke: "#22c55e", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#22c55e" } },
 ]
 
@@ -333,7 +331,7 @@ export default function RunbookAgentSlide() {
           subtitle="Watch template matching — Pattern to executable remediation playbook"
         />
 
-        <div className="flex-1 grid grid-cols-4 gap-3">
+        <div className="flex-1 grid grid-cols-4 gap-4">
           <div className="col-span-3 rounded-xl overflow-hidden border shadow-lg bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
             <ReactFlow
               nodes={nodes}
@@ -344,18 +342,18 @@ export default function RunbookAgentSlide() {
               nodesDraggable={!isLocked}
               nodesConnectable={false}
               fitView
-              minZoom={0.5}
+              minZoom={0.4}
               maxZoom={1.5}
-              defaultViewport={{ x: 40, y: 80, zoom: 0.75 }}
+              defaultViewport={{ x: 40, y: 80, zoom: 0.65 }}
             >
               <Background color="#94a3b8" gap={30} size={1} />
               <Controls showInteractive={false} />
               <div className="absolute top-3 right-3 flex gap-2 z-50">
-                <Button size="sm" onClick={toggleLock} className={`h-9 px-3 gap-1.5 text-xs font-medium shadow-md ${isLocked ? "bg-green-600 hover:bg-green-700 text-white" : "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300"}`}>
+                <Button size="sm" onClick={toggleLock} className={`h-9 px-3 gap-1.5 text-sm font-medium shadow-md ${isLocked ? "bg-green-600 hover:bg-green-700 text-white" : "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300"}`}>
                   {isLocked ? <Lock className="h-4 w-4" /> : <Unlock className="h-4 w-4" />}
                   {isLocked ? "Locked" : "Drag to arrange"}
                 </Button>
-                <Button size="sm" variant="outline" onClick={resetPositions} className="h-9 px-3 gap-1.5 text-xs font-medium shadow-md bg-white hover:bg-gray-100 border border-gray-300">
+                <Button size="sm" variant="outline" onClick={resetPositions} className="h-9 px-3 gap-1.5 text-sm font-medium shadow-md bg-white hover:bg-gray-100 border border-gray-300">
                   <RotateCcw className="h-4 w-4" />
                   Reset
                 </Button>
@@ -363,23 +361,23 @@ export default function RunbookAgentSlide() {
             </ReactFlow>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             <Card className="shadow-lg">
-              <CardContent className="p-3">
-                <h3 className="font-bold text-sm mb-2 flex items-center gap-2">
-                  <Server className="h-4 w-4 text-green-500" />
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-3 flex items-center gap-2">
+                  <Server className="h-5 w-5 text-green-500" />
                   AWX Templates
                 </h3>
-                <div className="space-y-1.5 text-[10px]">
+                <div className="space-y-2 text-base">
                   {[
                     { id: 42, name: "restart_service", runs: 156 },
                     { id: 78, name: "clear_queue", runs: 89 },
                     { id: 103, name: "restart_libvirtd", runs: 234 },
                   ].map((t) => (
-                    <div key={t.id} className="flex justify-between items-center px-2 py-1 bg-muted/50 rounded">
+                    <div key={t.id} className="flex justify-between items-center px-3 py-2 bg-muted/50 rounded">
                       <code className="text-green-500">#{t.id}</code>
                       <span>{t.name}</span>
-                      <Badge variant="secondary" className="text-[8px]">{t.runs}</Badge>
+                      <Badge variant="secondary" className="text-sm">{t.runs}</Badge>
                     </div>
                   ))}
                 </div>
@@ -387,27 +385,27 @@ export default function RunbookAgentSlide() {
             </Card>
 
             <Card className="shadow-lg border-2 border-green-500/30">
-              <CardContent className="p-3">
-                <h4 className="font-semibold text-xs mb-2 flex items-center gap-2">
-                  <FileCode className="h-4 w-4 text-green-500" />
+              <CardContent className="p-4">
+                <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                  <FileCode className="h-5 w-5 text-green-500" />
                   Ansible Integration
                 </h4>
-                <p className="text-[10px] text-muted-foreground">
+                <p className="text-base text-muted-foreground">
                   Version-controlled playbooks in GitLab with AWX providing execution, scheduling, and RBAC.
                 </p>
               </CardContent>
             </Card>
 
             <Card className="shadow-lg bg-gradient-to-br from-primary/5 to-secondary/5">
-              <CardContent className="p-3">
-                <div className="grid grid-cols-2 gap-2 text-center">
+              <CardContent className="p-4">
+                <div className="grid grid-cols-2 gap-3 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-orange-500">47</div>
-                    <div className="text-[10px] text-muted-foreground">Templates</div>
+                    <div className="text-3xl font-bold text-orange-500">47</div>
+                    <div className="text-base text-muted-foreground">Templates</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-green-500">89%</div>
-                    <div className="text-[10px] text-muted-foreground">Match Rate</div>
+                    <div className="text-3xl font-bold text-green-500">89%</div>
+                    <div className="text-base text-muted-foreground">Match Rate</div>
                   </div>
                 </div>
               </CardContent>

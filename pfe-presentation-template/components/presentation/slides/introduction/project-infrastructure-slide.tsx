@@ -56,8 +56,8 @@ export default function ProjectInfrastructureSlide() {
             <Card className="shadow-md border-0 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 flex-1 flex flex-col">
               <CardContent className="p-6 flex-1 flex flex-col">
                 <div className="flex items-center gap-3 mb-4">
-                  <Layers className="h-8 w-8 text-muted-foreground" />
-                  <h4 className="text-xl font-semibold text-muted-foreground uppercase tracking-wide">
+                  <Layers className="h-10 w-10 text-muted-foreground" />
+                  <h4 className="text-2xl font-semibold text-muted-foreground uppercase tracking-wide">
                     Existing Monitoring & Automation Stack
                   </h4>
                 </div>
@@ -72,8 +72,8 @@ export default function ProjectInfrastructureSlide() {
                       whileHover={{ y: -2, scale: 1.05 }}
                     >
                       <tool.icon className={`h-14 w-14 mx-auto mb-3 ${tool.color}`} />
-                      <div className="text-sm font-semibold text-foreground">{tool.name}</div>
-                      <div className="text-xs text-muted-foreground">{tool.desc}</div>
+                      <div className="text-xl font-semibold text-foreground">{tool.name}</div>
+                      <div className="text-lg text-muted-foreground">{tool.desc}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -112,11 +112,11 @@ export default function ProjectInfrastructureSlide() {
                       >
                         <Zap className="h-12 w-12 text-yellow-300" />
                       </motion.div>
-                      <h3 className="text-3xl font-bold text-white">
+                      <h3 className="text-4xl font-bold text-white">
                         Vision: SRE Co-Pilot
                       </h3>
                     </div>
-                    <p className="text-base text-white/90 max-w-md leading-relaxed">
+                    <p className="text-2xl text-white/90 max-w-md leading-relaxed">
                       Transform IT operations from reactive and manual to{" "}
                       <span className="font-bold text-yellow-200">
                         proactive AI-driven automation
@@ -136,7 +136,7 @@ export default function ProjectInfrastructureSlide() {
                           <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-2">
                             <Server className="h-12 w-12 mx-auto text-white" />
                           </div>
-                          <span className="text-sm font-medium text-white">Alert</span>
+                          <span className="text-xl font-medium text-white">Alert</span>
                         </motion.div>
                         
                         <motion.div
@@ -153,7 +153,7 @@ export default function ProjectInfrastructureSlide() {
                           <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-2">
                             <Brain className="h-12 w-12 mx-auto text-cyan-300" />
                           </div>
-                          <span className="text-sm font-medium text-white">AI Analysis</span>
+                          <span className="text-xl font-medium text-white">AI Analysis</span>
                         </motion.div>
                         
                         <motion.div
@@ -170,7 +170,7 @@ export default function ProjectInfrastructureSlide() {
                           <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-2">
                             <Zap className="h-12 w-12 mx-auto text-green-400" />
                           </div>
-                          <span className="text-sm font-medium text-white">Auto-Fix</span>
+                          <span className="text-xl font-medium text-white">Auto-Fix</span>
                         </motion.div>
                       </div>
                     </div>
@@ -185,9 +185,9 @@ export default function ProjectInfrastructureSlide() {
                     >
                       <Badge 
                         variant="outline" 
-                        className="text-base px-5 py-2.5 bg-white/10 backdrop-blur-sm border-white/30 text-white"
+                        className="text-xl px-5 py-2.5 bg-white/10 backdrop-blur-sm border-white/30 text-white"
                       >
-                        <Brain className="h-5 w-5 mr-2" />
+                        <Brain className="h-6 w-6 mr-2" />
                         Multi-Agent LLM System
                       </Badge>
                     </motion.div>

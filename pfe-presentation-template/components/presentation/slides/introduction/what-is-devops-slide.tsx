@@ -1,19 +1,15 @@
 "use client"
 import SlideWrapper from "../../slide-wrapper"
 import SlideHeader from "../../slide-header"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent } from "@/components/ui/card"
 import {
     GitBranch,
     Settings,
     Users,
-    Rocket,
+    RefreshCw,
     Code,
     Server,
-    RefreshCw,
-    Shield,
     Lightbulb,
-    ArrowRight,
     Book
 } from "lucide-react"
 
@@ -50,34 +46,10 @@ const coreComponents = [
     }
 ]
 
-const traditionalVsDevOps = [
-    {
-        traditional: "Silos organisationnels",
-        devops: "Équipes collaboratives",
-        icon: Users
-    },
-    {
-        traditional: "Déploiements manuels",
-        devops: "Déploiement automatisé",
-        icon: Rocket
-    },
-    {
-        traditional: "Cycles longs",
-        devops: "Livraison continue",
-        icon: RefreshCw
-    },
-    {
-        traditional: "Réaction aux problèmes",
-        devops: "Prévention proactive",
-        icon: Shield
-    }
-]
-
 export default function WhatIsDevOpsSlide() {
     return (
         <SlideWrapper>
             <div className="h-full flex flex-col">
-                {/* En-tête - réduit */}
                 <SlideHeader 
                     badge="1 • Introduction"
                     title="Qu'est-ce que le DevOps ?"
@@ -86,14 +58,13 @@ export default function WhatIsDevOpsSlide() {
                 />
 
                 <div className="flex-1 overflow-hidden">
-                    {/* Layout horizontal - Definition à gauche, Piliers à droite */}
                     <div className="h-full grid grid-cols-2 gap-8 px-4">
 
                         {/* Partie gauche - Définition DevOps */}
                         <div className="flex flex-col justify-center">
                             <div className="space-y-4">
-                                <h2 className="text-2xl font-bold text-center flex items-center justify-center gap-3">
-                                    <Book className="h-8 w-8 text-primary" />
+                                <h2 className="text-3xl font-bold text-center flex items-center justify-center gap-3">
+                                    <Book className="h-10 w-10 text-primary" />
                                     Définition du DevOps
                                 </h2>
                                 <Card className="w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-0 shadow-xl rounded-2xl">
@@ -139,10 +110,10 @@ export default function WhatIsDevOpsSlide() {
 
                                             <div className="inline-flex items-center gap-3 mb-4 px-4 py-2 bg-primary/10 rounded-full">
                                                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                                                <span className="text-sm font-medium text-primary uppercase tracking-wider">Définition</span>
+                                                <span className="text-lg font-medium text-primary uppercase tracking-wider">Définition</span>
                                             </div>
 
-                                            <p className="text-lg leading-relaxed font-medium text-foreground">
+                                            <p className="text-2xl leading-relaxed font-medium text-foreground">
                                                 {devopsDefinition.description}
                                             </p>
                                         </div>
@@ -150,11 +121,12 @@ export default function WhatIsDevOpsSlide() {
                                 </Card>
                             </div>
                         </div>
+                        
                         {/* Partie droite - Piliers fondamentaux en 2x2 */}
                         <div className="flex flex-col justify-center">
                             <div className="space-y-4">
-                                <h2 className="text-2xl font-bold text-center flex items-center justify-center gap-3">
-                                    <Settings className="h-8 w-8 text-primary" />
+                                <h2 className="text-3xl font-bold text-center flex items-center justify-center gap-3">
+                                    <Settings className="h-10 w-10 text-primary" />
                                     Piliers Fondamentaux
                                 </h2>
                                 <div className="grid grid-cols-2 gap-4">
@@ -165,8 +137,8 @@ export default function WhatIsDevOpsSlide() {
                                                     <component.icon className="h-8 w-8 text-white" />
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <h3 className="text-lg font-bold text-foreground">{component.title}</h3>
-                                                    <p className="text-sm text-muted-foreground leading-relaxed">{component.description}</p>
+                                                    <h3 className="text-2xl font-bold text-foreground">{component.title}</h3>
+                                                    <p className="text-xl text-muted-foreground leading-relaxed">{component.description}</p>
                                                 </div>
                                             </div>
                                         </Card>

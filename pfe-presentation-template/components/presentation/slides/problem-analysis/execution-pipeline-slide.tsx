@@ -54,23 +54,16 @@ function BackupNode({ data }: NodeProps) {
     <div className={`relative transition-all duration-300 ${isActive ? "scale-110" : "scale-100"}`}>
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-purple-500" />
       <div
-        className={`p-4 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 border-2 border-indigo-500/50 shadow-xl transition-all duration-300 min-w-[140px] ${
+        className={`p-4 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 border-2 border-indigo-500/50 shadow-xl transition-all duration-300 min-w-[150px] ${
           isActive ? "ring-4 ring-offset-2 ring-indigo-500/30" : ""
         }`}
         style={{ boxShadow: isActive ? "0 0 25px rgba(99,102,241,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <Database className={`h-6 w-6 text-indigo-500 ${isActive ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm">BACKUP_STATE</span>
+          <Database className={`h-7 w-7 text-indigo-500 ${isActive ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base">BACKUP</span>
         </div>
-        <p className="text-[10px] text-muted-foreground">Capture configuration</p>
-        <div className="mt-2 space-y-1">
-          {["Store config", "Record artifacts", "Set backup_status"].map((item, i) => (
-            <span key={i} className="text-[9px] px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 block">
-              {item}
-            </span>
-          ))}
-        </div>
+        <p className="text-sm text-muted-foreground">Capture config</p>
         {isActive && <div className="absolute -top-1 -right-1 w-3 h-3 bg-indigo-400 rounded-full animate-ping" />}
       </div>
       <Handle type="source" position={Position.Right} className="w-3 h-3 !bg-red-500" />
@@ -94,19 +87,19 @@ function ExecutorNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-red-500" />
       <div
-        className="p-4 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border-2 border-red-500/50 shadow-xl min-w-[160px]"
+        className="p-4 rounded-2xl bg-gradient-to-br from-red-500/20 to-orange-500/20 border-2 border-red-500/50 shadow-xl min-w-[170px]"
         style={{ boxShadow: phase === 2 ? "0 0 30px rgba(239,68,68,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <Cog className={`h-6 w-6 text-red-500 ${phase >= 0 ? "animate-spin" : ""}`} style={{ animationDuration: "3s" }} />
-          <span className="font-bold text-sm">EXECUTOR</span>
+          <Cog className={`h-7 w-7 text-red-500 ${phase >= 0 ? "animate-spin" : ""}`} style={{ animationDuration: "3s" }} />
+          <span className="font-bold text-base">EXECUTOR</span>
         </div>
-        <p className="text-[10px] text-muted-foreground mb-2">AWX MCP execution</p>
-        <div className="flex gap-1">
+        <p className="text-sm text-muted-foreground mb-3">AWX MCP</p>
+        <div className="flex gap-1.5">
           {phases.map((p, i) => (
             <Badge
               key={i}
-              className={`text-[9px] transition-all duration-300 ${
+              className={`text-xs transition-all duration-300 ${
                 i === phase
                   ? i === 0
                     ? "bg-blue-500 text-white scale-110"
@@ -143,38 +136,26 @@ function ValidatorNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-emerald-500" />
       <div
-        className={`p-4 rounded-2xl border-2 shadow-xl min-w-[140px] transition-all duration-300 ${
+        className={`p-4 rounded-2xl border-2 shadow-xl min-w-[150px] transition-all duration-300 ${
           result === "pass"
             ? "bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-emerald-500/50 ring-4 ring-offset-2 ring-emerald-500/30"
             : result === "fail"
             ? "bg-gradient-to-br from-red-500/20 to-rose-500/20 border-red-500/50 ring-4 ring-offset-2 ring-red-500/30"
             : "bg-gradient-to-br from-emerald-500/20 to-green-500/20 border-emerald-500/50"
         }`}
-        style={{
-          boxShadow:
-            result === "pass"
-              ? "0 0 25px rgba(16,185,129,0.5)"
-              : result === "fail"
-              ? "0 0 25px rgba(239,68,68,0.5)"
-              : undefined,
-        }}
       >
         <div className="flex items-center gap-2 mb-2">
           {result === "pass" ? (
-            <CheckCircle className="h-6 w-6 text-emerald-500 animate-pulse" />
+            <CheckCircle className="h-7 w-7 text-emerald-500 animate-pulse" />
           ) : result === "fail" ? (
-            <XCircle className="h-6 w-6 text-red-500 animate-pulse" />
+            <XCircle className="h-7 w-7 text-red-500 animate-pulse" />
           ) : (
-            <CheckCircle className="h-6 w-6 text-emerald-500" />
+            <CheckCircle className="h-7 w-7 text-emerald-500" />
           )}
-          <span className="font-bold text-sm">VALIDATOR</span>
+          <span className="font-bold text-base">VALIDATOR</span>
         </div>
-        <p className="text-[10px] text-muted-foreground mb-2">Grafana MCP verification</p>
-        <Badge
-          className={`text-[9px] ${
-            result === "pass" ? "bg-emerald-500" : result === "fail" ? "bg-red-500" : "bg-muted"
-          }`}
-        >
+        <p className="text-sm text-muted-foreground mb-2">Grafana MCP</p>
+        <Badge className={`text-xs ${result === "pass" ? "bg-emerald-500" : result === "fail" ? "bg-red-500" : "bg-muted"}`}>
           {result === "checking" ? "Checking..." : result.toUpperCase()}
         </Badge>
       </div>
@@ -200,23 +181,16 @@ function LearnerNode({ data }: NodeProps) {
     <div className={`relative transition-all duration-300 ${isLearning ? "scale-110" : "scale-100"}`}>
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-violet-500" />
       <div
-        className={`p-4 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 border-2 border-violet-500/50 shadow-xl min-w-[140px] ${
+        className={`p-4 rounded-2xl bg-gradient-to-br from-violet-500/20 to-purple-500/20 border-2 border-violet-500/50 shadow-xl min-w-[150px] ${
           isLearning ? "ring-4 ring-offset-2 ring-violet-500/30" : ""
         }`}
         style={{ boxShadow: isLearning ? "0 0 25px rgba(139,92,246,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <Brain className={`h-6 w-6 text-violet-500 ${isLearning ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm">LEARNER</span>
+          <Brain className={`h-7 w-7 text-violet-500 ${isLearning ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base">LEARNER</span>
         </div>
-        <p className="text-[10px] text-muted-foreground">Update knowledge base</p>
-        <div className="mt-2 space-y-1">
-          {["Update confidence", "Store outcome", "Promote to KB"].map((item, i) => (
-            <span key={i} className="text-[9px] px-1.5 py-0.5 rounded bg-violet-500/10 text-violet-600 dark:text-violet-400 block">
-              {item}
-            </span>
-          ))}
-        </div>
+        <p className="text-sm text-muted-foreground">Update KB</p>
         {isLearning && <div className="absolute -top-1 -right-1 w-3 h-3 bg-violet-400 rounded-full animate-ping" />}
       </div>
     </div>
@@ -239,16 +213,15 @@ function RollbackNode({ data }: NodeProps) {
     <div className={`relative transition-all duration-300 ${isRolling ? "scale-110" : "scale-100"}`}>
       <Handle type="target" position={Position.Top} className="w-3 h-3 !bg-red-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-red-500/20 to-rose-500/20 border-2 border-red-500/50 shadow-lg ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-red-500/20 to-rose-500/20 border-2 border-red-500/50 shadow-lg ${
           isRolling ? "ring-4 ring-offset-2 ring-red-500/30" : ""
         }`}
-        style={{ boxShadow: isRolling ? "0 0 25px rgba(239,68,68,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2">
-          <RotateCcw className={`h-5 w-5 text-red-500 ${isRolling ? "animate-spin" : ""}`} />
-          <span className="font-bold text-sm">ROLLBACK</span>
+          <RotateCcw className={`h-6 w-6 text-red-500 ${isRolling ? "animate-spin" : ""}`} />
+          <span className="font-bold text-base">ROLLBACK</span>
         </div>
-        <p className="text-[10px] text-muted-foreground mt-1">Restore from backup</p>
+        <p className="text-sm text-muted-foreground mt-1">Restore backup</p>
       </div>
       <Handle type="source" position={Position.Left} className="w-3 h-3 !bg-indigo-500" />
     </div>
@@ -270,16 +243,15 @@ function StartNode({ data }: NodeProps) {
   return (
     <div className="relative">
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border-2 border-green-500/50 shadow-lg transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 border-2 border-green-500/50 shadow-lg transition-all duration-300 ${
           pulse ? "scale-110 ring-4 ring-offset-2 ring-green-500/30" : ""
         }`}
-        style={{ boxShadow: pulse ? "0 0 20px rgba(34,197,94,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2">
-          <Play className={`h-5 w-5 text-green-500 ${pulse ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm">START</span>
+          <Play className={`h-6 w-6 text-green-500 ${pulse ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base">START</span>
         </div>
-        <p className="text-[10px] text-muted-foreground">Policy approved</p>
+        <p className="text-sm text-muted-foreground">Approved</p>
       </div>
       <Handle type="source" position={Position.Right} className="w-3 h-3 !bg-indigo-500" />
     </div>
@@ -297,15 +269,14 @@ const nodeTypes = {
 
 const initialNodes: Node[] = [
   { id: "start", type: "start", position: { x: 0, y: 120 }, data: {} },
-  { id: "backup", type: "backup", position: { x: 150, y: 100 }, data: {} },
-  { id: "executor", type: "executor", position: { x: 350, y: 100 }, data: {} },
-  { id: "validator", type: "validator", position: { x: 570, y: 100 }, data: {} },
-  { id: "learner", type: "learner", position: { x: 780, y: 100 }, data: {} },
-  { id: "rollback", type: "rollback", position: { x: 460, y: 280 }, data: {} },
+  { id: "backup", type: "backup", position: { x: 160, y: 100 }, data: {} },
+  { id: "executor", type: "executor", position: { x: 370, y: 100 }, data: {} },
+  { id: "validator", type: "validator", position: { x: 600, y: 100 }, data: {} },
+  { id: "learner", type: "learner", position: { x: 810, y: 100 }, data: {} },
+  { id: "rollback", type: "rollback", position: { x: 480, y: 280 }, data: {} },
 ]
 
 const initialEdges: Edge[] = [
-  // Main flow
   {
     id: "e-start-backup",
     source: "start",
@@ -339,10 +310,9 @@ const initialEdges: Edge[] = [
     style: { stroke: "#8b5cf6", strokeWidth: 2 },
     markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" },
     label: "PASS",
-    labelStyle: { fill: "#10b981", fontSize: 10, fontWeight: "bold" },
+    labelStyle: { fill: "#10b981", fontSize: 11, fontWeight: "bold" },
     labelBgStyle: { fill: "transparent" },
   },
-  // Rollback paths
   {
     id: "e-exec-rollback",
     source: "executor",
@@ -352,7 +322,7 @@ const initialEdges: Edge[] = [
     style: { stroke: "#ef4444", strokeWidth: 2, strokeDasharray: "5,5" },
     markerEnd: { type: MarkerType.ArrowClosed, color: "#ef4444" },
     label: "ERROR",
-    labelStyle: { fill: "#ef4444", fontSize: 9 },
+    labelStyle: { fill: "#ef4444", fontSize: 10 },
     labelBgStyle: { fill: "transparent" },
   },
   {
@@ -364,7 +334,7 @@ const initialEdges: Edge[] = [
     style: { stroke: "#ef4444", strokeWidth: 2, strokeDasharray: "5,5" },
     markerEnd: { type: MarkerType.ArrowClosed, color: "#ef4444" },
     label: "FAIL",
-    labelStyle: { fill: "#ef4444", fontSize: 9 },
+    labelStyle: { fill: "#ef4444", fontSize: 10 },
     labelBgStyle: { fill: "transparent" },
   },
   {
@@ -375,7 +345,7 @@ const initialEdges: Edge[] = [
     style: { stroke: "#6366f1", strokeWidth: 2, strokeDasharray: "5,5" },
     markerEnd: { type: MarkerType.ArrowClosed, color: "#6366f1" },
     label: "restore",
-    labelStyle: { fill: "#6366f1", fontSize: 9 },
+    labelStyle: { fill: "#6366f1", fontSize: 10 },
     labelBgStyle: { fill: "transparent" },
   },
 ]
@@ -432,10 +402,10 @@ export default function ExecutionPipelineSlide() {
         <SlideHeader
           badge="6 • Architecture"
           title="Execution Pipeline: Safe Remediation"
-          subtitle="Watch the flow — Backup → Execute → Validate → Learn/Rollback"
+          subtitle="Backup → Execute → Validate → Learn or Rollback"
         />
 
-        <div className="flex-1 grid grid-cols-4 gap-3">
+        <div className="flex-1 grid grid-cols-4 gap-4">
           <div className="col-span-3 rounded-xl overflow-hidden border shadow-lg bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
             <ReactFlow
               nodes={nodes}
@@ -448,39 +418,38 @@ export default function ExecutionPipelineSlide() {
               fitView
               minZoom={0.5}
               maxZoom={1.5}
-              defaultViewport={{ x: 30, y: 30, zoom: 0.85 }}
+              defaultViewport={{ x: 30, y: 30, zoom: 0.8 }}
             >
               <Background color="#94a3b8" gap={30} size={1} />
               <Controls showInteractive={false} />
               <div className="absolute top-3 right-3 flex gap-2 z-50">
                 <Button size="sm" onClick={toggleLock} className={`h-9 px-3 gap-1.5 text-xs font-medium shadow-md ${isLocked ? "bg-green-600 hover:bg-green-700 text-white" : "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300"}`}>
                   {isLocked ? <Lock className="h-4 w-4" /> : <Unlock className="h-4 w-4" />}
-                  {isLocked ? "Locked" : "Drag to arrange"}
+                  {isLocked ? "Locked" : "Drag"}
                 </Button>
                 <Button size="sm" variant="outline" onClick={resetPositions} className="h-9 px-3 gap-1.5 text-xs font-medium shadow-md bg-white hover:bg-gray-100 border border-gray-300">
                   <RotateCcw className="h-4 w-4" />
-                  Reset
                 </Button>
               </div>
             </ReactFlow>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             <Card className="shadow-lg">
-              <CardContent className="p-3">
-                <h3 className="font-bold text-sm mb-2 flex items-center gap-2">
-                  <Zap className="h-4 w-4 text-primary" />
+              <CardContent className="p-4">
+                <h3 className="font-bold text-base mb-3 flex items-center gap-2">
+                  <Zap className="h-5 w-5 text-primary" />
                   Execution Phases
                 </h3>
-                <div className="space-y-1.5 text-[10px]">
+                <div className="space-y-2">
                   {[
                     { phase: "SIMULATE", desc: "Dry-run first", color: "text-blue-500" },
                     { phase: "CANARY", desc: "Single target test", color: "text-yellow-500" },
                     { phase: "EXPAND", desc: "Full rollout", color: "text-green-500" },
                   ].map((item, i) => (
-                    <div key={i} className="p-1.5 bg-muted/50 rounded flex items-center gap-2">
-                      <span className={`font-bold ${item.color}`}>{item.phase}</span>
-                      <span className="text-muted-foreground">{item.desc}</span>
+                    <div key={i} className="p-2 bg-muted/50 rounded-lg flex items-center gap-3">
+                      <span className={`font-bold text-sm ${item.color}`}>{item.phase}</span>
+                      <span className="text-sm text-muted-foreground">{item.desc}</span>
                     </div>
                   ))}
                 </div>
@@ -488,20 +457,20 @@ export default function ExecutionPipelineSlide() {
             </Card>
 
             <Card className="shadow-lg border-2 border-red-500/30">
-              <CardContent className="p-3">
-                <h4 className="font-semibold text-xs mb-2 flex items-center gap-2">
-                  <RotateCcw className="h-4 w-4 text-red-500" />
+              <CardContent className="p-4">
+                <h4 className="font-bold text-sm mb-3 flex items-center gap-2">
+                  <RotateCcw className="h-5 w-5 text-red-500" />
                   Rollback Triggers
                 </h4>
-                <div className="space-y-1 text-[10px]">
+                <div className="space-y-2">
                   {[
                     "Validation metrics fail",
                     "AWX job non-zero exit",
                     "Health check fails",
                   ].map((item, i) => (
                     <div key={i} className="flex items-center gap-2">
-                      <AlertTriangle className="h-3 w-3 text-red-500" />
-                      <span className="text-muted-foreground">{item}</span>
+                      <AlertTriangle className="h-4 w-4 text-red-500" />
+                      <span className="text-sm text-muted-foreground">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -509,46 +478,22 @@ export default function ExecutionPipelineSlide() {
             </Card>
 
             <Card className="shadow-lg bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
-              <CardContent className="p-3">
-                <h4 className="font-semibold text-xs mb-2 flex items-center gap-2 text-green-700 dark:text-green-400">
-                  <Shield className="h-4 w-4" />
+              <CardContent className="p-4">
+                <h4 className="font-bold text-sm mb-3 flex items-center gap-2 text-green-700 dark:text-green-400">
+                  <Shield className="h-5 w-5" />
                   Safety Guarantees
                 </h4>
-                <div className="space-y-1">
+                <div className="space-y-2">
                   {[
                     "Always backup first",
                     "Progressive rollout",
                     "Auto-rollback on failure",
-                    "Circuit breaker protection",
                   ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2 text-[10px]">
-                      <CheckCircle className="h-3 w-3 text-green-500" />
-                      <span>{item}</span>
+                    <div key={i} className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-sm">{item}</span>
                     </div>
                   ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-lg bg-gradient-to-br from-primary/5 to-secondary/5">
-              <CardContent className="p-3">
-                <div className="grid grid-cols-2 gap-2 text-center">
-                  <div>
-                    <div className="text-2xl font-bold text-indigo-500">4</div>
-                    <div className="text-[10px] text-muted-foreground">Stages</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-red-500">3</div>
-                    <div className="text-[10px] text-muted-foreground">Phases</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-green-500">100%</div>
-                    <div className="text-[10px] text-muted-foreground">Rollback</div>
-                  </div>
-                  <div>
-                    <div className="text-2xl font-bold text-violet-500">Auto</div>
-                    <div className="text-[10px] text-muted-foreground">Learning</div>
-                  </div>
                 </div>
               </CardContent>
             </Card>

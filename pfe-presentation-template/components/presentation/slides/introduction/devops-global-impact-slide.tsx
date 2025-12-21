@@ -2,9 +2,7 @@
 import SlideWrapper from "../../slide-wrapper"
 import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { 
-  TrendingUp, 
   Clock,
   Shield,
   Users,
@@ -58,7 +56,6 @@ export default function DevOpsGlobalImpactSlide() {
   return (
     <SlideWrapper>
       <div className="h-full flex flex-col">
-        {/* En-tête */}
         <SlideHeader 
           badge="1 • Introduction"
           title="Impact du DevOps"
@@ -68,8 +65,8 @@ export default function DevOpsGlobalImpactSlide() {
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 px-4">
           {/* Métriques d'impact */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3">
-              <BarChart className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold text-center mb-6 flex items-center justify-center gap-3">
+              <BarChart className="h-10 w-10 text-primary" />
               Métriques d'Impact
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -80,11 +77,11 @@ export default function DevOpsGlobalImpactSlide() {
                       <div className={`w-16 h-16 mx-auto rounded-full bg-gradient-to-br ${metric.color} flex items-center justify-center shadow-lg mb-3`}>
                         <metric.icon className="h-8 w-8 text-white" />
                       </div>
-                      <div className="text-3xl font-bold text-primary mb-2">{metric.stat}</div>
-                      <CardTitle className="text-lg font-semibold">{metric.title}</CardTitle>
+                      <div className="text-4xl font-bold text-primary mb-2">{metric.stat}</div>
+                      <CardTitle className="text-xl font-semibold">{metric.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="text-center">
-                      <p className="text-sm text-muted-foreground">{metric.description}</p>
+                      <p className="text-xl text-muted-foreground">{metric.description}</p>
                     </CardContent>
                   </div>
                 </Card>
@@ -94,8 +91,8 @@ export default function DevOpsGlobalImpactSlide() {
 
           {/* Bénéfices globaux */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-3">
-              <Globe className="h-8 w-8 text-primary" />
+            <h2 className="text-3xl font-bold text-center mb-6 flex items-center justify-center gap-3">
+              <Globe className="h-10 w-10 text-primary" />
               Bénéfices Globaux
             </h2>
             <Card className="shadow-xl bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 p-5">
@@ -106,7 +103,7 @@ export default function DevOpsGlobalImpactSlide() {
                       <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-1">
                         <CheckCircle className="h-5 w-5 text-primary" />
                       </div>
-                      <p className="text-lg leading-relaxed font-medium">{benefit}</p>
+                      <p className="text-2xl leading-relaxed font-medium">{benefit}</p>
                     </div>
                   ))}
                 </div>

@@ -10,7 +10,6 @@ import NavigationSlide from "@/components/presentation/slides/core/navigation-sl
 // Introduction slides
 import IntroductionTitleSlide from "@/components/presentation/slides/introduction/introduction-title-slide"
 import ProjectContextSlide from "@/components/presentation/slides/introduction/project-context-slide"
-import ProjectInfrastructureSlide from "@/components/presentation/slides/introduction/project-infrastructure-slide"
 
 // Company context slides
 import CompanyPresentationTitleSlide from "@/components/presentation/slides/company-context/company-presentation-title-slide"
@@ -25,14 +24,11 @@ import TechnologiesUsedSlide from "@/components/presentation/slides/problem-anal
 // Architecture slides
 import ArchitectureTitleSlide from "@/components/presentation/slides/problem-analysis/architecture-title-slide"
 import InteractivePipelineSlide from "@/components/presentation/slides/problem-analysis/interactive-pipeline-slide"
-import LangGraphWorkflowSlide from "@/components/presentation/slides/problem-analysis/langgraph-workflow-slide"
-import SmartRouterSlide from "@/components/presentation/slides/problem-analysis/smart-router-slide"
 import LogicalArchitectureSlide from "@/components/presentation/slides/problem-analysis/logical-architecture-slide"
 import PhysicalArchitectureSlide from "@/components/presentation/slides/problem-analysis/physical-architecture-slide"
 import KubernetesArchitectureSlide from "@/components/presentation/slides/problem-analysis/kubernetes-architecture-slide"
-import MetricsDiagnosticsSlide from "@/components/presentation/slides/problem-analysis/metrics-diagnostics-slide"
-import IncidentAgentSlide from "@/components/presentation/slides/problem-analysis/incident-agent-slide"
-import RunbookAgentSlide from "@/components/presentation/slides/problem-analysis/runbook-agent-slide"
+import SmartRouterSlide from "@/components/presentation/slides/problem-analysis/smart-router-slide"
+import AiAgentsOverviewSlide from "@/components/presentation/slides/problem-analysis/ai-agents-overview-slide"
 import PolicyEngineSlide from "@/components/presentation/slides/problem-analysis/policy-engine-slide"
 import ExecutionPipelineSlide from "@/components/presentation/slides/problem-analysis/execution-pipeline-slide"
 import McpConnectorsSlide from "@/components/presentation/slides/problem-analysis/mcp-connectors-slide"
@@ -40,6 +36,10 @@ import McpConnectorsSlide from "@/components/presentation/slides/problem-analysi
 // Project management slides
 import ProjectPlanningTitleSlide from "@/components/presentation/slides/project-management/project-planning-title-slide"
 import GanttChartSlide from "@/components/presentation/slides/project-management/gantt-chart-slide"
+
+// Demo slides
+import DemoTitleSlide from "@/components/presentation/slides/results-conclusion/demo-title-slide"
+import DemoVideoSlide from "@/components/presentation/slides/results-conclusion/demo-video-slide"
 
 // Results and conclusion slides
 import RealisationTitleSlide from "@/components/presentation/slides/results-conclusion/realisation-title-slide"
@@ -68,49 +68,49 @@ export default function PresentationPage() {
       // 1 - Navigation
       <NavigationSlide key="nav" onNavigate={handleNavigateToSlide} />,
 
-      // SECTION 1: Introduction (slides 2-6) - includes company presentation
+      // SECTION 1: Introduction (slides 2-4)
       <IntroductionTitleSlide key="intro-title" />,
       <ProjectContextSlide key="project-context" />,
-      <ProjectInfrastructureSlide key="project-infrastructure" />,
       <CompanyOverviewSlide key="company-overview" />,
 
-      // SECTION 2: General Context / Problématique (slides 6-7)
+      // SECTION 2: General Context / Problématique (slides 5-6)
       <CompanyPresentationTitleSlide key="company-title" />,
       <CurrentArchitectureProblemsSlide key="problems" />,
 
-      // SECTION 3: Proposed Solution (slides 8)
+      // SECTION 3: Proposed Solution (slide 7)
       <ProposedSolutionSlide key="solution" />,
 
-      // SECTION 4: Specifications (slides 9-10)
+      // SECTION 4: Specifications (slides 8-9)
       <ActorsRequirementsSlide key="actors-requirements" />,
       <TechnologiesUsedSlide key="technologies" />,
 
-      // SECTION 5: Planning (slides 11-12)
+      // SECTION 5: Planning (slides 10-11)
       <ProjectPlanningTitleSlide key="planning-title" />,
       <GanttChartSlide key="gantt-chart" />,
 
-      // SECTION 6: Architecture (slides 13-25)
+      // SECTION 6: Architecture (slides 12-21)
       <ArchitectureTitleSlide key="arch-title" />,
       <InteractivePipelineSlide key="interactive-pipeline" />,
-      <LangGraphWorkflowSlide key="langgraph-workflow" />,
-      <SmartRouterSlide key="smart-router" />,
       <LogicalArchitectureSlide key="logical-arch" />,
       <PhysicalArchitectureSlide key="physical-arch" />,
       <KubernetesArchitectureSlide key="k8s-arch" />,
-      <MetricsDiagnosticsSlide key="metrics-diagnostics" />,
-      <IncidentAgentSlide key="incident-agent" />,
-      <RunbookAgentSlide key="runbook-agent" />,
+      <SmartRouterSlide key="smart-router" />,
+      <AiAgentsOverviewSlide key="ai-agents" />,
       <PolicyEngineSlide key="policy-engine" />,
       <ExecutionPipelineSlide key="execution-pipeline" />,
       <McpConnectorsSlide key="mcp-connectors" />,
 
-      // SECTION 7: Implementation (slides 26-29)
+      // SECTION 7: Demonstration (slides 23-24)
+      <DemoTitleSlide key="demo-title" />,
+      <DemoVideoSlide key="demo-video" />,
+
+      // SECTION 8: Implementation (slides 25-28)
       <RealisationTitleSlide key="realisation-title" />,
       <EnvironmentToolsSlide key="environment-tools" />,
       <KpiImprovementsSlide key="kpi-improvements" />,
       <TestResultsSlide key="test-results" />,
 
-      // SECTION 8: Conclusion (slides 30-32)
+      // SECTION 9: Conclusion (slides 29-31)
       <ConclusionContentSlide key="conclusion" />,
       <FutureRoadmapSlide key="future-roadmap" />,
       <ThankYouSlide key="thank-you" />,
@@ -126,7 +126,7 @@ export default function PresentationPage() {
       "Project Context", // 3
       "Maison du Web", // 4
       "General Context", // 5
-      "System Critique", // 6
+      "Problematic", // 6
       "Proposed Solution - AutoSphere", // 7
       "Actors & Requirements", // 8
       "Technologies Used", // 9
@@ -134,24 +134,23 @@ export default function PresentationPage() {
       "Gantt Chart & Milestones", // 11
       "System Architecture", // 12
       "Interactive Pipeline", // 13
-      "LangGraph Workflow", // 14
-      "Smart Router", // 15
-      "Logical Architecture", // 16
-      "Physical Architecture", // 17
-      "Kubernetes Architecture", // 18 - NEW!
-      "Metrics Agent", // 19
-      "Incident Agent (RAG)", // 20
-      "Runbook Agent (AWX)", // 21
-      "Policy Engine", // 22
-      "Execution Pipeline", // 23
-      "MCP Connectors", // 24
-      "Implementation", // 25
-      "Development Environment", // 26
-      "KPI Improvements", // 27
-      "Test Results", // 28
-      "Summary & Perspectives", // 29
-      "Future Roadmap", // 30
-      "Thank You", // 31
+      "Logical Architecture", // 14
+      "Physical Architecture", // 15
+      "Kubernetes Architecture", // 16
+      "Smart Router", // 17
+      "AI Investigation Agents", // 18
+      "Policy Engine", // 19
+      "Execution Pipeline", // 20
+      "MCP Connectors", // 21
+      "Live Demonstration", // 22
+      "AutoSphere in Action", // 23
+      "Implementation", // 24
+      "Development Environment", // 25
+      "KPI Improvements", // 26
+      "Test Results", // 27
+      "Summary & Perspectives", // 28
+      "Future Roadmap", // 29
+      "Thank You", // 30
     ],
     []
   )

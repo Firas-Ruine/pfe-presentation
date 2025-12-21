@@ -157,8 +157,8 @@ export default function DevelopmentMethodologySlide() {
             <CardTitle className="flex items-center text-2xl">
               <RotateCcw className="mr-3 h-8 w-8 text-primary" />
               Framework Scrum
-              <Badge variant="secondary" className="ml-4">
-                <Award className="mr-1 h-4 w-4" />
+              <Badge variant="secondary" className="ml-4 text-lg">
+                <Award className="mr-1 h-5 w-5" />
                 6 Sprints Complétés
               </Badge>
             </CardTitle>
@@ -167,8 +167,8 @@ export default function DevelopmentMethodologySlide() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Scrum Roles */}
               <div>
-                <h4 className="text-lg font-semibold mb-3 flex items-center">
-                  <Users className="mr-2 h-5 w-5 text-primary" />
+                <h4 className="text-xl font-semibold mb-3 flex items-center">
+                  <Users className="mr-2 h-6 w-6 text-primary" />
                   Rôles Scrum
                 </h4>
                 <div className="space-y-3">
@@ -177,16 +177,16 @@ export default function DevelopmentMethodologySlide() {
                       <CardContent className="p-4">
                         <div className="flex items-center gap-3 mb-2">
                           <div className={`p-2 ${role.color} rounded-lg`}>
-                            <role.icon className="h-4 w-4 text-white" />
+                            <role.icon className="h-5 w-5 text-white" />
                           </div>
                           <div>
-                            <p className="font-semibold text-sm">{role.role}</p>
-                            <p className="text-xs text-muted-foreground">{role.name}</p>
+                            <p className="font-semibold text-lg">{role.role}</p>
+                            <p className="text-base text-muted-foreground">{role.name}</p>
                           </div>
                         </div>
                         <div className="space-y-1">
                           {role.responsibilities.map((resp, i) => (
-                            <Badge key={i} variant="outline" className="mr-1 text-xs">
+                            <Badge key={i} variant="outline" className="mr-1 text-base">
                               {resp}
                             </Badge>
                           ))}
@@ -199,8 +199,8 @@ export default function DevelopmentMethodologySlide() {
 
               {/* Scrum Events */}
               <div>
-                <h4 className="text-lg font-semibold mb-3 flex items-center">
-                  <Calendar className="mr-2 h-5 w-5 text-primary" />
+                <h4 className="text-xl font-semibold mb-3 flex items-center">
+                  <Calendar className="mr-2 h-6 w-6 text-primary" />
                   Événements Scrum
                 </h4>
                 <div className="space-y-3">
@@ -209,14 +209,14 @@ export default function DevelopmentMethodologySlide() {
                       <CardContent className="p-4">
                         <div className="flex justify-between items-start mb-2">
                           <div className="flex-1">
-                            <p className="font-semibold text-sm">{event.event}</p>
-                            <p className="text-xs text-muted-foreground">{event.description}</p>
+                            <p className="font-semibold text-lg">{event.event}</p>
+                            <p className="text-base text-muted-foreground">{event.description}</p>
                           </div>
-                          <Badge variant="secondary" className="text-xs ml-2">
+                          <Badge variant="secondary" className="text-base ml-2">
                             {event.duration}
                           </Badge>
                         </div>
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="outline" className="text-base">
                           {event.frequency}
                         </Badge>
                       </CardContent>
@@ -227,8 +227,8 @@ export default function DevelopmentMethodologySlide() {
 
               {/* Agile Principles */}
               <div>
-                <h4 className="text-lg font-semibold mb-3 flex items-center">
-                  <Target className="mr-2 h-5 w-5 text-primary" />
+                <h4 className="text-xl font-semibold mb-3 flex items-center">
+                  <Target className="mr-2 h-6 w-6 text-primary" />
                   Principes Agiles
                 </h4>
                 <div className="space-y-3">
@@ -236,11 +236,11 @@ export default function DevelopmentMethodologySlide() {
                     <Card key={index} className="shadow-md hover:shadow-lg transition-all duration-200">
                       <CardContent className="p-4">
                         <div className="flex items-start gap-2 mb-2">
-                          <principle.icon className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                          <principle.icon className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
                           <div>
-                            <p className="font-semibold text-sm">{principle.principle}</p>
-                            <p className="text-xs text-muted-foreground mb-2">{principle.description}</p>
-                            <Badge variant="outline" className="text-xs bg-green-50 text-green-700 border-green-200">
+                            <p className="font-semibold text-lg">{principle.principle}</p>
+                            <p className="text-base text-muted-foreground mb-2">{principle.description}</p>
+                            <Badge variant="outline" className="text-base bg-green-50 text-green-700 border-green-200">
                               {principle.benefit}
                             </Badge>
                           </div>
@@ -257,7 +257,7 @@ export default function DevelopmentMethodologySlide() {
         {/* Sprint Overview */}
         <div>
           <h3 className="text-2xl font-semibold mb-6 flex items-center">
-            <Layers className="mr-3 h-6 w-6 text-primary" />
+            <Layers className="mr-3 h-7 w-7 text-primary" />
             Vue d'Ensemble des Sprints
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -266,30 +266,30 @@ export default function DevelopmentMethodologySlide() {
                 <CardHeader className="pb-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-bold text-sm">
+                      <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-bold text-lg">
                         {index + 1}
                       </div>
                       <div>
-                        <CardTitle className="text-lg">{sprint.sprint}</CardTitle>
-                        <p className="text-sm text-muted-foreground">{sprint.focus}</p>
+                        <CardTitle className="text-xl">{sprint.sprint}</CardTitle>
+                        <p className="text-lg text-muted-foreground">{sprint.focus}</p>
                       </div>
                     </div>
-                    <Badge variant="secondary" className="text-xs">
+                    <Badge variant="secondary" className="text-base">
                       {sprint.duration}
                     </Badge>
                   </div>
                 </CardHeader>
                 <CardContent className="space-y-3">
                   <div className="flex items-center gap-1">
-                    <CheckCircle2 className="h-4 w-4 text-green-500" />
-                    <span className="text-sm font-medium text-green-600">Terminé</span>
+                    <CheckCircle2 className="h-5 w-5 text-green-500" />
+                    <span className="text-lg font-medium text-green-600">Terminé</span>
                     <Progress value={sprint.progress} className="flex-1 ml-2 h-2" />
                   </div>
                   <div className="space-y-1">
                     {sprint.deliverables.map((deliverable, i) => (
                       <div key={i} className="flex items-center gap-2">
-                        <CheckCircle2 className="h-3 w-3 text-green-500 flex-shrink-0" />
-                        <span className="text-xs text-muted-foreground">{deliverable}</span>
+                        <CheckCircle2 className="h-4 w-4 text-green-500 flex-shrink-0" />
+                        <span className="text-base text-muted-foreground">{deliverable}</span>
                       </div>
                     ))}
                   </div>
@@ -302,28 +302,28 @@ export default function DevelopmentMethodologySlide() {
         {/* Project Metrics */}
         <Card className="shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white">
           <CardHeader className="pb-4">
-            <CardTitle className="flex items-center gap-2 text-xl">
-              <Clock className="h-6 w-6" />
+            <CardTitle className="flex items-center gap-2 text-2xl">
+              <Clock className="h-7 w-7" />
               Métriques Projet
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="text-center">
-                <div className="text-3xl font-bold">6</div>
-                <div className="text-sm opacity-90">Sprints</div>
+                <div className="text-4xl font-bold">6</div>
+                <div className="text-lg opacity-90">Sprints</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold">12</div>
-                <div className="text-sm opacity-90">Semaines</div>
+                <div className="text-4xl font-bold">12</div>
+                <div className="text-lg opacity-90">Semaines</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold">100%</div>
-                <div className="text-sm opacity-90">Objectifs</div>
+                <div className="text-4xl font-bold">100%</div>
+                <div className="text-lg opacity-90">Objectifs</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold">15+</div>
-                <div className="text-sm opacity-90">Livrables</div>
+                <div className="text-4xl font-bold">15+</div>
+                <div className="text-lg opacity-90">Livrables</div>
               </div>
             </div>
           </CardContent>

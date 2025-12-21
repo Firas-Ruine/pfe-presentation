@@ -1,205 +1,200 @@
 "use client"
 import SlideWrapper from "../../slide-wrapper"
 import SlideHeader from "../../slide-header"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { motion } from "framer-motion"
 import { 
-  TrendingUp, TrendingDown, Clock, AlertTriangle, Users, Activity, 
-  ArrowRight, CheckCircle, Zap, Brain, Database
+  TrendingUp, Clock, AlertTriangle, Users, 
+  ArrowRight, CheckCircle2
 } from "lucide-react"
 
-const kpiMetrics = [
+// Only 3 key metrics - the ones that matter most
+const keyMetrics = [
   { 
-    kpi: "MTTD", 
-    fullName: "Mean Time To Detect",
-    before: "~5 min", 
-    after: "-15 min", 
-    improvement: "↓ 20 min EARLIER",
-    mechanism: "Predictive ML (RCF)",
-    icon: Clock,
-    color: "blue"
-  },
-  { 
-    kpi: "MTTA", 
-    fullName: "Mean Time To Acknowledge",
-    before: "~10 min", 
-    after: "<1 sec", 
-    improvement: "↓ 99.8%",
-    mechanism: "Auto-triage",
-    icon: Zap,
-    color: "purple"
-  },
-  { 
-    kpi: "MTTR", 
+    label: "MTTR", 
     fullName: "Mean Time To Repair",
     before: "~30 min", 
-    after: "~30 sec (fast) / ~2 min (full)", 
-    improvement: "↓ 93%",
-    mechanism: "Fast path + parallel agents",
-    icon: Activity,
-    color: "green"
+    after: "~30 sec", 
+    improvement: "93%",
+    icon: Clock,
+    color: "from-red-500 to-orange-500",
+    bgColor: "bg-red-50 dark:bg-red-950/30"
   },
   { 
-    kpi: "Volume", 
-    fullName: "Daily Alert Volume",
+    label: "Alert Volume", 
+    fullName: "Daily Alerts",
     before: "~1,000/day", 
     after: "~300/day", 
-    improvement: "↓ 70%",
-    mechanism: "Redis dedup + correlation",
+    improvement: "70%",
     icon: AlertTriangle,
-    color: "orange"
+    color: "from-orange-500 to-amber-500",
+    bgColor: "bg-orange-50 dark:bg-orange-950/30"
   },
   { 
-    kpi: "False Pos.", 
-    fullName: "False Positive Rate",
-    before: "~40%", 
-    after: "~10%", 
-    improvement: "↓ 75%",
-    mechanism: "Disposition classification",
-    icon: Brain,
-    color: "cyan"
-  },
-  { 
-    kpi: "Human Work", 
-    fullName: "Manual Intervention",
+    label: "Manual Work", 
+    fullName: "Human Intervention",
     before: "100%", 
     after: "15%", 
-    improvement: "↓ 85%",
-    mechanism: "Auto-approval (low-risk + high-conf)",
+    improvement: "85%",
     icon: Users,
-    color: "red"
+    color: "from-amber-500 to-yellow-500",
+    bgColor: "bg-amber-50 dark:bg-amber-950/30"
   },
 ]
 
-const featureImpact = [
-  { feature: "Predictive Alerts (RCF)", impact: "MTTD ↓ 20 min", desc: "Detect 15 min BEFORE failure" },
-  { feature: "Deduplication (Redis)", impact: "Volume ↓ 70%", desc: "5-min TTL fingerprinting" },
-  { feature: "Parallel Investigation", impact: "MTTR ↓ 66%", desc: "3x faster than sequential" },
-  { feature: "Fast Path Routing", impact: "MTTR ↓ 93%", desc: "Skip investigation for known patterns" },
-  { feature: "Disposition Classification", impact: "False Pos ↓ 75%", desc: "Identify rule misconfiguration" },
-  { feature: "Auto-Approval (Policy)", impact: "Human ↓ 85%", desc: "Low-risk + high-confidence" },
-]
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1, 
+    transition: { staggerChildren: 0.2, delayChildren: 0.1 } 
+  }
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30, scale: 0.95 },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    scale: 1,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } 
+  }
+}
 
 export default function KpiImprovementsSlide() {
   return (
     <SlideWrapper>
       <div className="h-full flex flex-col">
         <SlideHeader 
-          badge="Results" 
-          title="KPI Improvements Matrix" 
-          subtitle="Quantified operational impact of AutoSphere" 
+          badge="7 • Results" 
+          title="Measured Impact" 
+          subtitle="Before and after AutoSphere implementation" 
         />
         
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-5" style={{ minHeight: 0 }}>
-          {/* KPI Metrics Grid */}
-          <div className="flex flex-col">
-            <h3 className="text-base font-semibold flex items-center mb-3">
-              <TrendingUp className="h-6 w-6 mr-3 text-green-500" />
-              Before vs After Comparison
-            </h3>
-            <div className="grid grid-cols-2 gap-3 flex-1">
-              {kpiMetrics.map((metric) => (
-                <Card key={metric.kpi} className={`shadow-md border-l-4 ${
-                  metric.color === 'blue' ? 'border-l-blue-500' :
-                  metric.color === 'purple' ? 'border-l-purple-500' :
-                  metric.color === 'green' ? 'border-l-green-500' :
-                  metric.color === 'orange' ? 'border-l-orange-500' :
-                  metric.color === 'cyan' ? 'border-l-cyan-500' :
-                  'border-l-red-500'
-                }`}>
-                  <CardContent className="p-3">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <metric.icon className={`h-5 w-5 ${
-                          metric.color === 'blue' ? 'text-blue-500' :
-                          metric.color === 'purple' ? 'text-purple-500' :
-                          metric.color === 'green' ? 'text-green-500' :
-                          metric.color === 'orange' ? 'text-orange-500' :
-                          metric.color === 'cyan' ? 'text-cyan-500' :
-                          'text-red-500'
-                        }`} />
-                        <span className="font-bold text-base">{metric.kpi}</span>
+        <motion.div 
+          className="flex-1 flex flex-col gap-6"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Section Header */}
+          <motion.div 
+            variants={itemVariants}
+            className="flex items-center gap-4"
+          >
+            <div className="p-4 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 shadow-lg">
+              <TrendingUp className="h-10 w-10 text-white" />
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-green-600 dark:text-green-400">
+                Key Performance Indicators
+              </h3>
+              <p className="text-xl text-muted-foreground">Quantified operational improvements</p>
+            </div>
+          </motion.div>
+
+          {/* Metrics Grid - 3 Cards */}
+          <div className="flex-1 grid grid-cols-3 gap-6">
+            {keyMetrics.map((metric, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                className="h-full"
+              >
+                <Card className={`shadow-xl border-0 h-full ${metric.bgColor} overflow-hidden`}>
+                  <CardContent className="p-6 h-full flex flex-col">
+                    {/* Header */}
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className={`p-4 rounded-xl bg-gradient-to-br ${metric.color} shadow-lg`}>
+                        <metric.icon className="h-10 w-10 text-white" />
                       </div>
-                      <Badge className="bg-green-500 text-white text-xs px-2 py-1">{metric.improvement}</Badge>
+                      <div>
+                        <h4 className="font-bold text-2xl text-foreground">{metric.label}</h4>
+                        <p className="text-lg text-muted-foreground">{metric.fullName}</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-2">{metric.fullName}</p>
-                    <div className="flex items-center gap-2 text-sm mb-2">
-                      <span className="text-red-500 line-through">{metric.before}</span>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-green-600 font-semibold">{metric.after}</span>
+
+                    {/* Before / After Comparison */}
+                    <div className="flex-1 flex flex-col justify-center">
+                      {/* Before */}
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-xl text-muted-foreground font-medium">Before</span>
+                        <span className="text-3xl font-bold text-red-500 line-through decoration-2">
+                          {metric.before}
+                        </span>
+                      </div>
+
+                      {/* Arrow */}
+                      <div className="flex justify-center my-3">
+                        <motion.div
+                          animate={{ y: [0, 5, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity }}
+                        >
+                          <ArrowRight className="h-10 w-10 text-green-500 rotate-90" />
+                        </motion.div>
+                      </div>
+
+                      {/* After */}
+                      <div className="flex items-center justify-between mt-4">
+                        <span className="text-xl text-muted-foreground font-medium">After</span>
+                        <span className="text-4xl font-bold text-green-600">
+                          {metric.after}
+                        </span>
+                      </div>
                     </div>
-                    <div>
-                      <Badge variant="outline" className="text-xs px-2 py-1">{metric.mechanism}</Badge>
-                    </div>
+
+                    {/* Improvement Badge */}
+                    <motion.div 
+                      className="mt-6 pt-4 border-t border-green-200 dark:border-green-800"
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      transition={{ delay: 0.5 + index * 0.1 }}
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        <CheckCircle2 className="h-7 w-7 text-green-500" />
+                        <Badge className="bg-green-500 hover:bg-green-600 text-white text-2xl px-5 py-2.5 font-bold">
+                          ↓ {metric.improvement} Reduction
+                        </Badge>
+                      </div>
+                    </motion.div>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Feature Impact Breakdown */}
-          <div className="flex flex-col space-y-3">
-            <Card className="shadow-lg">
-              <CardHeader className="pb-2">
-                <CardTitle className="text-base flex items-center">
-                  <Zap className="h-5 w-5 mr-2 text-yellow-500" />
-                  Feature Impact Breakdown
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                {featureImpact.map((item, index) => (
-                  <div key={index} className="p-2 bg-muted/30 rounded-lg">
-                    <div className="flex items-center justify-between mb-0.5">
-                      <span className="font-semibold text-sm">{item.feature}</span>
-                      <Badge className="bg-green-500 text-white text-xs px-2 py-0.5">{item.impact}</Badge>
-                    </div>
-                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+          {/* Bottom Summary */}
+          <motion.div variants={itemVariants}>
+            <Card className="shadow-xl border-2 border-green-200 dark:border-green-800 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30">
+              <CardContent className="p-5">
+                <div className="flex items-center justify-center gap-8">
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="h-7 w-7 text-green-500" />
+                    <span className="text-xl font-semibold text-green-700 dark:text-green-400">
+                      Faster Resolution
+                    </span>
                   </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            {/* Summary Stats */}
-            <Card className="shadow-lg bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20">
-              <CardContent className="p-3 flex flex-col items-center justify-center">
-                <h4 className="font-semibold text-center text-green-700 dark:text-green-400 mb-3 text-sm">
-                  Total Operational Impact
-                </h4>
-                <div className="grid grid-cols-3 gap-3 w-full text-center">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="text-3xl font-bold text-green-600">93%</div>
-                    <div className="text-xs text-muted-foreground mt-1">MTTR Reduction</div>
+                  <div className="h-6 w-px bg-green-300 dark:bg-green-700" />
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="h-7 w-7 text-green-500" />
+                    <span className="text-xl font-semibold text-green-700 dark:text-green-400">
+                      Fewer Alerts
+                    </span>
                   </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="text-3xl font-bold text-green-600">85%</div>
-                    <div className="text-xs text-muted-foreground mt-1">Less Manual Work</div>
-                  </div>
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="text-3xl font-bold text-green-600">70%</div>
-                    <div className="text-xs text-muted-foreground mt-1">Fewer Alerts</div>
+                  <div className="h-6 w-px bg-green-300 dark:bg-green-700" />
+                  <div className="flex items-center gap-3">
+                    <CheckCircle2 className="h-7 w-7 text-green-500" />
+                    <span className="text-xl font-semibold text-green-700 dark:text-green-400">
+                      Less Manual Work
+                    </span>
                   </div>
                 </div>
               </CardContent>
             </Card>
-
-            {/* Key Insight */}
-            <Card className="shadow-lg border-2 border-primary/20">
-              <CardContent className="p-3">
-                <div className="flex items-start gap-2">
-                  <Brain className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-semibold text-sm mb-1">Key Insight</h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      The combination of <strong>predictive detection</strong> and <strong>fast-path routing</strong> 
-                      enables AutoSphere to resolve 85% of incidents without human intervention, 
-                      while maintaining safety through policy-driven governance.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </SlideWrapper>
   )
