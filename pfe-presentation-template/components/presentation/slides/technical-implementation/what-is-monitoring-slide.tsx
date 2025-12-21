@@ -115,7 +115,7 @@ export default function WhatIsMonitoringSlide() {
                                     <h3 className="text-7xl md:text-8xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                                         {monitoringDefinition.title}
                                     </h3>
-                                    <Badge className="px-6 py-3 text-lg bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 border-orange-200 font-semibold rounded-full">
+                                    <Badge className="px-6 py-3 text-xl bg-gradient-to-r from-orange-100 to-red-100 text-orange-700 border-orange-200 font-semibold rounded-full">
                                         {monitoringDefinition.subtitle}
                                     </Badge>
                                 </div>
@@ -133,22 +133,22 @@ export default function WhatIsMonitoringSlide() {
                                 <div className="flex flex-col items-center gap-4 p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl border border-orange-100">
                                     <Eye className="h-12 w-12 text-orange-600" />
                                     <div className="text-center">
-                                        <h4 className="text-xl font-bold text-slate-800">Surveillance</h4>
-                                        <p className="text-slate-600 text-sm">Temps réel</p>
+                                        <h4 className="text-2xl font-bold text-slate-800">Surveillance</h4>
+                                        <p className="text-slate-600 text-lg">Temps réel</p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center gap-4 p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl border border-orange-100">
                                     <BarChart3 className="h-12 w-12 text-orange-600" />
                                     <div className="text-center">
-                                        <h4 className="text-xl font-bold text-slate-800">Performance</h4>
-                                        <p className="text-slate-600 text-sm">Optimisation</p>
+                                        <h4 className="text-2xl font-bold text-slate-800">Performance</h4>
+                                        <p className="text-slate-600 text-lg">Optimisation</p>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center gap-4 p-6 bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl border border-orange-100">
                                     <Shield className="h-12 w-12 text-orange-600" />
                                     <div className="text-center">
-                                        <h4 className="text-xl font-bold text-slate-800">Fiabilité</h4>
-                                        <p className="text-slate-600 text-sm">Disponibilité</p>
+                                        <h4 className="text-2xl font-bold text-slate-800">Fiabilité</h4>
+                                        <p className="text-slate-600 text-lg">Disponibilité</p>
                                     </div>
                                 </div>
                             </div>

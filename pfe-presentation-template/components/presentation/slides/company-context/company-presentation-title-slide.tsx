@@ -78,7 +78,7 @@ export default function CompanyPresentationTitleSlide() {
             className="text-center"
           >
             <motion.div
-              className="text-sm font-semibold tracking-wider mb-4 uppercase"
+              className="text-xl font-semibold tracking-wider mb-4 uppercase"
               style={{ color: MDW_BLUE }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -104,7 +104,7 @@ export default function CompanyPresentationTitleSlide() {
             </motion.h1>
 
             <motion.p
-              className="text-3xl font-light text-muted-foreground"
+              className="text-4xl font-light text-muted-foreground"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
@@ -132,15 +132,15 @@ export default function CompanyPresentationTitleSlide() {
             className="absolute bottom-12"
           >
             <div
-              className="px-6 py-3 rounded-full backdrop-blur-md border flex items-center gap-3"
+              className="px-8 py-4 rounded-full backdrop-blur-md border flex items-center gap-4"
               style={{
                 backgroundColor: 'rgba(43, 73, 153, 0.1)',
                 borderColor: 'rgba(43, 73, 153, 0.2)'
               }}
             >
-              <div className="text-sm font-medium" style={{ color: MDW_BLUE }}>MDW Engineering</div>
-              <div className="w-px h-4" style={{ backgroundColor: 'rgba(43, 73, 153, 0.3)' }} />
-              <div className="text-xs text-muted-foreground">Digital Transformation Partner</div>
+              <div className="text-xl font-medium" style={{ color: MDW_BLUE }}>MDW Engineering</div>
+              <div className="w-px h-6" style={{ backgroundColor: 'rgba(43, 73, 153, 0.3)' }} />
+              <div className="text-lg text-muted-foreground">Digital Transformation Partner</div>
             </div>
           </motion.div>
         </div>

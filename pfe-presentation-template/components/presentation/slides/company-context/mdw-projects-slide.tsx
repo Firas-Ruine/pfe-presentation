@@ -77,31 +77,31 @@ export default function MDWProjectsSlide() {
                       </svg>
                     </div>
 
-                    <h3 className="text-white font-bold text-sm leading-tight relative z-10">
+                    <h3 className="text-white font-bold text-lg leading-tight relative z-10">
                       {study.title}
                     </h3>
-                    <study.icon className="h-8 w-8 text-white/60 mt-2 relative z-10" />
+                    <study.icon className="h-10 w-10 text-white/60 mt-2 relative z-10" />
                   </div>
 
                   {/* Content */}
-                  <div className="p-3 flex-1 flex flex-col bg-white dark:bg-slate-900">
+                  <div className="p-4 flex-1 flex flex-col bg-white dark:bg-slate-900">
                     <div className="flex items-center gap-2 mb-2">
-                      <Briefcase className="h-3 w-3 text-muted-foreground" />
-                      <span className="text-[10px] font-semibold text-muted-foreground">{study.subtitle}</span>
+                      <Briefcase className="h-5 w-5 text-muted-foreground" />
+                      <span className="text-base font-semibold text-muted-foreground">{study.subtitle}</span>
                     </div>
 
-                    <p className="text-[10px] text-foreground leading-relaxed flex-1">
+                    <p className="text-lg text-foreground leading-relaxed flex-1">
                       {study.description}
                     </p>
 
                     {/* View details button like MDW */}
                     <div className="mt-3 pt-2 border-t border-slate-100 dark:border-slate-800">
                       <div
-                        className="inline-flex items-center gap-1 text-[9px] font-medium px-2 py-1 rounded-full text-white"
+                        className="inline-flex items-center gap-2 text-base font-medium px-4 py-2 rounded-full text-white"
                         style={{ backgroundColor: MDW_BLUE }}
                       >
                         View details
-                        <ArrowRight className="h-2.5 w-2.5" />
+                        <ArrowRight className="h-5 w-5" />
                       </div>
                     </div>
                   </div>
@@ -115,43 +115,43 @@ export default function MDWProjectsSlide() {
             className="shadow-xl border-0 overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)' }}
           >
-            <CardContent className="p-4">
+            <CardContent className="p-5">
               <div className="flex items-center justify-between">
                 {/* Left side - Quote */}
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-1">
+                  <h3 className="text-2xl font-bold mb-2">
                     <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
                       From nothing, To something, To everything
                     </span>
                   </h3>
-                  <p className="text-white/70 text-xs max-w-md">
+                  <p className="text-white/70 text-xl max-w-xl">
                     At Maisonduweb, we believe real value comes from learning, sharing, and working together.
                   </p>
                   <div
-                    className="inline-flex items-center gap-1.5 mt-3 text-[10px] font-medium px-3 py-1.5 rounded-full text-white"
+                    className="inline-flex items-center gap-2 mt-4 text-lg font-medium px-5 py-2 rounded-full text-white"
                     style={{ backgroundColor: MDW_BLUE }}
                   >
                     Join us and let's grow together
-                    <ArrowRight className="h-3 w-3" />
+                    <ArrowRight className="h-5 w-5" />
                   </div>
                 </div>
 
                 {/* Right side - Stats */}
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <div
-                    className="px-5 py-3 rounded-xl text-center"
+                    className="px-6 py-4 rounded-xl text-center"
                     style={{ backgroundColor: MDW_BLUE }}
                   >
-                    <div className="text-2xl font-bold text-white">+13</div>
-                    <div className="text-[9px] text-white/80 uppercase tracking-wide">Années</div>
-                    <div className="text-[9px] text-white/80 uppercase tracking-wide">d'expérience</div>
+                    <div className="text-4xl font-bold text-white">+13</div>
+                    <div className="text-base text-white/80 uppercase tracking-wide">Années</div>
+                    <div className="text-base text-white/80 uppercase tracking-wide">d'expérience</div>
                   </div>
 
-                  <div className="flex items-center gap-2">
-                    <Award className="h-8 w-8 text-amber-400" />
+                  <div className="flex items-center gap-3">
+                    <Award className="h-12 w-12 text-amber-400" />
                     <div>
-                      <div className="text-white text-xs font-bold">MDW</div>
-                      <div className="text-white/60 text-[9px]">Engineering</div>
+                      <div className="text-white text-xl font-bold">MDW</div>
+                      <div className="text-white/60 text-lg">Engineering</div>
                     </div>
                   </div>
                 </div>

@@ -54,16 +54,16 @@ function AlertInputNode({ data }: NodeProps) {
   return (
     <div className="relative">
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-red-900/80 to-rose-900/80 border-2 border-red-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-red-900/80 to-rose-900/80 border-2 border-red-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           pulse ? "scale-105" : ""
         }`}
         style={{ boxShadow: pulse ? "0 0 25px rgba(239,68,68,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2">
-          <AlertTriangle className={`h-5 w-5 text-red-400 ${pulse ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">{nodeData.label}</span>
+          <AlertTriangle className={`h-6 w-6 text-red-400 ${pulse ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">{nodeData.label}</span>
         </div>
-        <p className="text-[10px] text-red-300 mt-1">{nodeData.alertType}</p>
+        <p className="text-sm text-red-300 mt-1">{nodeData.alertType}</p>
         {pulse && <div className="absolute -top-1 -right-1 w-2 h-2 bg-red-400 rounded-full animate-ping" />}
       </div>
       <Handle type="source" position={Position.Right} className="w-3 h-3 !bg-red-500" />
@@ -98,28 +98,25 @@ function RouterNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-red-500" />
       <div
-        className="p-4 rounded-2xl bg-gradient-to-br from-purple-900/90 to-indigo-900/90 border-2 border-purple-500/50 shadow-2xl backdrop-blur-sm min-w-[200px]"
+        className="p-5 rounded-2xl bg-gradient-to-br from-purple-900/90 to-indigo-900/90 border-2 border-purple-500/50 shadow-2xl backdrop-blur-sm min-w-[210px]"
         style={{ boxShadow: decision ? "0 0 40px rgba(168,85,247,0.6)" : "0 0 20px rgba(168,85,247,0.3)" }}
       >
         <div className="flex items-center gap-2 mb-3">
-          <GitBranch className={`h-6 w-6 text-purple-400 ${decision ? "animate-pulse" : ""}`} />
+          <GitBranch className={`h-7 w-7 text-purple-400 ${decision ? "animate-pulse" : ""}`} />
           <span className="font-bold text-lg text-white">SMART ROUTER</span>
         </div>
-        <Badge className="bg-purple-500/30 text-purple-200 text-[10px] mb-3">Rule-Based • No LLM • &lt;10ms</Badge>
-        <div className="space-y-1">
+        <Badge className="bg-purple-500/30 text-purple-200 text-xs mb-3">Rule-Based • No LLM • &lt;10ms</Badge>
+        <div className="space-y-1.5">
           {rules.map((rule, i) => (
             <div
               key={i}
-              className={`px-2 py-1.5 rounded text-[10px] font-mono transition-all duration-300 ${
+              className={`px-2 py-1.5 rounded text-xs font-mono transition-all duration-300 ${
                 i === activeRule
                   ? decision === "fast"
                     ? "bg-green-500 text-white scale-[1.02]"
                     : "bg-orange-500 text-white scale-[1.02]"
                   : "bg-purple-900/50 text-purple-300"
               }`}
-              style={{
-                boxShadow: i === activeRule ? `0 0 15px ${decision === "fast" ? "rgba(34,197,94,0.5)" : "rgba(249,115,22,0.5)"}` : undefined,
-              }}
             >
               if ({rule.condition}) → {rule.result.toUpperCase()}
             </div>
@@ -148,22 +145,22 @@ function FastPathNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-green-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-green-900/80 to-emerald-900/80 border-2 border-green-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-green-900/80 to-emerald-900/80 border-2 border-green-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           active ? "scale-105" : ""
         }`}
         style={{ boxShadow: active ? "0 0 30px rgba(34,197,94,0.6)" : undefined }}
       >
-        <div className="flex items-center gap-2 mb-1">
-          <Zap className={`h-5 w-5 text-green-400 ${active ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">FAST PATH</span>
+        <div className="flex items-center gap-2 mb-2">
+          <Zap className={`h-6 w-6 text-green-400 ${active ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">FAST PATH</span>
         </div>
-        <div className="space-y-1 text-[10px]">
-          <div className="flex items-center gap-1 text-green-300">
-            <Timer className="h-3 w-3" />
-            <span>30-60 seconds MTTR</span>
+        <div className="space-y-1.5 text-sm">
+          <div className="flex items-center gap-2 text-green-300">
+            <Timer className="h-4 w-4" />
+            <span>30-60s MTTR</span>
           </div>
-          <div className="flex items-center gap-1 text-green-300">
-            <CheckCircle className="h-3 w-3" />
+          <div className="flex items-center gap-2 text-green-300">
+            <CheckCircle className="h-4 w-4" />
             <span>Skip investigation</span>
           </div>
         </div>
@@ -188,27 +185,26 @@ function InvestigationNode({ data }: NodeProps) {
   return (
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-orange-500" />
-      <div className="p-3 rounded-xl bg-gradient-to-br from-orange-900/80 to-amber-900/80 border-2 border-orange-500/50 shadow-lg backdrop-blur-sm">
+      <div className="p-4 rounded-xl bg-gradient-to-br from-orange-900/80 to-amber-900/80 border-2 border-orange-500/50 shadow-lg backdrop-blur-sm">
         <div className="flex items-center gap-2 mb-2">
-          <Bot className="h-5 w-5 text-orange-400" />
-          <span className="font-bold text-sm text-white">INVESTIGATION</span>
-          <Badge className="bg-orange-500/30 text-orange-200 text-[9px]">Parallel</Badge>
+          <Bot className="h-6 w-6 text-orange-400" />
+          <span className="font-bold text-base text-white">INVESTIGATION</span>
+          <Badge className="bg-orange-500/30 text-orange-200 text-xs">Parallel</Badge>
         </div>
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           {agents.map((agent, i) => (
             <div
               key={i}
-              className={`px-2 py-1 rounded text-[10px] transition-all duration-300 ${
+              className={`px-2 py-1.5 rounded text-sm transition-all duration-300 ${
                 i === activeAgent ? "bg-orange-500 text-white scale-[1.02]" : "bg-orange-900/50 text-orange-300"
               }`}
-              style={{ boxShadow: i === activeAgent ? "0 0 10px rgba(249,115,22,0.5)" : undefined }}
             >
               {agent}
             </div>
           ))}
         </div>
-        <div className="mt-2 flex items-center gap-1 text-[10px] text-orange-300">
-          <Clock className="h-3 w-3" />
+        <div className="mt-2 flex items-center gap-2 text-sm text-orange-300">
+          <Clock className="h-4 w-4" />
           <span>2-5 min MTTR</span>
         </div>
       </div>
@@ -235,16 +231,16 @@ function OutputNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-cyan-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-cyan-900/80 to-teal-900/80 border-2 border-cyan-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-cyan-900/80 to-teal-900/80 border-2 border-cyan-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           pulse ? "scale-105" : ""
         }`}
         style={{ boxShadow: pulse ? "0 0 25px rgba(6,182,212,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2">
-          <Icon className={`h-5 w-5 text-cyan-400 ${pulse ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">{nodeData.label}</span>
+          <Icon className={`h-6 w-6 text-cyan-400 ${pulse ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">{nodeData.label}</span>
         </div>
-        <p className="text-[10px] text-cyan-300 mt-1">{nodeData.description}</p>
+        <p className="text-sm text-cyan-300 mt-1">{nodeData.description}</p>
       </div>
     </div>
   )
@@ -268,25 +264,25 @@ const initialNodes: Node[] = [
   {
     id: "router",
     type: "router",
-    position: { x: 200, y: 100 },
+    position: { x: 200, y: 90 },
     data: {},
   },
   {
     id: "fast",
     type: "fastPath",
-    position: { x: 480, y: 50 },
+    position: { x: 500, y: 40 },
     data: {},
   },
   {
     id: "investigate",
     type: "investigation",
-    position: { x: 480, y: 180 },
+    position: { x: 500, y: 190 },
     data: {},
   },
   {
     id: "reasoning",
     type: "output",
-    position: { x: 700, y: 120 },
+    position: { x: 740, y: 120 },
     data: { label: "REASONING", description: "LLM + Pydantic", icon: Activity, color: "cyan" },
   },
 ]
@@ -309,7 +305,7 @@ const initialEdges: Edge[] = [
     style: { stroke: "#22c55e", strokeWidth: 3 },
     markerEnd: { type: MarkerType.ArrowClosed, color: "#22c55e" },
     label: "≥95%",
-    labelStyle: { fill: "#22c55e", fontSize: 11, fontWeight: "bold" },
+    labelStyle: { fill: "#22c55e", fontSize: 12, fontWeight: "bold" },
     labelBgStyle: { fill: "transparent" },
   },
   {
@@ -321,7 +317,7 @@ const initialEdges: Edge[] = [
     style: { stroke: "#f97316", strokeWidth: 3 },
     markerEnd: { type: MarkerType.ArrowClosed, color: "#f97316" },
     label: "<95%",
-    labelStyle: { fill: "#f97316", fontSize: 11, fontWeight: "bold" },
+    labelStyle: { fill: "#f97316", fontSize: 12, fontWeight: "bold" },
     labelBgStyle: { fill: "transparent" },
   },
   {
@@ -394,10 +390,10 @@ export default function SmartRouterSlide() {
         <SlideHeader
           badge="6 • Architecture"
           title="Smart Router: Rule-Based Routing"
-          subtitle="Watch decision paths — No LLM latency, deterministic routing in <10ms"
+          subtitle="No LLM latency, deterministic routing in <10ms"
         />
 
-        <div className="flex-1 grid grid-cols-4 gap-3">
+        <div className="flex-1 grid grid-cols-4 gap-4">
           <div className="col-span-3 rounded-xl overflow-hidden border shadow-lg bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
             <ReactFlow
               nodes={nodes}
@@ -410,79 +406,78 @@ export default function SmartRouterSlide() {
               fitView
               minZoom={0.5}
               maxZoom={1.5}
-              defaultViewport={{ x: 80, y: 80, zoom: 0.85 }}
+              defaultViewport={{ x: 60, y: 60, zoom: 0.8 }}
             >
               <Background color="#94a3b8" gap={30} size={1} />
               <Controls showInteractive={false} />
               <div className="absolute top-3 right-3 flex gap-2 z-50">
                 <Button size="sm" onClick={toggleLock} className={`h-9 px-3 gap-1.5 text-xs font-medium shadow-md ${isLocked ? "bg-green-600 hover:bg-green-700 text-white" : "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300"}`}>
                   {isLocked ? <Lock className="h-4 w-4" /> : <Unlock className="h-4 w-4" />}
-                  {isLocked ? "Locked" : "Drag to arrange"}
+                  {isLocked ? "Locked" : "Drag"}
                 </Button>
                 <Button size="sm" variant="outline" onClick={resetPositions} className="h-9 px-3 gap-1.5 text-xs font-medium shadow-md bg-white hover:bg-gray-100 border border-gray-300">
                   <RotateCcw className="h-4 w-4" />
-                  Reset
                 </Button>
               </div>
             </ReactFlow>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             <Card className="shadow-lg">
-              <CardContent className="p-3">
-                <h3 className="font-bold text-sm mb-2 flex items-center gap-2">
-                  <GitBranch className="h-4 w-4 text-purple-500" />
+              <CardContent className="p-4">
+                <h3 className="font-bold text-base mb-3 flex items-center gap-2">
+                  <GitBranch className="h-5 w-5 text-purple-500" />
                   Routing Logic
                 </h3>
-                <div className="space-y-2 text-xs">
-                  <div className="p-2 rounded bg-green-500/10 border border-green-500/30">
-                    <div className="flex items-center gap-2 text-green-600 font-semibold">
-                      <Zap className="h-3 w-3" />
+                <div className="space-y-3">
+                  <div className="p-3 rounded-lg bg-green-500/10 border border-green-500/30">
+                    <div className="flex items-center gap-2 text-green-600 font-bold">
+                      <Zap className="h-4 w-4" />
                       FAST PATH
                     </div>
-                    <p className="text-green-600/70 text-[10px] mt-1">confidence ≥ 95% → Skip agents</p>
+                    <p className="text-green-600/70 text-sm mt-1">confidence ≥ 95% → Skip agents</p>
                   </div>
-                  <div className="p-2 rounded bg-orange-500/10 border border-orange-500/30">
-                    <div className="flex items-center gap-2 text-orange-600 font-semibold">
-                      <Bot className="h-3 w-3" />
+                  <div className="p-3 rounded-lg bg-orange-500/10 border border-orange-500/30">
+                    <div className="flex items-center gap-2 text-orange-600 font-bold">
+                      <Bot className="h-4 w-4" />
                       INVESTIGATION
                     </div>
-                    <p className="text-orange-600/70 text-[10px] mt-1">Spawn 1-3 agents in parallel</p>
+                    <p className="text-orange-600/70 text-sm mt-1">Spawn 1-3 agents in parallel</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="shadow-lg">
-              <CardContent className="p-3">
-                <h4 className="font-semibold text-xs mb-2">Performance Impact</h4>
-                <div className="space-y-2">
+              <CardContent className="p-4">
+                <h4 className="font-bold text-base mb-3">Performance Impact</h4>
+                <div className="space-y-3">
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-xs">Fast Path MTTR</span>
-                    <span className="text-green-500 font-bold">30-60s</span>
+                    <span className="text-muted-foreground text-sm">Fast Path MTTR</span>
+                    <span className="text-green-500 font-bold text-base">30-60s</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-xs">Investigation MTTR</span>
-                    <span className="text-orange-500 font-bold">2-5min</span>
+                    <span className="text-muted-foreground text-sm">Investigation MTTR</span>
+                    <span className="text-orange-500 font-bold text-base">2-5min</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-muted-foreground text-xs">Routing Decision</span>
-                    <span className="text-purple-500 font-bold">&lt;10ms</span>
+                    <span className="text-muted-foreground text-sm">Routing Decision</span>
+                    <span className="text-purple-500 font-bold text-base">&lt;10ms</span>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             <Card className="shadow-lg bg-gradient-to-br from-primary/5 to-secondary/5">
-              <CardContent className="p-3">
-                <div className="grid grid-cols-2 gap-2 text-center">
+              <CardContent className="p-4">
+                <div className="grid grid-cols-2 gap-3 text-center">
                   <div>
                     <div className="text-2xl font-bold text-green-500">93%</div>
-                    <div className="text-[10px] text-muted-foreground">MTTR Reduction</div>
+                    <div className="text-xs text-muted-foreground">MTTR Reduction</div>
                   </div>
                   <div>
                     <div className="text-2xl font-bold text-purple-500">0</div>
-                    <div className="text-[10px] text-muted-foreground">LLM Calls</div>
+                    <div className="text-xs text-muted-foreground">LLM Calls</div>
                   </div>
                 </div>
               </CardContent>

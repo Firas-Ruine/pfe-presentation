@@ -3,7 +3,7 @@ import SlideWrapper from "../../slide-wrapper"
 import SlideHeader from "../../slide-header"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Network, ArrowRight, Brain, Server, Activity, FileText, Wrench, CheckCircle, Zap } from "lucide-react"
+import { Network, ArrowRight, Brain, Activity, FileText, Wrench, CheckCircle, Zap } from "lucide-react"
 
 const mcpServers = [
   {
@@ -64,40 +64,40 @@ export default function McpConnectorsSlide() {
               'border-t-green-500'
             }`}>
               <CardHeader className="pb-4">
-                <CardTitle className="text-lg flex items-center justify-between">
+                <CardTitle className="text-2xl flex items-center justify-between">
                   <div className="flex items-center">
-                    <mcp.icon className={`h-7 w-7 mr-3 ${
+                    <mcp.icon className={`h-8 w-8 mr-3 ${
                       mcp.color === 'orange' ? 'text-orange-500' :
                       mcp.color === 'red' ? 'text-red-500' :
                       'text-green-500'
                     }`} />
                     {mcp.name}
                   </div>
-                  <Badge variant="outline" className="text-sm px-3 py-1.5">{mcp.language}</Badge>
+                  <Badge variant="outline" className="text-lg px-3 py-1.5">{mcp.language}</Badge>
                 </CardTitle>
-                <p className="text-base text-muted-foreground mt-2">{mcp.description}</p>
+                <p className="text-xl text-muted-foreground mt-2">{mcp.description}</p>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <h4 className="text-base font-semibold mb-3 flex items-center">
-                    <Wrench className="h-5 w-5 mr-2" />Tools
+                  <h4 className="text-xl font-semibold mb-3 flex items-center">
+                    <Wrench className="h-6 w-6 mr-2" />Tools
                   </h4>
                   <div className="space-y-2.5">
                     {mcp.tools.map((tool, idx) => (
                       <div key={idx} className="p-2.5 bg-muted/30 rounded">
-                        <code className="text-primary font-mono text-sm">{tool.name}</code>
-                        <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{tool.description}</p>
+                        <code className="text-primary font-mono text-lg">{tool.name}</code>
+                        <p className="text-muted-foreground text-lg mt-1 leading-relaxed">{tool.description}</p>
                       </div>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <h4 className="text-base font-semibold mb-3 flex items-center">
-                    <Zap className="h-5 w-5 mr-2" />Use Cases
+                  <h4 className="text-xl font-semibold mb-3 flex items-center">
+                    <Zap className="h-6 w-6 mr-2" />Use Cases
                   </h4>
                   <div className="flex flex-wrap gap-2">
                     {mcp.useCases.map((useCase, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-sm px-3 py-1.5">{useCase}</Badge>
+                      <Badge key={idx} variant="secondary" className="text-lg px-3 py-1.5">{useCase}</Badge>
                     ))}
                   </div>
                 </div>
@@ -107,27 +107,27 @@ export default function McpConnectorsSlide() {
         </div>
 
         <Card className="mt-4 shadow-md bg-gradient-to-r from-primary/5 to-secondary/5">
-          <CardContent className="p-4">
+          <CardContent className="p-5">
             <div className="flex items-center justify-center space-x-4 flex-wrap gap-3">
               <div className="flex items-center space-x-2">
-                <Brain className="h-6 w-6 text-purple-500" />
-                <span className="text-base font-medium">LLM Agent</span>
+                <Brain className="h-7 w-7 text-purple-500" />
+                <span className="text-xl font-medium">LLM Agent</span>
               </div>
-              <ArrowRight className="h-5 w-5 text-muted-foreground" />
+              <ArrowRight className="h-6 w-6 text-muted-foreground" />
               <div className="flex items-center space-x-2">
-                <Network className="h-6 w-6 text-blue-500" />
-                <span className="text-base font-medium">MCP Protocol</span>
+                <Network className="h-7 w-7 text-blue-500" />
+                <span className="text-xl font-medium">MCP Protocol</span>
               </div>
-              <ArrowRight className="h-5 w-5 text-muted-foreground" />
+              <ArrowRight className="h-6 w-6 text-muted-foreground" />
               <div className="flex items-center space-x-2">
-                <Badge className="bg-orange-500 text-sm px-3 py-1.5">Grafana</Badge>
-                <Badge className="bg-red-500 text-sm px-3 py-1.5">AWX</Badge>
-                <Badge className="bg-green-500 text-sm px-3 py-1.5">Redmine</Badge>
+                <Badge className="bg-orange-500 text-lg px-3 py-1.5">Grafana</Badge>
+                <Badge className="bg-red-500 text-lg px-3 py-1.5">AWX</Badge>
+                <Badge className="bg-green-500 text-lg px-3 py-1.5">Redmine</Badge>
               </div>
-              <ArrowRight className="h-5 w-5 text-muted-foreground" />
+              <ArrowRight className="h-6 w-6 text-muted-foreground" />
               <div className="flex items-center space-x-2">
-                <CheckCircle className="h-6 w-6 text-green-500" />
-                <span className="text-base font-medium">Auto-Remediation</span>
+                <CheckCircle className="h-7 w-7 text-green-500" />
+                <span className="text-xl font-medium">Auto-Remediation</span>
               </div>
             </div>
           </CardContent>

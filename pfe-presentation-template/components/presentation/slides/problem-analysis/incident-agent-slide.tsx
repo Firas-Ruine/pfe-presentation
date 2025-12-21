@@ -23,14 +23,11 @@ import { Button } from "@/components/ui/button"
 import {
   Search,
   Database,
-  FileText,
   Sparkles,
   Target,
   Layers,
-  Clock,
   Brain,
   AlertTriangle,
-  LucideIcon,
   Lock,
   Unlock,
   RotateCcw,
@@ -55,16 +52,16 @@ function AlertInputNode({ data }: NodeProps) {
   return (
     <div className="relative">
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-red-900/80 to-rose-900/80 border-2 border-red-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-red-900/80 to-rose-900/80 border-2 border-red-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           pulse ? "scale-105" : ""
         }`}
         style={{ boxShadow: pulse ? "0 0 25px rgba(239,68,68,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-1">
-          <AlertTriangle className={`h-5 w-5 text-red-400 ${pulse ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">Alert</span>
+          <AlertTriangle className={`h-6 w-6 text-red-400 ${pulse ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">Alert</span>
         </div>
-        <p className="text-[10px] text-red-300">{nodeData.alert}</p>
+        <p className="text-sm text-red-300">{nodeData.alert}</p>
       </div>
       <Handle type="source" position={Position.Right} className="w-3 h-3 !bg-blue-500" />
     </div>
@@ -87,17 +84,17 @@ function EmbeddingNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-blue-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-blue-900/80 to-indigo-900/80 border-2 border-blue-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-blue-900/80 to-indigo-900/80 border-2 border-blue-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           processing ? "scale-105" : ""
         }`}
         style={{ boxShadow: processing ? "0 0 30px rgba(59,130,246,0.6)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-1">
-          <Sparkles className={`h-5 w-5 text-blue-400 ${processing ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">Embedding</span>
+          <Sparkles className={`h-6 w-6 text-blue-400 ${processing ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">Embedding</span>
         </div>
-        <p className="text-[10px] text-blue-300">text-embedding-ada-002</p>
-        <Badge className="bg-blue-500/30 text-blue-200 text-[9px] mt-1">1536 dims</Badge>
+        <p className="text-sm text-blue-300">text-embedding-ada-002</p>
+        <Badge className="bg-blue-500/30 text-blue-200 text-sm mt-1">1536 dims</Badge>
       </div>
       <Handle type="source" position={Position.Right} className="w-3 h-3 !bg-purple-500" />
     </div>
@@ -128,20 +125,20 @@ function VectorSearchNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-purple-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-purple-900/80 to-violet-900/80 border-2 border-purple-500/50 shadow-lg backdrop-blur-sm min-w-[160px] transition-all duration-300`}
+        className={`p-4 rounded-xl bg-gradient-to-br from-purple-900/80 to-violet-900/80 border-2 border-purple-500/50 shadow-lg backdrop-blur-sm min-w-[180px] transition-all duration-300`}
         style={{ boxShadow: searching ? "0 0 35px rgba(168,85,247,0.6)" : "0 0 15px rgba(168,85,247,0.3)" }}
       >
         <div className="flex items-center gap-2 mb-2">
-          <Search className={`h-5 w-5 text-purple-400 ${searching ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">Qdrant Search</span>
+          <Search className={`h-6 w-6 text-purple-400 ${searching ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">Qdrant Search</span>
         </div>
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-[10px]">
-            <Database className="h-3 w-3 text-purple-400" />
+          <div className="flex items-center gap-2 text-sm">
+            <Database className="h-4 w-4 text-purple-400" />
             <span className="text-purple-300">1,247 incidents indexed</span>
           </div>
-          <div className="flex items-center gap-2 text-[10px]">
-            <Target className="h-3 w-3 text-purple-400" />
+          <div className="flex items-center gap-2 text-sm">
+            <Target className="h-4 w-4 text-purple-400" />
             <span className="text-purple-300">cosine similarity, top-k=5</span>
           </div>
         </div>
@@ -150,7 +147,7 @@ function VectorSearchNode({ data }: NodeProps) {
             {[...Array(5)].map((_, i) => (
               <div
                 key={i}
-                className={`w-6 h-1 rounded transition-all duration-200 ${
+                className={`w-6 h-1.5 rounded transition-all duration-200 ${
                   i < matchCount ? "bg-purple-400" : "bg-purple-900"
                 }`}
               />
@@ -182,27 +179,27 @@ function MatchResultsNode({ data }: NodeProps) {
   return (
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-cyan-500" />
-      <div className="p-3 rounded-xl bg-gradient-to-br from-cyan-900/80 to-teal-900/80 border-2 border-cyan-500/50 shadow-lg backdrop-blur-sm min-w-[180px]">
+      <div className="p-4 rounded-xl bg-gradient-to-br from-cyan-900/80 to-teal-900/80 border-2 border-cyan-500/50 shadow-lg backdrop-blur-sm min-w-[200px]">
         <div className="flex items-center gap-2 mb-2">
-          <Layers className="h-5 w-5 text-cyan-400" />
-          <span className="font-bold text-sm text-white">Matches</span>
+          <Layers className="h-6 w-6 text-cyan-400" />
+          <span className="font-bold text-base text-white">Matches</span>
         </div>
-        <div className="space-y-1.5">
+        <div className="space-y-2">
           {matches.map((match, i) => (
             <div
               key={i}
-              className={`px-2 py-1.5 rounded text-[10px] transition-all duration-300 ${
+              className={`px-3 py-2 rounded text-sm transition-all duration-300 ${
                 i === activeMatch ? "bg-cyan-500 text-white scale-[1.02]" : "bg-cyan-900/50 text-cyan-300"
               }`}
               style={{ boxShadow: i === activeMatch ? "0 0 15px rgba(6,182,212,0.5)" : undefined }}
             >
               <div className="flex justify-between items-center">
-                <Badge className={`text-[8px] ${
+                <Badge className={`text-xs ${
                   match.score >= 90 ? "bg-green-500" : match.score >= 85 ? "bg-yellow-500" : "bg-orange-500"
                 }`}>
                   {match.score}%
                 </Badge>
-                <span className="text-[8px] opacity-70">{match.age}</span>
+                <span className="text-xs opacity-70">{match.age}</span>
               </div>
               <p className="mt-0.5 truncate">{match.title}</p>
             </div>
@@ -230,17 +227,17 @@ function EvidenceNode({ data }: NodeProps) {
     <div className="relative">
       <Handle type="target" position={Position.Left} className="w-3 h-3 !bg-green-500" />
       <div
-        className={`p-3 rounded-xl bg-gradient-to-br from-green-900/80 to-emerald-900/80 border-2 border-green-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
+        className={`p-4 rounded-xl bg-gradient-to-br from-green-900/80 to-emerald-900/80 border-2 border-green-500/50 shadow-lg backdrop-blur-sm transition-all duration-300 ${
           pulse ? "scale-105" : ""
         }`}
         style={{ boxShadow: pulse ? "0 0 25px rgba(34,197,94,0.5)" : undefined }}
       >
         <div className="flex items-center gap-2 mb-1">
-          <Brain className={`h-5 w-5 text-green-400 ${pulse ? "animate-pulse" : ""}`} />
-          <span className="font-bold text-sm text-white">Evidence</span>
+          <Brain className={`h-6 w-6 text-green-400 ${pulse ? "animate-pulse" : ""}`} />
+          <span className="font-bold text-base text-white">Evidence</span>
         </div>
-        <p className="text-[10px] text-green-300">→ Reasoner Pipeline</p>
-        <Badge className="bg-green-500/30 text-green-200 text-[9px] mt-1">confidence: 0.87</Badge>
+        <p className="text-sm text-green-300">→ Reasoner Pipeline</p>
+        <Badge className="bg-green-500/30 text-green-200 text-sm mt-1">confidence: 0.87</Badge>
       </div>
     </div>
   )
@@ -256,16 +253,16 @@ const nodeTypes = {
 
 const initialNodes: Node[] = [
   { id: "alert", type: "alertInput", position: { x: 0, y: 100 }, data: { alert: "Nova Instance Boot Failure" } },
-  { id: "embed", type: "embedding", position: { x: 180, y: 90 }, data: {} },
-  { id: "search", type: "vectorSearch", position: { x: 380, y: 70 }, data: {} },
-  { id: "matches", type: "matchResults", position: { x: 600, y: 60 }, data: {} },
-  { id: "evidence", type: "evidence", position: { x: 820, y: 100 }, data: {} },
+  { id: "embed", type: "embedding", position: { x: 200, y: 90 }, data: {} },
+  { id: "search", type: "vectorSearch", position: { x: 420, y: 70 }, data: {} },
+  { id: "matches", type: "matchResults", position: { x: 660, y: 60 }, data: {} },
+  { id: "evidence", type: "evidence", position: { x: 900, y: 100 }, data: {} },
 ]
 
 const initialEdges: Edge[] = [
   { id: "e1", source: "alert", target: "embed", animated: true, style: { stroke: "#3b82f6", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#3b82f6" } },
-  { id: "e2", source: "embed", target: "search", animated: true, style: { stroke: "#8b5cf6", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" }, label: "vector", labelStyle: { fill: "#8b5cf6", fontSize: 9 }, labelBgStyle: { fill: "transparent" } },
-  { id: "e3", source: "search", target: "matches", animated: true, style: { stroke: "#06b6d4", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#06b6d4" }, label: "top-5", labelStyle: { fill: "#06b6d4", fontSize: 9 }, labelBgStyle: { fill: "transparent" } },
+  { id: "e2", source: "embed", target: "search", animated: true, style: { stroke: "#8b5cf6", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#8b5cf6" }, label: "vector", labelStyle: { fill: "#8b5cf6", fontSize: 11 }, labelBgStyle: { fill: "transparent" } },
+  { id: "e3", source: "search", target: "matches", animated: true, style: { stroke: "#06b6d4", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#06b6d4" }, label: "top-5", labelStyle: { fill: "#06b6d4", fontSize: 11 }, labelBgStyle: { fill: "transparent" } },
   { id: "e4", source: "matches", target: "evidence", animated: true, style: { stroke: "#22c55e", strokeWidth: 2 }, markerEnd: { type: MarkerType.ArrowClosed, color: "#22c55e" } },
 ]
 
@@ -324,7 +321,7 @@ export default function IncidentAgentSlide() {
           subtitle="Watch vector search — Historical incident matching via Qdrant"
         />
 
-        <div className="flex-1 grid grid-cols-4 gap-3">
+        <div className="flex-1 grid grid-cols-4 gap-4">
           <div className="col-span-3 rounded-xl overflow-hidden border shadow-lg bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
             <ReactFlow
               nodes={nodes}
@@ -335,18 +332,18 @@ export default function IncidentAgentSlide() {
               nodesDraggable={!isLocked}
               nodesConnectable={false}
               fitView
-              minZoom={0.5}
+              minZoom={0.4}
               maxZoom={1.5}
-              defaultViewport={{ x: 40, y: 80, zoom: 0.8 }}
+              defaultViewport={{ x: 40, y: 80, zoom: 0.7 }}
             >
               <Background color="#94a3b8" gap={30} size={1} />
               <Controls showInteractive={false} />
               <div className="absolute top-3 right-3 flex gap-2 z-50">
-                <Button size="sm" onClick={toggleLock} className={`h-9 px-3 gap-1.5 text-xs font-medium shadow-md ${isLocked ? "bg-green-600 hover:bg-green-700 text-white" : "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300"}`}>
+                <Button size="sm" onClick={toggleLock} className={`h-9 px-3 gap-1.5 text-sm font-medium shadow-md ${isLocked ? "bg-green-600 hover:bg-green-700 text-white" : "bg-white hover:bg-gray-100 text-gray-700 border border-gray-300"}`}>
                   {isLocked ? <Lock className="h-4 w-4" /> : <Unlock className="h-4 w-4" />}
                   {isLocked ? "Locked" : "Drag to arrange"}
                 </Button>
-                <Button size="sm" variant="outline" onClick={resetPositions} className="h-9 px-3 gap-1.5 text-xs font-medium shadow-md bg-white hover:bg-gray-100 border border-gray-300">
+                <Button size="sm" variant="outline" onClick={resetPositions} className="h-9 px-3 gap-1.5 text-sm font-medium shadow-md bg-white hover:bg-gray-100 border border-gray-300">
                   <RotateCcw className="h-4 w-4" />
                   Reset
                 </Button>
@@ -354,14 +351,14 @@ export default function IncidentAgentSlide() {
             </ReactFlow>
           </div>
 
-          <div className="space-y-3">
+          <div className="space-y-4">
             <Card className="shadow-lg">
-              <CardContent className="p-3">
-                <h3 className="font-bold text-sm mb-2 flex items-center gap-2">
-                  <Database className="h-4 w-4 text-purple-500" />
+              <CardContent className="p-4">
+                <h3 className="font-bold text-lg mb-3 flex items-center gap-2">
+                  <Database className="h-5 w-5 text-purple-500" />
                   Qdrant Vector Store
                 </h3>
-                <div className="space-y-1.5 text-[10px]">
+                <div className="space-y-2 text-base">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Collection</span>
                     <code className="text-purple-500">incidents</code>
@@ -379,12 +376,12 @@ export default function IncidentAgentSlide() {
             </Card>
 
             <Card className="shadow-lg border-2 border-purple-500/30">
-              <CardContent className="p-3">
-                <h4 className="font-semibold text-xs mb-2 flex items-center gap-2">
-                  <Target className="h-4 w-4 text-orange-500" />
+              <CardContent className="p-4">
+                <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                  <Target className="h-5 w-5 text-orange-500" />
                   Hybrid Scoring
                 </h4>
-                <div className="p-2 bg-muted/50 rounded font-mono text-[10px]">
+                <div className="p-3 bg-muted/50 rounded font-mono text-base">
                   <span className="text-purple-500">score</span>
                   <span className="text-muted-foreground"> = 0.7 × </span>
                   <span className="text-cyan-500">similarity</span>
@@ -395,15 +392,15 @@ export default function IncidentAgentSlide() {
             </Card>
 
             <Card className="shadow-lg bg-gradient-to-br from-primary/5 to-secondary/5">
-              <CardContent className="p-3">
-                <div className="grid grid-cols-2 gap-2 text-center">
+              <CardContent className="p-4">
+                <div className="grid grid-cols-2 gap-3 text-center">
                   <div>
-                    <div className="text-2xl font-bold text-purple-500">1,247</div>
-                    <div className="text-[10px] text-muted-foreground">Indexed</div>
+                    <div className="text-3xl font-bold text-purple-500">1,247</div>
+                    <div className="text-base text-muted-foreground">Indexed</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-green-500">&lt;50ms</div>
-                    <div className="text-[10px] text-muted-foreground">Latency</div>
+                    <div className="text-3xl font-bold text-green-500">&lt;50ms</div>
+                    <div className="text-base text-muted-foreground">Latency</div>
                   </div>
                 </div>
               </CardContent>
