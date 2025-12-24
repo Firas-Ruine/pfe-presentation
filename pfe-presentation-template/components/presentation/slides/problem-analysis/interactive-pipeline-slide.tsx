@@ -3,6 +3,7 @@
 import { useCallback, useState, useEffect } from "react"
 import SlideWrapper from "../../slide-wrapper"
 import SlideHeader from "../../slide-header"
+import FullscreenFlowWrapper from "../../fullscreen-flow-wrapper"
 import {
   ReactFlow,
   Node,
@@ -37,6 +38,8 @@ import {
   LucideIcon,
   Lock,
   Unlock,
+  Maximize2,
+  Minimize2,
 } from "lucide-react"
 
 const STORAGE_KEY = "interactive-pipeline-nodes"
@@ -810,6 +813,7 @@ const initialEdges: Edge[] = [
 
 export default function InteractivePipelineSlide() {
   const [isLocked, setIsLocked] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
   const [edges, , onEdgesChange] = useEdgesState(initialEdges)
   const [selectedNode, setSelectedNode] = useState<string | null>(null)
@@ -950,7 +954,11 @@ export default function InteractivePipelineSlide() {
         <div className="flex-1 grid grid-cols-4 gap-3">
           {/* Flow Diagram */}
           <div className="col-span-3 rounded-xl overflow-hidden border shadow-lg bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-            <ReactFlow
+            <FullscreenFlowWrapper
+              title="OpenStack Observability Pipeline"
+              subtitle="Complete data flow from infrastructure to self-healing"
+            >
+              <ReactFlow
               nodes={nodes}
               edges={edges}
               onNodesChange={handleNodesChange}
@@ -986,7 +994,8 @@ export default function InteractivePipelineSlide() {
                   Reset
                 </Button>
               </div>
-            </ReactFlow>
+              </ReactFlow>
+            </FullscreenFlowWrapper>
           </div>
 
           {/* Info Panel */}

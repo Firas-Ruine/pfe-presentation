@@ -47,7 +47,7 @@ import EnvironmentToolsSlide from "@/components/presentation/slides/results-conc
 import KpiImprovementsSlide from "@/components/presentation/slides/results-conclusion/kpi-improvements-slide"
 import TestResultsSlide from "@/components/presentation/slides/results-conclusion/test-results-slide"
 import ConclusionContentSlide from "@/components/presentation/slides/results-conclusion/conclusion-content-slide"
-import FutureRoadmapSlide from "@/components/presentation/slides/results-conclusion/future-roadmap-slide"
+
 import ThankYouSlide from "@/components/presentation/slides/results-conclusion/thank-you-slide"
 
 export default function PresentationPage() {
@@ -73,7 +73,7 @@ export default function PresentationPage() {
       <ProjectContextSlide key="project-context" />,
       <CompanyOverviewSlide key="company-overview" />,
 
-      // SECTION 2: General Context / Problématique (slides 5-6)
+      // SECTION 2: Problématique (slides 5-6)
       <CompanyPresentationTitleSlide key="company-title" />,
       <CurrentArchitectureProblemsSlide key="problems" />,
 
@@ -110,9 +110,8 @@ export default function PresentationPage() {
       <KpiImprovementsSlide key="kpi-improvements" />,
       <TestResultsSlide key="test-results" />,
 
-      // SECTION 9: Conclusion (slides 29-31)
+      // SECTION 9: Conclusion (slides 29-30)
       <ConclusionContentSlide key="conclusion" />,
-      <FutureRoadmapSlide key="future-roadmap" />,
       <ThankYouSlide key="thank-you" />,
     ],
     []
@@ -123,10 +122,10 @@ export default function PresentationPage() {
       "Home", // 0
       "Presentation Outline", // 1
       "Introduction", // 2
-      "Project Context", // 3
+      "Context & Importance", // 3
       "Maison du Web", // 4
-      "General Context", // 5
-      "Problematic", // 6
+      "Problématique", // 5
+      "Current Problems", // 6
       "Proposed Solution - AutoSphere", // 7
       "Actors & Requirements", // 8
       "Technologies Used", // 9
@@ -149,8 +148,7 @@ export default function PresentationPage() {
       "KPI Improvements", // 26
       "Test Results", // 27
       "Summary & Perspectives", // 28
-      "Future Roadmap", // 29
-      "Thank You", // 30
+      "Thank You", // 29
     ],
     []
   )

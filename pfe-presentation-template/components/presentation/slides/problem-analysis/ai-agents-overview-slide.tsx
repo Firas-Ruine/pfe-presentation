@@ -24,7 +24,11 @@ import {
   BookOpen,
   Brain,
   Zap,
+  Maximize2,
+  X,
 } from "lucide-react"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
 
 // Simple Alert Node
 function AlertNode() {
@@ -224,6 +228,46 @@ const initialEdges: Edge[] = [
 export default function AiAgentsOverviewSlide() {
   const [nodes] = useNodesState(initialNodes)
   const [edges] = useEdgesState(initialEdges)
+  const [isFullscreen, setIsFullscreen] = useState(false)
+
+  // Fullscreen modal
+  if (isFullscreen) {
+    return (
+      <div className="fixed inset-0 z-[9999] bg-white">
+        <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-gradient-to-b from-white to-transparent">
+          <div>
+            <h2 className="text-xl font-bold text-slate-800">AI Investigation Agents</h2>
+            <p className="text-sm text-slate-500">Parallel specialized agents for comprehensive incident analysis</p>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="bg-white border-slate-300 hover:bg-slate-100 text-slate-700 shadow-md"
+            onClick={() => setIsFullscreen(false)}
+          >
+            <X className="h-4 w-4 mr-2" />
+            Exit Fullscreen
+          </Button>
+        </div>
+        <div className="w-full h-full pt-16">
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            nodeTypes={nodeTypes}
+            nodesDraggable={false}
+            nodesConnectable={false}
+            elementsSelectable={false}
+            fitView
+            fitViewOptions={{ padding: 0.15 }}
+            minZoom={0.3}
+            maxZoom={2}
+          >
+            <Background color="#cbd5e1" gap={20} size={1} />
+          </ReactFlow>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <SlideWrapper>
@@ -236,7 +280,7 @@ export default function AiAgentsOverviewSlide() {
 
         <div className="flex-1 grid grid-cols-4 gap-4">
           {/* ReactFlow Diagram - Takes 3/4 */}
-          <div className="col-span-3 rounded-xl overflow-hidden border shadow-lg bg-gradient-to-br from-slate-900 to-slate-800">
+          <div className="col-span-3 rounded-xl overflow-hidden border shadow-lg bg-gradient-to-br from-slate-900 to-slate-800 relative">
             <ReactFlow
               nodes={nodes}
               edges={edges}
@@ -251,6 +295,17 @@ export default function AiAgentsOverviewSlide() {
             >
               <Background color="#475569" gap={20} size={1} />
             </ReactFlow>
+            <div className="absolute top-3 right-3 z-50">
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => setIsFullscreen(true)}
+                className="h-9 px-3 gap-1.5 text-xs font-medium shadow-md bg-white hover:bg-gray-100 border border-gray-300"
+              >
+                <Maximize2 className="h-4 w-4" />
+                Fullscreen
+              </Button>
+            </div>
           </div>
 
           {/* Side Panel - Stats & Info */}

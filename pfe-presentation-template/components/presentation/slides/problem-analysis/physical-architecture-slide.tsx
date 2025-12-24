@@ -31,6 +31,8 @@ import {
   Lock,
   Unlock,
   RotateCcw,
+  Maximize2,
+  X,
 } from "lucide-react"
 
 const STORAGE_KEY = "physical-architecture-nodes"
@@ -168,6 +170,7 @@ const initialEdges: Edge[] = [
 
 export default function PhysicalArchitectureSlide() {
   const [isLocked, setIsLocked] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
   const [edges, , onEdgesChange] = useEdgesState(initialEdges)
 
@@ -219,6 +222,46 @@ export default function PhysicalArchitectureSlide() {
     localStorage.removeItem(STORAGE_KEY)
   }, [setNodes])
 
+  // Fullscreen modal
+  if (isFullscreen) {
+    return (
+      <div className="fixed inset-0 z-[9999] bg-white">
+        <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-gradient-to-b from-white to-transparent">
+          <div>
+            <h2 className="text-xl font-bold text-slate-800">Physical Architecture</h2>
+            <p className="text-sm text-slate-500">Kubernetes deployment topology and infrastructure</p>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="bg-white border-slate-300 hover:bg-slate-100 text-slate-700 shadow-md"
+            onClick={() => setIsFullscreen(false)}
+          >
+            <X className="h-4 w-4 mr-2" />
+            Exit Fullscreen
+          </Button>
+        </div>
+        <div className="w-full h-full pt-16">
+          <ReactFlow
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={handleNodesChange}
+            onEdgesChange={onEdgesChange}
+            nodeTypes={nodeTypes}
+            nodesDraggable={!isLocked}
+            nodesConnectable={false}
+            fitView
+            minZoom={0.3}
+            maxZoom={2}
+          >
+            <Background color="#cbd5e1" gap={30} size={1} />
+            <Controls className="bg-white rounded-lg shadow-lg border border-slate-200" />
+          </ReactFlow>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <SlideWrapper>
       <div className="h-full flex flex-col">
@@ -246,6 +289,15 @@ export default function PhysicalArchitectureSlide() {
               <Background color="#94a3b8" gap={30} size={1} />
               <Controls showInteractive={false} />
               <div className="absolute top-2 right-2 z-10 flex gap-2">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setIsFullscreen(true)}
+                  className="h-8 px-3"
+                >
+                  <Maximize2 className="h-4 w-4 mr-1" />
+                  Fullscreen
+                </Button>
                 <Button
                   size="sm"
                   variant={isLocked ? "default" : "outline"}

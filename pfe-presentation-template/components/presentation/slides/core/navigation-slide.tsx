@@ -9,13 +9,13 @@ interface NavigationSlideProps {
 }
 
 const sections = [
-  { title: "Introduction", icon: BookOpen, time: "5 min", targetSlide: 2, description: "Context & company", slides: "2-4" },
-  { title: "General Context", icon: Building, time: "5 min", targetSlide: 5, description: "Problematic", slides: "5-6" },
-  { title: "Proposed Solution", icon: Lightbulb, time: "5 min", targetSlide: 7, description: "AutoSphere overview", slides: "7" },
-  { title: "Specifications", icon: ClipboardList, time: "8 min", targetSlide: 8, description: "Requirements & tech", slides: "8-9" },
-  { title: "Project Planning", icon: Calendar, time: "5 min", targetSlide: 10, description: "Gantt & milestones", slides: "10-11" },
-  { title: "Architecture", icon: Network, time: "25 min", targetSlide: 12, description: "LangGraph, MCP, Policy", slides: "12-23" },
-  { title: "Implementation", icon: Code, time: "20 min", targetSlide: 24, description: "Results & testing", slides: "24-31" },
+  { title: "Introduction", icon: BookOpen, time: "2 min", targetSlide: 2, description: "Context & company", slides: "2-4" },
+  { title: "General Context", icon: Building, time: "1 min", targetSlide: 5, description: "Problematic", slides: "5-6" },
+  { title: "Proposed Solution", icon: Lightbulb, time: "2 min", targetSlide: 7, description: "AutoSphere overview", slides: "7" },
+  { title: "Specifications", icon: ClipboardList, time: "2 min", targetSlide: 8, description: "Requirements & tech", slides: "8-9" },
+  { title: "Project Planning", icon: Calendar, time: "1 min", targetSlide: 10, description: "Gantt & milestones", slides: "10-11" },
+  { title: "Architecture", icon: Network, time: "6 min", targetSlide: 12, description: "LangGraph, MCP, Policy", slides: "12-21" },
+  { title: "Implementation", icon: Code, time: "8 min", targetSlide: 24, description: "Results & testing", slides: "24-29" },
 ]
 
 export default function NavigationSlide({ onNavigate }: NavigationSlideProps) {

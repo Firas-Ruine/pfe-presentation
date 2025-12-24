@@ -16,7 +16,7 @@ import {
 
 // UPDATE THIS with your actual YouTube video ID
 // Example: If URL is https://www.youtube.com/watch?v=ABC123, use "ABC123"
-const YOUTUBE_VIDEO_ID = "YOUR_VIDEO_ID_HERE"
+const YOUTUBE_VIDEO_ID = "ftiXyHG9auE"
 
 const demoSteps = [
   {
