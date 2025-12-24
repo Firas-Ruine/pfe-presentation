@@ -4,7 +4,7 @@ import SlideHeader from "../../slide-header"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Lock, Unlock, RotateCcw } from "lucide-react"
+import { Lock, Unlock, RotateCcw, Maximize2, X } from "lucide-react"
 import { useState, useEffect, useCallback } from "react"
 import {
   ReactFlow,
@@ -23,6 +23,38 @@ import "@xyflow/react/dist/style.css"
 
 const STORAGE_KEY = "logical-architecture-nodes"
 const LOCK_KEY = "logical-architecture-locked"
+
+// Fixed positions for fullscreen mode (optimized layout)
+const FULLSCREEN_POSITIONS: Record<string, { x: number; y: number }> = {
+  "stage-ingestion": { x: 0, y: 15 },
+  "start": { x: 150, y: 0 },
+  "ingest": { x: 320, y: 0 },
+  "correlate": { x: 490, y: 0 },
+  "dedup": { x: 660, y: 0 },
+  "preprocess": { x: 830, y: 0 },
+  "stage-routing": { x: 0, y: 130 },
+  "router": { x: 551.751216647082, y: 133.95877774752736 },
+  "stage-investigation": { x: 0, y: 260 },
+  "fastpath": { x: 202.7922903455646, y: 297.554880119361 },
+  "investigation": { x: 988.8178135835223, y: 218.2906848518137 },
+  "metrics_agent": { x: 730.5089343027879, y: 368.11752157926276 },
+  "incident_agent": { x: 996.6130405635274, y: 370.24626901864406 },
+  "runbook_agent": { x: 1230.7573114863894, y: 353.6471549782383 },
+  "stage-reasoning": { x: 0, y: 510 },
+  "retriever": { x: 1055.1638728828937, y: 533.12627644273 },
+  "reasoner": { x: 465.5494726101123, y: 480.7562637285874 },
+  "stage-execution": { x: 0, y: 640 },
+  "policy": { x: 160.50546780072904, y: 499.5467800729041 },
+  "backup": { x: 360.6172971837506, y: 651.975270596717 },
+  "executor": { x: 534.135810739844, y: 644.9382434845301 },
+  "validator": { x: 707.6543242959376, y: 648.4567570406235 },
+  "reporter": { x: 34.629862863604046, y: 714.8148644390646 },
+  "stage-completion": { x: 0, y: 890 },
+  "rollback": { x: 963.3329760387342, y: 733.5802700715635 },
+  "learner": { x: 725.3083806209261, y: 825.7408102146904 },
+  "audit": { x: 370, y: 875 },
+  "end": { x: 200, y: 875 }
+}
 
 // Custom Node Component with better styling
 const CustomNode = ({ data }: { data: any }) => {
@@ -493,6 +525,7 @@ const initialEdges: Edge[] = [
 
 export default function LogicalArchitectureSlide() {
   const [isLocked, setIsLocked] = useState(false)
+  const [isFullscreen, setIsFullscreen] = useState(false)
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes)
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges)
 
@@ -551,6 +584,68 @@ export default function LogicalArchitectureSlide() {
     localStorage.removeItem(STORAGE_KEY)
   }, [setNodes])
 
+  // Generate fullscreen nodes with fixed positions
+  const fullscreenNodes = initialNodes.map((node) => ({
+    ...node,
+    position: FULLSCREEN_POSITIONS[node.id] || node.position
+  }))
+
+  // Fullscreen modal with fixed layout
+  if (isFullscreen) {
+    return (
+      <div className="fixed inset-0 z-[9999] bg-white">
+        <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-gradient-to-b from-white to-transparent">
+          <div>
+            <h2 className="text-xl font-bold text-slate-800">Logical Architecture</h2>
+            <p className="text-sm text-slate-500">LangGraph workflow with 20+ specialized nodes</p>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="bg-white border-slate-300 hover:bg-slate-100 text-slate-700 shadow-md"
+            onClick={() => setIsFullscreen(false)}
+          >
+            <X className="h-4 w-4 mr-2" />
+            Exit Fullscreen
+          </Button>
+        </div>
+        <div className="w-full h-full pt-16">
+          <ReactFlow
+            nodes={fullscreenNodes}
+            edges={initialEdges}
+            nodeTypes={nodeTypes}
+            nodesDraggable={false}
+            nodesConnectable={false}
+            fitView
+            fitViewOptions={{ padding: 0.05 }}
+            minZoom={0.3}
+            maxZoom={2}
+          >
+            <Background color="#cbd5e1" gap={20} size={1} />
+            <Controls className="bg-white rounded-lg shadow-lg border border-slate-200" />
+            <MiniMap
+              nodeColor={(node: Node) => {
+                const border = (node.data?.borderColor as string) || ''
+                if (border.includes('blue')) return '#3b82f6'
+                if (border.includes('purple')) return '#a855f7'
+                if (border.includes('orange')) return '#f97316'
+                if (border.includes('green') || border.includes('emerald')) return '#22c55e'
+                if (border.includes('yellow')) return '#eab308'
+                if (border.includes('red')) return '#ef4444'
+                if (border.includes('cyan')) return '#06b6d4'
+                if (border.includes('violet')) return '#8b5cf6'
+                if (border.includes('indigo')) return '#6366f1'
+                return '#64748b'
+              }}
+              className="bg-white rounded-lg shadow-lg border border-slate-200"
+              style={{ height: 120, width: 180 }}
+            />
+          </ReactFlow>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <SlideWrapper>
       <div className="h-full flex flex-col">
@@ -580,8 +675,18 @@ export default function LogicalArchitectureSlide() {
               <Background color="#94a3b8" gap={16} size={1} />
               <Controls className="bg-white dark:bg-slate-800 rounded-lg shadow-lg" />
 
-              {/* Lock/Reset Controls - Positioned outside ReactFlow panel */}
+              {/* Lock/Reset/Fullscreen Controls */}
               <div className="absolute top-3 right-3 flex gap-2 z-50">
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => setIsFullscreen(true)}
+                  className="h-9 px-3 gap-1.5 text-xs font-medium shadow-md bg-white hover:bg-gray-100 border border-gray-300"
+                  title="View in fullscreen"
+                >
+                  <Maximize2 className="h-4 w-4" />
+                  Fullscreen
+                </Button>
                 <Button
                   size="sm"
                   variant={isLocked ? "default" : "secondary"}
